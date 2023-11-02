@@ -14,11 +14,18 @@ Tên đề tài :
 Xây dựng website kinh doanh sách trực tuyến - chuyên bán lậu bán phá giá sách quý
 
 Mô tả : 
-Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách. Website sẽ các trang : 
+Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách. 
+
+Website sẽ các trang : 
+
 Trang chủ : Chứa các thông tin nổi bật về các giải thưởng trong lĩnh vực văn học, các tác giả nổi bật, mục lưu ý : sách mới ra, sách sắp ra
+
 Trang bán hàng : Chứa thông tin cơ bản và giá của sách thuộc nhiều thể loại khác nhau 
+
 Tác giả : Chứa thông tin của các tác giả những tác phẩm làm lên tên tuổi của họ
+
 Sự kiện : Các sự kiện off - online liên quan đến văn hóa đọc
+
 Giới thiệu : Các thành viên sáng lập và câu truyện của họ
  
 
