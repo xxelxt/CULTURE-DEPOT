@@ -1,8 +1,8 @@
 #FINAL-IS19A
 
-#Nhóm 1 - Thiết kế web
+Nhóm 1 - Thiết kế web
 
-#Thành viên: 
+Thành viên: 
 |Họ và Tên                   |Mã sinh viên|Github  |
 |----------------------------|------------|--------|
 |Ngô Văn Minh < nhóm trưởng >|            |        |
@@ -10,10 +10,10 @@
 |Hà Gia Bảo                  | 24A4042425 |TuilaBao|
 |Phạm Ngọc Nghiệp            |            |        |
 
-#Tên đề tài : 
+Tên đề tài : 
 Xây dựng website kinh doanh sách trực tuyến - chuyên bán lậu bán phá giá sách quý
 
-#Mô tả : 
+Mô tả : 
 Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách. Website sẽ các trang : 
 Trang chủ : Chứa các thông tin nổi bật về các giải thưởng trong lĩnh vực văn học, các tác giả nổi bật, mục lưu ý : sách mới ra, sách sắp ra
 Trang bán hàng : Chứa thông tin cơ bản và giá của sách thuộc nhiều thể loại khác nhau 
@@ -22,7 +22,7 @@ Sự kiện : Các sự kiện off - online liên quan đến văn hóa đọc
 Giới thiệu : Các thành viên sáng lập và câu truyện của họ
  
 
-#Một số website tương tự :
+Một số website tương tự :
 
 1. [Abebooks][1]
 2. [Nhã Nam][2]
