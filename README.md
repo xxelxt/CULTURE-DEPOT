@@ -1,6 +1,6 @@
-# FINAL-IS19A
-# Nhóm 1
-# Thành viên: 
+#FINAL-IS19A
+#Nhóm 1
+#Thành viên: 
         Ngô Văn Minh < nhóm trưởng > \n
         Phạm Bảo Anh \n
         Hà Gia Bảo - 24A4042425 - < TuilaBao > \n
