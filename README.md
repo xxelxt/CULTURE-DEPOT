@@ -16,7 +16,7 @@ Xây dựng website kinh doanh sách trực tuyến - chuyên bán lậu bán ph
 Mô tả : 
 Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách. 
 
-Website sẽ các trang : 
+Website sẽ có các trang chính : 
 
 Trang chủ : Chứa các thông tin nổi bật về các giải thưởng trong lĩnh vực văn học, các tác giả nổi bật, mục lưu ý : sách mới ra, sách sắp ra
 
