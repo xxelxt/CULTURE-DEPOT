@@ -44,7 +44,7 @@ Giới thiệu : Các thành viên sáng lập và câu truyện của họ
 
 ### Một số website tương tự:
 
-1. [Abebooks](https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections)
-2. [Nhã Nam](https://nhanam.vn/)
-3. [Fahasa](https://www.fahasa.com/)
-4. [Vinabook](https://www.vinabook.com/)
+- [Nhã Nam](https://nhanam.vn/)
+- [Abebooks](https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections)
+- [Fahasa](https://www.fahasa.com/)
+- [Vinabook](https://www.vinabook.com/)
