@@ -19,15 +19,15 @@
 
 ### Mô tả:
 
-- **Trang chủ (Homepage)**: Bao gồm thông tin nổi bật, sách và merchandise mới lên kệ, sự kiện sắp diễn ra, chia sẻ mới nhất từ độc giả
+- **Trang chủ (Home)**: Bao gồm thông tin nổi bật, sách và merchandise mới lên kệ, sự kiện sắp diễn ra, chia sẻ mới nhất từ độc giả
 
-- **Trang bán hàng**:
+- **Trang bán hàng (Store)**:
 
-- **Cảm nhận của độc giả**:
+- **Cảm nhận của độc giả ( - )**:
   
-- **Sự kiện**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả
+- **Sự kiện (Events)**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả
 
-- **Giới thiệu**: Giới thiệu về doanh nghiệp và câu chuyện của họ
+- **Giới thiệu (About us)**: Giới thiệu về doanh nghiệp và câu chuyện của họ
 
 ### Một số website tương tự:
 
@@ -35,14 +35,3 @@
 - [Abebooks](https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections)
 - [Fahasa](https://www.fahasa.com/)
 - [Vinabook](https://www.vinabook.com/)
-
--- Draft materials --
-
-Mô tả:
-
-Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách
-
-Trang bán hàng : Chứa thông tin cơ bản và giá của sách thuộc nhiều thể loại khác nhau 
-
-Tác giả : Chứa thông tin của các tác giả những tác phẩm làm lên tên tuổi của họ
- 
