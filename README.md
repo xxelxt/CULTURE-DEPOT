@@ -1,17 +1,30 @@
-#FINAL-IS19A
+# Đề tài: Xây dựng trang web kinh doanh sách
 
-Nhóm 1 - Thiết kế web
+## Nhóm 1 - Thiết kế web (231IS19A01)
 
-Thành viên: 
-|Họ và Tên                   |Mã sinh viên|Github  |
-|----------------------------|------------|--------|
-|Ngô Văn Minh < nhóm trưởng >|            |        |
-|Phạm Bảo Anh                |            |        |
-|Hà Gia Bảo                  | 24A4042425 |TuilaBao|
-|Phạm Ngọc Nghiệp            |            |        |
+### Danh sách thành viên:
 
-Tên đề tài : 
-Xây dựng website kinh doanh sách trực tuyến - chuyên bán lậu bán phá giá sách quý
+| Họ và tên          | Mã sinh viên | Chức vụ        | Github     |
+| ------------------ | ------------ | -------------- | ---------- |
+| Ngô Văn Minh       |              | Nhóm trưởng    |            |
+| Phạm Bảo Anh       |              |                |            |
+| Hà Gia Bảo         | 24A4042425   |                | tuilaBao03 |
+| Phạm Ngọc Nghiệp   | 24A4042603   |                | xxelxt     |
+
+### Tên đề tài: Xây dựng website bán sách trực tuyến cùng các nội dung đi kèm như chia sẻ trải nghiệm của bạn đọc, bán merchandise đi kèm, thông báo sự kiện,...
+
+### Mô tả:
+
+- **Trang chủ (Homepage)**: Bao gồm thông tin nổi bật, sách và merchandise mới lên kệ, sự kiện sắp diễn ra, chia sẻ mới nhất từ độc giả
+
+- **Trang bán hàng**: 
+
+- **Cảm nhận của độc giả**:
+  
+- **Sự kiện**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả
+
+- **Giới thiệu**: Giới thiệu về doanh nghiệp và câu chuyện của họ
+
 
 Mô tả : 
 Xây dựng website trong lĩnh vực kinh doanh các loại sách và một số phụ tùng liên quan đến sách. 
@@ -24,19 +37,14 @@ Trang bán hàng : Chứa thông tin cơ bản và giá của sách thuộc nhi�
 
 Tác giả : Chứa thông tin của các tác giả những tác phẩm làm lên tên tuổi của họ
 
-Sự kiện : Các sự kiện off - online liên quan đến văn hóa đọc
+Sự kiện :
 
 Giới thiệu : Các thành viên sáng lập và câu truyện của họ
  
 
-Một số website tương tự :
+### Một số website tương tự:
 
-1. [Abebooks][1] <https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections>
-2. [Nhã Nam][2] <https://nhanam.vn/>
-3. [Fahasa][3] <https://www.fahasa.com/>
-4. [Vinabook][4] <https://www.vinabook.com/>
-
-[1]:[https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections]
-[2]:[https://nhanam.vn/]
-[3]:[https://www.fahasa.com/]
-[4]:[https://www.vinabook.com/]
+1. [Abebooks](https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections)
+2. [Nhã Nam](https://nhanam.vn/)
+3. [Fahasa](https://www.fahasa.com/)
+4. [Vinabook](https://www.vinabook.com/)
