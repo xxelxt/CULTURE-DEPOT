@@ -6,7 +6,7 @@
 
 | Họ và tên          | Mã sinh viên | Chức vụ        | 🔗 Link to GitHub profile                   |
 | ------------------ | ------------ | -------------- | -----------------------------------------   |
-| Ngô Văn Minh       | 24A4042598   | Nhóm trưởng    |                                             |
+| Ngô Văn Minh       | 24A4042598   | Nhóm trưởng    | [NMinh19](https://github.com/NMinh19)       |
 | Phạm Bảo Anh       | 24A4042424   |                |                                             |
 | Hà Gia Bảo         | 24A4042425   |                | [tuilaBao03](https://github.com/tuilaBao03) |
 | Phạm Ngọc Nghiệp   | 24A4042603   |                | [xxelxt](https://github.com/xxelxt)         |
