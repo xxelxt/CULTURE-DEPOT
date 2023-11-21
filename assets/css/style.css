@@ -4059,8 +4059,8 @@ Responsive For Mobile & Tablet Devices
             box-shadow: -5px 5px 0 0 #FFD32B;
   }
   .newslatter_box {
-    -webkit-box-shadow: 5px 5px 0 0 #FFD32B;
-            box-shadow: 5px 5px 0 0 #FFD32B;
+    -webkit-box-shadow: 5px 5px 0 0 rgb(34, 146, 77);
+            box-shadow: 5px 5px 0 0 rgb(34, 146, 77);
   }
   .calltoaction_form {
     -webkit-box-shadow: 2px 2px 30px rgba(31, 29, 13, 0.0894963), 5px 5px 0 0 #FFD32B;
