@@ -522,7 +522,7 @@ hr {
   top: 50%;
   font-size: 14px;
   position: absolute;
-  color: #F7FF62;
+  color: rgb(61, 214, 120);
   -webkit-transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -704,7 +704,7 @@ ol[type="1"] > li:not(:last-child) {
   background-color: #F6F6F6;
 }
 .item_category_list a:hover {
-  background-color: #FFD32B;
+  background-color: rgb(61, 214, 120);
 }
 
 .meta_info_list {
@@ -721,7 +721,7 @@ ol[type="1"] > li:not(:last-child) {
 }
 .meta_info_list i {
   margin-right: 2px;
-  color: #FFD32B;
+  color: rgb(34, 146, 77);
 }
 .meta_info_list a {
   color: #1F1D0D;
@@ -2799,10 +2799,10 @@ blockquote p {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
-  background-color: #F7FF62;
+  background-color: rgb(61, 214, 120);
   background-position: center center;
-  -webkit-box-shadow: 20px 20px 0 0 #FFD32B;
-          box-shadow: 20px 20px 0 0 #FFD32B;
+  -webkit-box-shadow: 20px 20px 0 0 rgb(34, 146, 77);
+          box-shadow: 20px 20px 0 0 rgb(34, 146, 77);
 }
 .newslatter_box :-moz-placeholder {
   color: #444444;
@@ -3282,7 +3282,7 @@ blockquote p {
   background-color: #1F1D0D;
 }
 .main_menu_list .dropdown-menu > li:hover > a, .main_menu_list .dropdown-menu > li.active > a {
-  background-color: #F7FF62;
+  background-color: rgb(44, 189, 99)
 }
 .main_menu_list .dropdown-menu .dropdown > a:after {
   margin-top: 1px;
