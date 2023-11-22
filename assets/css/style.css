@@ -3177,7 +3177,7 @@ blockquote p {
   max-width: 1430px;
 }
 .site_header.sticky {
-  padding: 10px 0;
+  padding: 10px 0 10px 0;
   position: fixed;
   background-color: rgba(255, 255, 255, 0.96);
   -webkit-backdrop-filter: saturate(180%) blur(20px);

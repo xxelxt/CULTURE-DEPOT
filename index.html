@@ -97,6 +97,30 @@
     width: 100%; /* Ensures the image takes the full width of its container */
     object-fit: cover; /* Maintain aspect ratio and cover the entire container */
   }
+
+  .course_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course_card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item_image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.item_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
   </style>
 
 </head>
@@ -262,7 +286,7 @@
     <main class="page_content">
 
       <!-- Carousel Section -->
-      <div id="carouselExample" class="carousel slide" data-ride="carousel" data-wrap="true">
+      <div id="carouselExample" class="carousel slide" data-ride="carousel" data-wrap="true" style="padding-top: 20px;">
 
         <div class="carousel-inner">
 
@@ -272,7 +296,7 @@
               <div class="container">
                 <div class="content_wrap">
                   <div class="row">
-                    <div class="col col-lg-8">
+                    <div class="col col-lg-7">
                       <!-- Content for the first slide -->
                       <h1 class="banner_small_title">Sách mới ra mắt</h1>
                       <h2 class="banner_big_title">BÀN VỀ LÒNG <br>KHOAN DUNG</h2>
@@ -293,7 +317,7 @@
                         
                       </ul>
                     </div>
-                    <div class="col col-lg-4">
+                    <div class="col col-lg-5">
                       <!-- Image for the first slide -->
                       <div class="banner_image_1 decoration_wrap">
                         <div class="image_wrap">
@@ -319,10 +343,10 @@
               <div class="container">
                 <div class="content_wrap">
                   <div class="row">
-                    <div class="col col-lg-8">
+                    <div class="col col-lg-7">
                       <!-- Content for the first slide -->
                       <h1 class="banner_small_title">Sách mới ra mắt</h1>
-                      <h2 class="banner_big_title">TANG LỄ CỦA <br>NGƯỜI AN NAM</h2>
+                      <h2 class="banner_big_title">TANG LỄ CỦA<br>NGƯỜI AN NAM</h2>
                       <p class="banner_description">
                         Những nghiên cứu cơ bản về phong tục tập quán người Việt, 
                         thông qua một trong hai tập tục lớn có ảnh hưởng đến cuộc đời con người và dân tộc là hôn nhân và tang lễ.
@@ -338,7 +362,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col col-lg-4">
+                    <div class="col col-lg-5">
                       <!-- Image for the first slide -->
                       <div class="banner_image_1 decoration_wrap">
                         <div class="image_wrap">
@@ -528,7 +552,7 @@
                           
                         </ul>
                         <div class="item_price">
-                          <span class="sale_price">189000đ</span>
+                          <span class="sale_price">189.000đ</span>
                         </div>
                       </div>
                       <ul class="meta_info_list unordered_list">
@@ -1092,9 +1116,6 @@
               </div>
             </div>
             <div class="deco_item shape_img_1" data-parallax='{"y" : -130, "smoothness": 6}'>
-              <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
-            </div>
-            <div class="deco_item shape_img_2" data-parallax='{"y" : 130, "smoothness": 6}'>
               <img src="assets/images/shape/shape_img_3.png" alt="Collab – Online Learning Platform">
             </div>
           </div>
