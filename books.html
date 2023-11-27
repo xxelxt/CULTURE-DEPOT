@@ -1432,7 +1432,9 @@
         }
     
         // Scroll to the "Showing X-Y of Z results" section
-        document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
+        if (event.isTrusted) {
+          document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
+        }
       }
     </script>
     
