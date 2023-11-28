@@ -3674,7 +3674,7 @@ blockquote p {
 .course_info_card .course_info_list i {
   width: 20px;
   margin-right: 5px;
-  color: #FFD32B;
+  color: rgb(34, 146, 77);
 }
 
 .event_details_section .sidebar .course_info_card,
