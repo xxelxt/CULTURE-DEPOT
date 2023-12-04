@@ -1,175 +1,291 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>Event Details – Collab – Online Learning Platform Template</title>
+    <link rel="shortcut icon" href="assets/images/logo/favourite_icon_1.svg">
+    <title> | Nhã Nam</title>
+    <link rel="shortcut icon" href="assets/images/logo/logo.webp">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Sự kiện | Nhã Nam</title>
-    <link rel="shortcut icon" href="assets/images/logo/logo.webp">
+    
 
-    <!-- Framework - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- Framework - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <!-- Icon Font - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+  <!-- Icon Font - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
 
-    <!-- Animation - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Animation - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 
-    <!-- Cursor - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
+  <!-- Cursor - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
 
-    <!-- Carousel - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+  <!-- Carousel - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
 
-    <!-- Video & Image Popup - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+  <!-- Video & Image Popup - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
 
-    <!-- Vanilla Calendar - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/vanilla-calendar.min.css">
+  <!-- Vanilla Calendar - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vanilla-calendar.min.css">
 
-    <!-- Custom - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Custom - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  </head>
+  <style>
+    /* Add your custom styles here */
+    .carousel-indicators {
+    justify-content: center;
+    position: absolute;
+    bottom: 100px; /* Adjust the bottom position as needed */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Center the indicators */
+    z-index: 1; /* Ensure the indicators are above the banner */
+  }
+
+  .carousel-indicators li {
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .intro_video {
+    position: relative;
+    display: inline-block;
+  }
+
+  .video_wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video_wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the desired level of dimming */
+  }
+
+  .video_wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .video_play_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+  }
+
+  .item_image img {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  }
+
+  .course_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course_card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item_image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.item_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
-  <body>
+  </style>
 
-    <!-- Body Wrap - Start -->
-    <div class="page_wrapper">
+</head>
 
-      <!-- Back To Top - Start -->
-      <div class="backtotop">
-        <a href="#" class="scroll">
-          <i class="far fa-arrow-up"></i>
-        </a>
-      </div>
-      <!-- Back To Top - End -->
 
-      <!-- Site Header - Start
+<body>
+
+  <!-- Body Wrap - Start -->
+  <div class="page_wrapper">
+
+    <!-- Back To Top - Start -->
+    <div class="backtotop">
+      <a href="#" class="scroll">
+        <i class="far fa-arrow-up"></i>
+      </a>
+    </div>
+    <!-- Back To Top - End -->
+
+    <!-- Site Header - Start
       ================================================== -->
-      <header class="site_header site_header_1">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col col-lg-3 col-5">
-              <div class="site_logo">
-                <a class="site_link" href="index.html">
-                  <img src="assets/images/logo/site_logo.svg" alt="Collab - Online Learning Platform">
-                </a>
-              </div>
-            </div>
-            <div class="col col-lg-6 col-2">
-              <nav class="main_menu navbar navbar-expand-lg">
-                <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
-                  <ul class="main_menu_list unordered_list_center">
-                    <li class="dropdown">
-                      <a class="nav-link" href="#" id="home_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                      <ul class="dropdown-menu" aria-labelledby="home_submenu">
-                        <li><a href="index.html">Home 1111</a></li>
-                        <li><a href="index_2.html">Home V.2</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Courses
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="service_submenu">
-                        <li class="dropdown">
-                          <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Courses Layout
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
-                            <li><a href="course.html">Courses Grid</a></li>
-                            <li><a href="course_list.html">Courses List</a></li>
-                          </ul>
-                        </li>
-                        <li class="dropdown">
-                          <a class="nav-link" href="#" id="courses_details_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Courses Details
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="courses_details_submenu">
-                            <li><a href="course_details.html">Course Details V.1</a></li>
-                            <li><a href="course_details_2.html">Course Details V.2</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="dropdown active">
-                      <a class="nav-link" href="#" id="pages_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="pages_submenu">
-                        <li><a href="about.html">About</a></li>
-                        <li class="dropdown">
-                          <a class="nav-link" href="#" id="mentors_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Our Mentors
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="mentors_submenu">
-                            <li><a href="mentor.html">Mentors</a></li>
-                            <li><a href="mentor_details.html">Mentors Details</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="faq.html">F.A.Q.</a></li>
-                        <li class="dropdown active">
-                          <a class="nav-link" href="#" id="events_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Our Events
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="events_submenu">
-                            <li class="active"><a href="event.html">Events</a></li>
-                            <li><a href="event_details.html">Event Details</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="error.html">404 Error</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a class="nav-link" href="#" id="blog_submenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Blog
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="blog_submenu">
-                        <li><a href="blog.html">Our Blogs</a></li>
-                        <li><a href="blog_details.html">Blog Details</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="nav-link" href="contact.html">Contact</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <div class="col col-lg-3 col-5">
-              <ul class="header_btns_group unordered_list_end">
-                <li>
-                  <button class="mobile_menu_btn" type="button" data-bs-toggle="collapse" data-bs-target="#main_menu_dropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="far fa-bars"></i>
-                  </button>
-                </li>
-                <li>
-                  <a class="btn border_dark" href="login.html">
-                    <span>
-                      <small>Login</small>
-                      <small>Login</small>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="btn btn_dark" href="signup.html">
-                    <span>
-                      <small>Sign Up</small>
-                      <small>Sign Up</small>
-                    </span>
-                  </a>
-                </li>
-              </ul>
+    <header class="site_header site_header_1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col col-lg-3 col-5">
+            <div class="site_logo">
+              <a class="site_link" href="index.html">
+                <img src="assets/images/logo/logo.png" width="65px" alt="Culture Depot">
+              </a>
             </div>
           </div>
+          <div class="col col-lg-6 col-2">
+            <nav class="main_menu navbar navbar-expand-lg">
+              <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
+                <ul class="main_menu_list unordered_list_center">
+                  <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Sách
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      <li><a href="books.html">Tất cả sách</a></li>
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Văn học hiện đại</a></li>
+                          <li><a>Văn học kinh điển</a></li>
+                          <li><a>Văn học thiếu nhi</a></li>
+                          <li><a>Lãng mạn</a></li>
+                          <li><a>Kỳ ảo</a></li>
+                          <li><a>Trinh thám</a></li>
+                          <li><a>Khoa học - viễn tưởng</a></li>
+                          <li><a>Tản văn</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phi hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Triết học - Sử học</a></li>
+                          <li><a>Khoa học</a></li>
+                          <li><a>Kinh doanh</a></li>
+                          <li><a>Kỹ năng</a></li>
+                          <li><a>Nghệ thuật</a></li>
+                          <li><a>Tiểu luận - Phê bình</a></li>
+                          <li><a>Tâm lý học</a></li>
+                          <li><a>Tâm lý ứng dụng</a></li>
+                          <li><a>Phong cách sống</a></li>
+                          <li><a>Hồi ký</a></li>
+                          <li><a>Tâm linh - Tôn giáo</a></li>
+                          <li><a>Y học - Sức khoẻ</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a href="#!">Thiếu nhi</a></li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phân loại khác
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Sách bán chạy</a></li>
+                          <li><a>Sách mới xuất bản</a></li>
+                          <li><a>Sách sắp xuất bản</a></li>
+                          <li><a>Sách được giải thưởng</a></li>
+                          <li><a>Việt Nam danh tác</a></li>
+                          <li><a>Bản đặc biệt</a></li>
+                          <li><a>Phụ kiện & quà tặng</a></li>
+                        </ul>
+                      </li>
+                      
+                    </ul>
+                  </li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Bảng tin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      
+
+                      <li><a href="#!">Tin tức</a></li>
+                      <li><a href="#!">Review từ bạn đọc</a></li>
+                      <li><a href="#!">Review từ báo chí</a></li>
+                      <li><a href="#!">Lựa chọn của biên tập viên</a></li>
+
+                      
+                      
+                    </ul>
+                  </li>
+
+                  <li><a class="nav-link" href="event.html">Sự kiện</a></li>
+                  <li><a class="nav-link" href="aboutus.html">Về chúng tôi</a></li>
+                
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="col col-lg-3 col-5">
+            <ul class="header_btns_group unordered_list_end">
+              <li>
+                <button class="mobile_menu_btn" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#main_menu_dropdown" aria-controls="main_menu_dropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <i class="far fa-bars"></i>
+                </button>
+              </li>
+              <li>
+                <a class="btn border_dark" href="login.html">
+                  <span>
+                    <small>Đăng nhập</small>
+                    <small>Đăng nhập</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="btn btn_dark" href="signup.html">
+                  <span>
+                    <small>Đăng ký</small>
+                    <small>Đăng ký</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </div>
+    </header>
       <!-- Site Header - End
       ================================================== -->
 
@@ -181,34 +297,48 @@
         ================================================== -->
         <section class="page_banner">
           <div class="container">
-            <div class="content_wrapper" style="background-image: url('assets/images/banner/page_banner_image.png');">
+            <div class="content_wrapper" style="background-image: url('assets/images/banner/a1.png');">
               <div class="row align-items-center">
-                <div class="col col-lg-6">
+                <div class="col col-lg-7">
                   <ul class="breadcrumb_nav unordered_list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#!">Pages</a></li>
-                    <li>Events</li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="event.html">Sự kiện</a></li>
+                    
                   </ul>
-                  <h1 class="page_title">Events</h1>
-                  <p class="page_description">
-                    Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt eget nullam non nisi. Faucibus turpis in eu mi bibendum neque egestas
-                  </p>
-                  <form action="#">
-                    <div class="form_item mb-0">
-                      <input type="search" name="search" placeholder="What do you want to learn ?">
-                      <button type="submit" class="btn btn_dark">
-                        <span>
-                          <small>Search</small>
-                          <small>Search</small>
-                        </span>
-                      </button>
-                    </div>
-                  </form>
+                  <h1 class="page_title" >
+                    Thông báo về cuộc thi "Ai đó đọc cùng ta"
+                  </h1>
+                  <ul class="info_list unordered_list_block pb-0">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>
+                        Chủ Nhật, 05/11/2023
+                      </span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>
+                        Địa điểm: Phòng Prism, Nam Thi House, Số 152 Nam Kỳ Khởi Nghĩa, Quận 1, TP.HCM
+                      </span>
+                    </li>
+                  </ul>
                 </div>
+                <form action="#">
+                  <div class="form_item mb-0">
+                    <input type="search" name="search" placeholder="Thông tin sự kiện bạn muốn tìm kiếm ?">
+                    <button type="submit" class="btn btn_dark">
+                      <span>
+                        <small>Search</small>
+                        <small>Search</small>
+                      </span>
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </section>
+       
         <!-- Page Section - End
         ================================================== -->
 
@@ -219,23 +349,41 @@
             <div class="row">
               <div class="col col-lg-4">
                 <div class="event_card">
-                  <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_1.jpg" alt="Collab – Online Learning Platform">
+                  <a class="item_image" href="event_detail.html">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/copy-of-trang-web.png?v=1699170184147" alt="Collab – Online Learning Platform">
+                  </a>
+                  <div class="item_content">
+                    <h3 class="item_title">
+                      <a href="event_detail.html">
+                        Thông báo về cuộc thi "Ai đó đọc cùng ta"
+                      </a>
+                    </h3>
+                    <ul class="meta_info_list unordered_list_block">
+                      
+                      <li>
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Chủ Nhật, 05/11/2023 </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-lg-4">
+                <div class="event_card">
+                  <a class="item_image" href="event_detail.html">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/size-website-14.png?v=1701263624510" alt="Collab – Online Learning Platform">
                   </a>
                   <div class="item_content">
                     <h3 class="item_title">
                       <a href="event_details.html">
-                        Engineering Management in Large Organization
+                        Thông báo mở bán lịch bàn Nhã Nam 2024
                       </a>
                     </h3>
                     <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Wendy Chandler</span>
-                      </li>
+                      
                       <li>
                         <i class="fas fa-calendar-day"></i>
-                        <span>Mon, February 15, 2023 5:30 PM</span>
+                        <span>Thứ Tư, 29/11/2023</span>
                       </li>
                     </ul>
                   </div>
@@ -244,22 +392,19 @@
               <div class="col col-lg-4">
                 <div class="event_card">
                   <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_2.jpg" alt="Collab – Online Learning Platform">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/trang-web-14.png?v=1697544706477" alt="Collab – Online Learning Platform">
                   </a>
                   <div class="item_content">
                     <h3 class="item_title">
                       <a href="event_details.html">
-                        Advances in Software and Computing Technologies
+                        SỰ KIỆN: TRÒ CHUYỆN VỀ NGHỀ THIẾT KẾ BÌA SÁCH
                       </a>
                     </h3>
                     <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Roberta Lane</span>
-                      </li>
+                     
                       <li>
                         <i class="fas fa-calendar-day"></i>
-                        <span>Wed, March 16, 2023 7:30 PM</span>
+                        <span>Thứ Sáu, 24/11/2023</span>
                       </li>
                     </ul>
                   </div>
@@ -268,22 +413,19 @@
               <div class="col col-lg-4">
                 <div class="event_card">
                   <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_3.jpg" alt="Collab – Online Learning Platform">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/nha-nam-website.png?v=1699171454313" alt="Collab – Online Learning Platform">
                   </a>
                   <div class="item_content">
                     <h3 class="item_title">
                       <a href="event_details.html">
-                        Social Media Marketing World 2023
+                        Sự kiện ra mắt bản dịch tiếng Việt của tác phẩm "Tang lễ của người An
                       </a>
                     </h3>
                     <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Roberta Lane</span>
-                      </li>
+                      
                       <li>
                         <i class="fas fa-calendar-day"></i>
-                        <span>Mon, February 26, 2023 5:00 PM</span>
+                        <span>Thứ Sáu, 24/11/2023</span>
                       </li>
                     </ul>
                   </div>
@@ -292,75 +434,63 @@
               <div class="col col-lg-4">
                 <div class="event_card">
                   <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_4.jpg" alt="Collab – Online Learning Platform">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/size-website.png?v=1700028750213" alt="Collab – Online Learning Platform">
+
                   </a>
                   <div class="item_content">
                     <h3 class="item_title">
                       <a href="event_details.html">
-                        Economics, Business Management & Social Sciences
+                        Sự kiện ra mắt tập di cảo "Anh hùng còn chi" của nhà văn Nguyễn Huy
+                        
                       </a>
                     </h3>
                     <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Justin Poole</span>
-                      </li>
+                      
                       <li>
                         <i class="fas fa-calendar-day"></i>
-                        <span>Fri, March 07, 2023 4:30 PM</span>
+                        <span>Thứ Sáu, 24/11/2023</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
+              
               <div class="col col-lg-4">
                 <div class="event_card">
                   <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_5.jpg" alt="Collab – Online Learning Platform">
+                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/con-chu-a.png?v=1700747336883" alt="Collab – Online Learning Platform">
                   </a>
                   <div class="item_content">
                     <h3 class="item_title">
+                      
                       <a href="event_details.html">
-                        How to Become a Software Tester Without A Computer
+                        Sự kiện ra mắt tác phẩm đoạt giải Goncourt 2018 - "Con cháu của họ cũng
                       </a>
                     </h3>
                     <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Roberta Lane</span>
-                      </li>
+                      
                       <li>
                         <i class="fas fa-calendar-day"></i>
-                        <span>Wed, March 16, 2023 7:30 PM</span>
+                        <span>Thứ Sáu, 24/11/2023</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col col-lg-4">
-                <div class="event_card">
-                  <a class="item_image" href="event_details.html">
-                    <img src="assets/images/event/event_image_6.jpg" alt="Collab – Online Learning Platform">
-                  </a>
-                  <div class="item_content">
-                    <h3 class="item_title">
-                      <a href="event_details.html">
-                        Intro to HTML, CSS, & JavaScript Workshop
-                      </a>
-                    </h3>
-                    <ul class="meta_info_list unordered_list_block">
-                      <li>
-                        <i class="fas fa-user"></i>
-                        <span>Roberta Lane</span>
-                      </li>
-                      <li>
-                        <i class="fas fa-calendar-day"></i>
-                        <span>Thu, March 26, 2023 5:30 PM</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
+              <div class="pagination_wrap">
+                <ul class="pagination_nav unordered_list justify-content-center">
+                  <li><a href="#!"><i class="fas fa-long-arrow-left"></i></a></li>
+                  <li class="active"><a href="#!">1</a></li>
+                  <li><a href="#!">2</a></li>
+
+                  <li><a href="#!">...</a></li>
+                  <li><a href="#!">12</a></li>
+                  <li><a href="#!"><i class="fas fa-long-arrow-right"></i></a></li>
+                </ul>
               </div>
+              
+
             </div>
           </div>
         </section>
@@ -376,19 +506,19 @@
                 <div class="col col-lg-6">
                   <div class="section_heading text-center">
                     <h2 class="heading_text">
-                      Subscribe Now Forget 20% Discount Every Courses
+                      Nhận thư từ chúng mình nhé bạn!
                     </h2>
                     <p class="heading_description mb-0">
-                      Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed magna purus, fermentum eu
+                      Chúng mình sẽ thông báo bạn về những cuốn sách hay, những chương trình giảm giá và sự kiện mới nhất
                     </p>
                   </div>
                   <form action="#">
                     <div class="form_item m-0">
-                      <input type="email" name="email" placeholder="Your Email">
+                      <input type="email" name="email" placeholder="Email của bạn">
                       <button type="submit" class="btn btn_dark">
                         <span>
-                          <small>Subsctibe</small>
-                          <small>Subsctibe</small>
+                          <small>Đăng ký</small>
+                          <small>Đăng ký</small>
                         </span>
                       </button>
                     </div>
@@ -400,6 +530,7 @@
         </section>
         <!-- Newslatter Section - End
         ================================================== -->
+      
 
       </main>
       <!-- Main Body - End
@@ -411,15 +542,15 @@
         <div class="footer_widget_area">
           <div class="container">
             <div class="row">
-              <div class="col col-lg-3 col-md-6 col-sm-6">
+              <div class="col col-lg-4 col-md-6 col-sm-6">
                 <div class="footer_widget">
                   <div class="site_logo">
                     <a class="site_link" href="index.html">
-                      <img src="assets/images/logo/site_logo_2.svg" alt="Collab - Online Learning Platform">
+                      <img src="assets/images/logo/logo-white.png" width="65px" alt="Collab - Online Learning Platform">
                     </a>
                   </div>
                   <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể tìm thấy những cuốn sách mình hứng thú, tìm thấy không gian để chia sẻ niềm đam mê, tìm thấy những sự kiện để kích thích sự đọc và yêu sách, giúp lan truyền giá trị về văn hóa đọc đến mọi người.
                   </p>
                   <ul class="social_links unordered_list">
                     <li>
@@ -429,154 +560,101 @@
                       <a href="#!"><i class="fab fa-youtube"></i></a>
                     </li>
                     <li>
-                      <a href="#!"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#!"><i class="fab fa-instagram"></i></a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="col col-lg-6">
+              <div class="col col-lg-4">
                 <div class="row">
-                  <div class="col col-md-4 col-sm-4">
+                  <div class="col col-md-6 col-sm-6">
                     <div class="footer_widget">
-                      <h3 class="footer_widget_title">Links</h3>
+                      <h3 class="footer_widget_title">Sách</h3>
                       <ul class="page_list unordered_list_block">
                         <li>
-                          <a href="about.html">
+                          <a href="books.html">
                             <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">About</span>
+                            <span class="item_text">Tất cả sách</span>
                           </a>
                         </li>
                         <li>
-                          <a href="course.html">
+                          <a href="#!">
                             <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Courses</span>
+                            <span class="item_text">Hư cấu</span>
                           </a>
                         </li>
                         <li>
-                          <a href="mentor.html">
+                          <a href="#!">
                             <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Mentors</span>
+                            <span class="item_text">Phi hư cấu</span>
                           </a>
                         </li>
                         <li>
-                          <a href="pricing.html">
+                          <a href="#!">
                             <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Prices</span>
+                            <span class="item_text">Thiếu nhi</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Sách bán chạy</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col col-md-6 col-sm-6">
+                    <div class="footer_widget">
+                      <h3 class="footer_widget_title">Đường dẫn khác</h3>
+                      <ul class="page_list unordered_list_block">
+                        <li>
+                          <a href="blog.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Bảng tin</span>
                           </a>
                         </li>
                         <li>
                           <a href="event.html">
                             <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Events</span>
+                            <span class="item_text">Sự kiện</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="aboutus.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Về chúng tôi</span>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="col col-md-4 col-sm-4">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Class</h3>
-                      <ul class="page_list unordered_list_block">
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Programming</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Art & Design</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Business</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Engineering</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Photography</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-sm-4">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Support</h3>
-                      <ul class="page_list unordered_list_block">
-                        <li>
-                          <a href="contact.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Help Center</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="faq.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">FAQ</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="contact.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Contacts</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Security</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Private Police</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
+              <div class="col col-lg-4 col-md-6 col-sm-6">
                 <div class="footer_widget">
-                  <h3 class="footer_widget_title">Latest Posts</h3>
+                  <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
                   <ul class="blog_small_group unordered_list_block">
                     <li>
                       <a class="blog_small" href="blog_details.html">
                         <span class="item_image">
-                          <img src="assets/images/blog/blog_small_img_1.jpg" alt="Collab – Online Learning Platform">
+                          <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943" alt="blog-btv-1">
                         </span>
                         <span class="item_content">
-                          <span class="item_author"><i class="fas fa-user-alt"></i> by Corabelle Durrad</span>
-                          <strong class="item_title">See How Michaele Built a New Life and Career</strong>
-                          <small class="item_post_date">October 12, 2023</small>
+                          <strong class="item_title">5 bí quyết dưỡng ẩm đắt giá - Chăm sóc da hiệu quả ngay trong mùa đông</strong>
+                          <small class="item_post_date">20 thg 11, 2023</small>
                         </span>
                       </a>
                     </li>
                     <li>
                       <a class="blog_small" href="blog_details.html">
                         <span class="item_image">
-                          <img src="assets/images/blog/blog_small_img_2.jpg" alt="Collab – Online Learning Platform">
+                          <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631" alt="blog-btv-2">
                         </span>
                         <span class="item_content">
-                          <span class="item_author"><i class="fas fa-user-alt"></i> by Corabelle Durrad</span>
-                          <strong class="item_title">See How Michaele Built a New Life and Career</strong>
-                          <small class="item_post_date">October 12, 2023</small>
+                          <strong class="item_title">"Người Đài Bắc": Tàn một giấc mộng quá vãng nơi xứ người</strong>
+                          <small class="item_post_date">10 thg 10, 2023</small>
                         </span>
                       </a>
                     </li>
@@ -584,13 +662,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="copyright_widget">
-          <div class="container">
-            <p class="copyright_text text-center mb-0">
-              <a href="https://themeforest.net/user/merkulove">Merkulove</a> © <b>Collab</b> Template All rights reserved Copyrights 2023
-            </p>
           </div>
         </div>
       </footer>
