@@ -2,12 +2,12 @@
 
 ## Nhóm 1 - Thiết kế web (231IS19A01)
 
-### 🚀 Danh sách thành viên
+### ✊ Danh sách thành viên
 
 | Họ và tên          | Mã sinh viên | Chức vụ        | 🔗 Link to GitHub profile                   |
 | ------------------ | ------------ | -------------- | -----------------------------------------   |
 | Ngô Văn Minh       | 24A4042598   | Nhóm trưởng    | [NMinh19](https://github.com/NMinh19)       |
-| Phạm Bảo Anh       | 24A4042424   |                |                                             |
+| Phạm Bảo Anh       | 24A4042424   |                | [PhamBaoAnh](https://github.com/PhamBaoAnh) |
 | Hà Gia Bảo         | 24A4042425   |                | [tuilaBao03](https://github.com/tuilaBao03) |
 | Phạm Ngọc Nghiệp   | 24A4042603   |                | [xxelxt](https://github.com/xxelxt)         |
 
@@ -32,6 +32,10 @@ Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể
 - **Sự kiện (Events)**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả
 
 - **Giới thiệu (About us)**: Giới thiệu về câu chuyện của chúng tôi
+
+### 🚀 Framework và thư viện sử dụng
+
+- 
 
 ### 🌐 Website tham khảo
 
