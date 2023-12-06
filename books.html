@@ -34,7 +34,35 @@
 
   <!-- Custom - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style>
+    .course_card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
+    /* .item_image {
+  flex: 1;
+} */
+
+    .item_image {
+      overflow: hidden;
+      /* Hide any overflow (part of the image that goes beyond the container) */
+    }
+
+    /* Set a specific height for all .item_image containers */
+    .item_image {
+      height: 500px;
+      /* Adjust this value based on your design */
+    }
+
+    /* Ensure the image takes up the full height of its container */
+    .item_image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 
@@ -143,7 +171,7 @@
                     <ul class="dropdown-menu" aria-labelledby="service_submenu">
 
 
-                      <li><a href="#!">Tin tức</a></li>
+                      <li><a href="blog.html">Tin tức</a></li>
                       <li><a href="#!">Review từ bạn đọc</a></li>
                       <li><a href="#!">Review từ báo chí</a></li>
                       <li><a href="#!">Lựa chọn của biên tập viên</a></li>
@@ -160,6 +188,7 @@
               </div>
             </nav>
           </div>
+
           <div class="col col-lg-3 col-5">
             <ul class="header_btns_group unordered_list_end">
               <li>
@@ -199,31 +228,27 @@
 
       <!-- Page Section - Start
         ================================================== -->
-
-
-
-
       <section class="page_banner">
         <div class="container">
-          <div class="content_wrapper" style="background-image: url('assets/images/banner/.jpg');">
+          <div class="content_wrapper" style="background-image: url('');">
             <div class="row align-items-center">
-              <div class="col col-lg-6">
+              <div class="col col-lg-12">
                 <ul class="breadcrumb_nav unordered_list">
                   <li><a href="index.html">Trang chủ</a></li>
                   <li>Tất cả sách</li>
                 </ul>
                 <h1 class="page_title">Hôm nay bạn muốn đọc gì?</h1>
                 <p class="page_description">
-                  Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt
-                  eget nullam non nisi. Faucibus turpis in eu mi bibendum neque egestas
+                  Tìm kiếm sách, tìm kiếm kiến thức, tìm kiếm sự trải nghiệm mới.
                 </p>
                 <form action="#">
                   <div class="form_item mb-0">
-                    <input type="search" name="search" placeholder="What do you want to learn ?">
+                    <input type="search" name="search" placeholder="Nhập tên sách, tên tác giả, thể loại"
+                      oninput="filterBooks()">
                     <button type="submit" class="btn btn_dark">
                       <span>
-                        <small>Search</small>
-                        <small>Search</small>
+                        <small><i class="fas fa-search"></i></small>
+                        <small><i class="fas fa-search"></i></small>
                       </span>
                     </button>
                   </div>
@@ -236,27 +261,35 @@
       <!-- Page Section - End
         ================================================== -->
 
+
       <!-- Courses Archive Section - Start
         ================================================== -->
 
       <section class="courses_archive_section section_space_lg">
+        <!-- <div class="container">
+          <ul class="breadcrumb_nav unordered_list">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li>Tất cả sách</li>
+          </ul>
+        </div> -->
         <div class="container">
           <div class="filter_topbar">
             <p class="filter_result">Đang hiển thị <span>first</span> - <span>last</span> trong tổng số
-              <span>total</span> cuốn sách</p>
+              <span>total</span> cuốn sách
+            </p>
             <ul class="filter_buttons_list unordered_list">
               <li>
                 <button type="button" class="offCanvas_open_btn">
                   <i class="fas fa-filter"></i>
-                  <span>Filter</span>
+                  <span>Lọc</span>
                 </button>
               </li>
               <li>
-                <div class="form_item m-0">
-                  <select name="sorting">
-                    <option value="sorting" selected>Sorting</option>
-                    <option value="newest">Newest</option>
-                    <option value="popularity">Popularity</option>
+                <div class="form_item m-0" style="width: 200px;">
+                  <select id="sorting" name="sorting">
+                    <option value="sorting" selected>Sắp xếp theo</option>
+                    <option value="newest">Mới nhất</option>
+                    <option value="popularity">Được xem nhiều</option>
                   </select>
                 </div>
               </li>
@@ -649,33 +682,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/z483970678034868c8fc99ba5f77a1.jpg?v=1698897505830"
-                      alt="Anh hùng còn chi - Di sản Nguyễn Huy Thiệp">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/mimcuoiduyendangdaplainguoivod.jpg?v=1696926543480"
+                      alt="Mỉm cười duyên dáng đáp lại người vô duyên">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Văn học hiện đại</a></li>
+                      <li><a href="#!">Tâm lý ứng dụng</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">168.000đ</span>
+                      <span class="sale_price">116.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>NGUYỄN HUY THIỆP</b></span>
-                    </li>
-                    <li>
-                      <i class="fas fa-calendar"></i>
-                      <span><time datetime="2023-11-22">22/11/2023</time></span>
+                      <span><b>JEONG MOON JEONG</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Anh hùng còn chi - Di sản Nguyễn Huy Thiệp
+                      Mỉm cười duyên dáng đáp lại người vô duyên
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -694,33 +723,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/tang-le-cua-nguoi-an-nam-01.jpg?v=1695026610680"
-                      alt="Tang lễ của người An Nam (Bìa cứng)">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/sodonew01.jpg?v=1697086460437"
+                      alt="Số đỏ (Việt Nam danh tác)">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Tâm linh - Tôn giáo</a></li>
+                      <li><a href="#!">Văn học Việt Nam</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">289.000đ</span>
+                      <span class="sale_price">86.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>GUSTAVE DUMOUTIER</b></span>
-                    </li>
-                    <li>
-                      <i class="fas fa-calendar"></i>
-                      <span><time datetime="2023-09-25">25/09/2023</time></span>
+                      <span><b>VŨ TRỌNG PHỤNG</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Tang lễ của người An Nam (Bìa cứng)
+                      Số đỏ (Việt Nam danh tác)
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -739,33 +764,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/catruc01.jpg?v=1696215160763"
-                      alt="Ca trực (SILO - Tháp giống #2)">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/raproncanhhace1701744390495.jpg?v=1701744441637"
+                      alt="Rập rờn cánh hạc">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Khoa học viễn tưởng</a></li>
+                      <li><a href="#!">Văn học hiện đại</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">272.000đ</span>
+                      <span class="sale_price">80.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>HUGH HOWEY</b></span>
-                    </li>
-                    <li>
-                      <i class="fas fa-calendar"></i>
-                      <span><time datetime="2023-09-25">25/09/2023</time></span>
+                      <span><b>KAWABATA YASUNARI</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Ca trực (SILO - Tháp giống #2)
+                      Rập rờn cánh hạc
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -784,29 +805,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/lenchuisilothapgiap101scalede1.jpg?v=1695959977500"
-                      alt="Len chùi (SILO - Tháp giống #1)">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/thutoi01-655de023-f67f-4f0f-aad7-a18753d94a5e.jpg?v=1698307554747"
+                      alt="Thú tội">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Khoa học viễn tưởng</a></li>
+                      <li><a href="#!">Hư cấu</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">268.000đ</span>
+                      <span class="sale_price">86.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>HUGH HOWEY</b></span>
+                      <span><b>MINATO KANAE</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Len chùi (SILO - Tháp giống #1)
+                      Thú tội
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -825,29 +846,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/dietchung01.jpg?v=1696238501673"
-                      alt="Diệt chủng">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/hanoibamsauphophuong1.jpg?v=1697701028377"
+                      alt="Hà Nội băm sáu phố phường (Việt Nam danh tác)">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Phiêu lưu ly kỳ</a></li>
+                      <li><a href="#!">Phi hư cấu</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">279.000đ</span>
+                      <span class="sale_price">50.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>TAKANO KAZUAKI</b></span>
+                      <span><b>THẠCH LAM</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Diệt chủng
+                      Hà Nội băm sáu phố phường (Việt Nam danh tác)
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -866,29 +887,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/trai-tim-nguoi-lon-la-con-hau-mang-vo-01.jpg?v=1694500611060"
-                      alt="trái tim người lớn là con hàu mang vỏ">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/bonmuoinamnoilao01.jpg?v=1696392841970"
+                      alt="Bốn mươi năm nói láo (Việt Nam danh tác)">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Tâm lý ứng dụng</a></li>
+                      <li><a href="#!">Văn học Việt Nam</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">189.000đ</span>
+                      <span class="sale_price">126.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>nini</b></span>
+                      <span><b>VŨ BẰNG</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      trái tim người lớn là con hàu mang vỏ
+                      Bốn mươi năm nói láo (Việt Nam danh tác)
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -907,29 +928,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/ngoithunhatsoit01.jpg?v=1696216738573"
-                      alt="Ngôi thứ nhất số ít">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/dungbaogiobuongdao01.jpg?v=1696912218440"
+                      alt="Hỗn mang 1 - Đừng bao giờ buông dao">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Văn học hiện đại</a></li>
+                      <li><a href="#!">Phiêu lưu ly kỳ</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">108.000đ</span>
+                      <span class="sale_price">196.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>Haruki Murakami</b></span>
+                      <span><b>PATRICK NESS</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Ngôi thứ nhất số ít
+                      Hỗn mang 1 - Đừng bao giờ buông dao
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -948,29 +969,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/vungdatquythamabat01.jpg?v=1695959985250"
-                      alt="Tiếng núi (Bìa cứng)">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/nhungtunhancuadialy01e16974447.jpg?v=1697445011877"
+                      alt="Những tù nhân của địa lý">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Văn học hiện đại</a></li>
+                      <li><a href="#!">Phi hư cấu</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">168.000đ</span>
+                      <span class="sale_price">210.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>Kevin Chen</b></span>
+                      <span><b>TIM MARSHALL</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Vùng đất quỷ tha ma bắt
+                      Những tù nhân của địa lý
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -989,29 +1010,29 @@
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img
-                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/tiengnui01.jpg?v=1696493732970"
-                      alt="Tiếng núi (Bìa cứng)">
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/caycamngotcuatoi01.jpg?v=1697099156757"
+                      alt="Cây cam ngọt của tôi">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Hư cấu</a></li>
+                      <li><a href="#!">Văn học hiện đại</a></li>
 
                     </ul>
                     <div class="item_price">
-                      <span class="sale_price">220.000đ</span>
+                      <span class="sale_price">108.000đ</span>
                     </div>
                   </div>
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>KAWABATA YASUNARI</b></span>
+                      <span><b>JOSÉ MAURO DE VASCONCELOS</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
                     <a href="#!">
-                      Tiếng núi (Bìa cứng)
+                      Cây cam ngọt của tôi
                     </a>
                   </h3>
                   <a class="btn_unfill" href="#!">
@@ -1024,6 +1045,213 @@
                 </div>
               </div>
             </div>
+
+            <div class="col col-lg-4 book" id="book19">
+              <div class="course_card">
+                <div class="item_image">
+                  <a href="#!" data-cursor-text="View">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/motnuachiecvali01.jpg?v=1696477705183"
+                      alt="Một nửa chiếc va li">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Văn học hiện đại</a></li>
+
+                    </ul>
+                    <div class="item_price">
+                      <span class="sale_price">130.000đ</span>
+                    </div>
+                  </div>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-pen-nib"></i>
+                      <span><b>KONDO FUMIE</b></span>
+                    </li>
+                  </ul>
+                  <h3 class="item_title">
+                    <a href="#!">
+                      Một nửa chiếc va li
+                    </a>
+                  </h3>
+                  <a class="btn_unfill" href="#!">
+                    <span class="btn_text">Xem chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-lg-4 book" id="book20">
+              <div class="course_card">
+                <div class="item_image">
+                  <a href="#!" data-cursor-text="View">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/banhangcotam01.jpg?v=1696238528190"
+                      alt="Bán hàng có tâm">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Kinh doanh</a></li>
+
+                    </ul>
+                    <div class="item_price">
+                      <span class="sale_price">159.000đ</span>
+                    </div>
+                  </div>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-pen-nib"></i>
+                      <span><b>SHARI LEVITIN</b></span>
+                    </li>
+                  </ul>
+                  <h3 class="item_title">
+                    <a href="#!">
+                      Bán hàng có tâm
+                    </a>
+                  </h3>
+                  <a class="btn_unfill" href="#!">
+                    <span class="btn_text">Xem chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-lg-4 book" id="book21">
+              <div class="course_card">
+                <div class="item_image">
+                  <a href="#!" data-cursor-text="View">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/buocchamlaigiuathegianvoiva01.jpg?v=1697600608343"
+                      alt="Bước chậm lại giữa thế gian vội vã">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Phi hư cấu</a></li>
+
+                    </ul>
+                    <div class="item_price">
+                      <span class="sale_price">85.000đ</span>
+                    </div>
+                  </div>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-pen-nib"></i>
+                      <span><b>HAE MIN</b></span>
+                    </li>
+                  </ul>
+                  <h3 class="item_title">
+                    <a href="#!">
+                      Bước chậm lại giữa thế gian vội vã
+                    </a>
+                  </h3>
+                  <a class="btn_unfill" href="#!">
+                    <span class="btn_text">Xem chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-lg-4 book" id="book22">
+              <div class="course_card">
+                <div class="item_image">
+                  <a href="#!" data-cursor-text="View">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/photanmandem01.jpg?v=1696215174077"
+                      alt="Phố tan màn đêm">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Trinh thám - Kinh dị</a></li>
+
+                    </ul>
+                    <div class="item_price">
+                      <span class="sale_price">179.000đ</span>
+                    </div>
+                  </div>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-pen-nib"></i>
+                      <span><b>HIGASHINO KEIGO</b></span>
+                    </li>
+                  </ul>
+                  <h3 class="item_title">
+                    <a href="#!">
+                      Phố tan màn đêm
+                    </a>
+                  </h3>
+                  <a class="btn_unfill" href="#!">
+                    <span class="btn_text">Xem chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-lg-4 book" id="book23">
+              <div class="course_card">
+                <div class="item_image">
+                  <a href="#!" data-cursor-text="View">
+                    <img
+                      src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/quyluat01.jpg?v=1695959984167"
+                      alt="Quy luật">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Văn học hiện đại</a></li>
+
+                    </ul>
+                    <div class="item_price">
+                      <span class="sale_price">139.000đ</span>
+                    </div>
+                  </div>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-pen-nib"></i>
+                      <span><b>CONNIE PALMEN</b></span>
+                    </li>
+                  </ul>
+                  <h3 class="item_title">
+                    <a href="#!">
+                      Quy luật
+                    </a>
+                  </h3>
+                  <a class="btn_unfill" href="#!">
+                    <span class="btn_text">Xem chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
 
 
             <div class="pagination_wrap">
@@ -1087,76 +1315,49 @@
           <div class="widget">
             <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_category"
               aria-expanded="true" aria-controls="collapse_category">
-              Category
+              Thể loại
             </div>
             <div class="collapse show" id="collapse_category">
               <div class="card card-body">
                 <div class="checkbox_item">
                   <input id="checkbox_design" type="checkbox">
-                  <label for="checkbox_design"><span>Design</span><span>(18)</span></label>
+                  <label for="checkbox_design"><span>Văn học hiện đại</span><span>(18)</span></label>
                 </div>
                 <div class="checkbox_item">
                   <input id="checkbox_it_software" type="checkbox">
-                  <label for="checkbox_it_software"><span>IT & Software</span><span>(11)</span></label>
+                  <label for="checkbox_it_software"><span>Tâm linh - Tôn giáo</span><span>(11)</span></label>
                 </div>
                 <div class="checkbox_item">
                   <input id="checkbox_development" type="checkbox">
-                  <label for="checkbox_development"><span>Development</span><span>(10)</span></label>
+                  <label for="checkbox_development"><span>Khoa học viễn tưởng</span><span>(10)</span></label>
                 </div>
                 <div class="checkbox_item">
                   <input id="checkbox_marketing" type="checkbox">
-                  <label for="checkbox_marketing"><span>Marketing</span><span>(4)</span></label>
+                  <label for="checkbox_marketing"><span>Phiêu lưu ly kỳ</span><span>(4)</span></label>
                 </div>
                 <div class="checkbox_item">
                   <input id="checkbox_business" type="checkbox">
-                  <label for="checkbox_business"><span>Business</span><span>(8)</span></label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ratings_widget widget">
-            <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_ratings"
-              aria-expanded="true" aria-controls="collapse_ratings">
-              Ratings
-            </div>
-            <div class="collapse show" id="collapse_ratings">
-              <div class="card card-body">
-                <div class="checkbox_item">
-                  <input id="checkbox_star5" type="checkbox">
-                  <label for="checkbox_star5">
-                    <span>
-                      <i class="fas fa-star"></i> 5 stars
-                    </span>
-                    <span>(23)</span>
-                  </label>
+                  <label for="checkbox_business"><span>Tâm lý ứng dụng</span><span>(8)</span></label>
                 </div>
                 <div class="checkbox_item">
-                  <input id="checkbox_star4half" type="checkbox">
-                  <label for="checkbox_star4half">
-                    <span>
-                      <i class="fas fa-star"></i> 4.5 stars
-                    </span>
-                    <span>(22)</span>
-                  </label>
+                  <input id="checkbox_business" type="checkbox">
+                  <label for="checkbox_business"><span>Hư cấu</span><span>(8)</span></label>
                 </div>
                 <div class="checkbox_item">
-                  <input id="checkbox_star4" type="checkbox">
-                  <label for="checkbox_star4">
-                    <span>
-                      <i class="fas fa-star"></i> 4 stars
-                    </span>
-                    <span>(20)</span>
-                  </label>
+                  <input id="checkbox_business" type="checkbox">
+                  <label for="checkbox_business"><span>Phi hư cấu</span><span>(8)</span></label>
                 </div>
                 <div class="checkbox_item">
-                  <input id="checkbox_star3half" type="checkbox">
-                  <label for="checkbox_star3half">
-                    <span>
-                      <i class="fas fa-star"></i> 3.5 stars
-                    </span>
-                    <span>(18)</span>
-                  </label>
+                  <input id="checkbox_business" type="checkbox">
+                  <label for="checkbox_business"><span>Văn học Việt Nam</span><span>(8)</span></label>
+                </div>
+                <div class="checkbox_item">
+                  <input id="checkbox_business" type="checkbox">
+                  <label for="checkbox_business"><span>Kinh doanh</span><span>(8)</span></label>
+                </div>
+                <div class="checkbox_item">
+                  <input id="checkbox_business" type="checkbox">
+                  <label for="checkbox_business"><span>Trinh thám - Kinh dị</span><span>(8)</span></label>
                 </div>
               </div>
             </div>
@@ -1165,79 +1366,54 @@
           <div class="widget">
             <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_instructors"
               aria-expanded="true" aria-controls="collapse_instructors">
-              Instructors
+              Quốc gia
             </div>
             <div class="collapse show" id="collapse_instructors">
               <div class="card card-body">
                 <div class="checkbox_item">
                   <input id="checkbox_lisa_baker" type="checkbox">
-                  <label for="checkbox_lisa_baker"><span>Lisa Baker</span><span>(18)</span></label>
+                  <label for="checkbox_lisa_baker"><span>Việt Nam</span><span>(18)</span></label>
                 </div>
+
                 <div class="checkbox_item">
                   <input id="checkbox_brandy_carlson" type="checkbox">
-                  <label for="checkbox_brandy_carlson"><span>Brandy Carlson</span><span>(10)</span></label>
+                  <label for="checkbox_brandy_carlson"><span>Nhật Bản</span><span>(10)</span></label>
                 </div>
+
                 <div class="checkbox_item">
-                  <input id="checkbox_kevin_taylor" type="checkbox">
-                  <label for="checkbox_kevin_taylor"><span>Kevin Taylor</span><span>(11)</span></label>
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Hàn Quốc</span><span>(10)</span></label>
                 </div>
+
                 <div class="checkbox_item">
-                  <input id="checkbox_catherine_parker" type="checkbox">
-                  <label for="checkbox_catherine_parker"><span>Catherine Parker</span><span>(11)</span></label>
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Trung Quốc</span><span>(10)</span></label>
                 </div>
+
+                <div class="checkbox_item">
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Pháp</span><span>(10)</span></label>
+                </div>
+
+                <div class="checkbox_item">
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Đức</span><span>(10)</span></label>
+                </div>
+
+                <div class="checkbox_item">
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Mỹ</span><span>(10)</span></label>
+                </div>
+
+                <div class="checkbox_item">
+                  <input id="checkbox_brandy_carlson" type="checkbox">
+                  <label for="checkbox_brandy_carlson"><span>Italy</span><span>(10)</span></label>
+                </div>
+
               </div>
             </div>
           </div>
 
-          <div class="widget">
-            <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_price"
-              aria-expanded="true" aria-controls="collapse_price">
-              Price
-            </div>
-            <div class="collapse show" id="collapse_price">
-              <div class="card card-body">
-                <div class="checkbox_item">
-                  <input id="checkbox_all" type="checkbox">
-                  <label for="checkbox_all"><span>All</span><span>(18)</span></label>
-                </div>
-                <div class="checkbox_item">
-                  <input id="checkbox_free" type="checkbox">
-                  <label for="checkbox_free"><span>FREE</span><span>(10)</span></label>
-                </div>
-                <div class="checkbox_item">
-                  <input id="checkbox_paid" type="checkbox">
-                  <label for="checkbox_paid"><span>Paid</span><span>(11)</span></label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="widget">
-            <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_level"
-              aria-expanded="true" aria-controls="collapse_level">
-              Level
-            </div>
-            <div class="collapse show" id="collapse_level">
-              <div class="card card-body">
-                <div class="checkbox_item">
-                  <input id="checkbox_all_levels" type="checkbox">
-                  <label for="checkbox_all_levels"><span>All Levels</span><span>(18)</span></label>
-                </div>
-                <div class="checkbox_item">
-                  <input id="checkbox_beginner" type="checkbox">
-                  <label for="checkbox_beginner"><span>Beginner</span><span>(10)</span></label>
-                </div>
-                <div class="checkbox_item">
-                  <input id="checkbox_intermediate" type="checkbox">
-                  <label for="checkbox_intermediate"><span>Intermediate</span><span>(11)</span></label>
-                </div>
-                <div class="checkbox_item">
-                  <input id="checkbox_expert" type="checkbox">
-                  <label for="checkbox_expert"><span>Expert</span><span>(11)</span></label>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </aside>
       <!-- <div class="offCanvas_overlay"></div> -->
@@ -1268,19 +1444,13 @@
                 </p>
                 <ul class="social_links unordered_list">
                   <li>
-                    <a href="https://www.facebook.com/nhanampublishing"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
+                    <a href="https://www.facebook.com/nhanampublishing"><i class="fab fa-facebook-f"></i></a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/@NhanamVideoChannel"
-                      ><i class="fab fa-youtube"></i
-                    ></a>
+                    <a href="https://www.youtube.com/@NhanamVideoChannel"><i class="fab fa-youtube"></i></a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/nhanambooks/"
-                      ><i class="fab fa-instagram"></i
-                    ></a>
+                    <a href="https://www.instagram.com/nhanambooks/"><i class="fab fa-instagram"></i></a>
                   </li>
                 </ul>
               </div>
@@ -1358,7 +1528,7 @@
                 <ul class="blog_small_group unordered_list_block">
                   <li>
                     <a class="blog_small" href="blog_details.html">
-                      <span class="item_image">
+                      <span class="item_image" style="width: 140px; height: auto; display: block; overflow: hidden;">
                         <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943"
                           alt="blog-btv-1">
                       </span>
@@ -1371,7 +1541,7 @@
                   </li>
                   <li>
                     <a class="blog_small" href="blog_details.html">
-                      <span class="item_image">
+                      <span class="item_image" style="width: 140px; height: auto; display: block; overflow: hidden;">
                         <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631"
                           alt="blog-btv-2">
                       </span>
@@ -1439,67 +1609,116 @@
     function changePage(event, page) {
       event.preventDefault();
 
+      const booksPerPage = 9; // Assuming 9 books per page
       const books = document.querySelectorAll('.book');
-      const paginationNav = document.getElementById('paginationNav');
-      const booksPerPage = 8; // Assuming 8 books per page
-
-      // Calculate the total number of pages
       const totalPages = Math.ceil(books.length / booksPerPage);
 
-      // Remove existing page links
-      paginationNav.innerHTML = '';
+      // Determine the current page
+      const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
 
-      // Add 'Previous' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
-      // Generate page links
-      for (let i = 1; i <= totalPages; i++) {
-        paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+      // Update the requested page based on arrow direction
+      if (page === 'prev' && currentPage > 1) {
+        page = currentPage - 1;
+      } else if (page === 'next' && currentPage < totalPages) {
+        page = currentPage + 1;
       }
 
-      // Add 'Next' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+      // If the clicked page is within the valid range, update the pagination
+      if (page >= 1 && page <= totalPages) {
+        // Remove existing page links
+        const paginationNav = document.getElementById('paginationNav');
+        paginationNav.innerHTML = '';
 
-      // Add the 'active' class to the clicked page number's parent <li> element
-      const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
-      if (selectedPageItem) {
-        selectedPageItem.classList.add('active');
+        // Add 'Previous' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+
+        // Generate page links
+        for (let i = 1; i <= totalPages; i++) {
+          paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+        }
+
+        // Add 'Next' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+
+        // Highlight the clicked page number
+        const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
+        if (selectedPageItem) {
+          selectedPageItem.classList.add('active');
+        }
+
+        // Update the "Showing X-Y of Z results" text
+        const startBook = (page - 1) * booksPerPage + 1;
+        const endBook = Math.min(startBook + booksPerPage - 1, books.length);
+        const resultText = `Showing ${startBook}-${endBook} of ${books.length} results`;
+
+        document.querySelector('.filter_result span:first-child').textContent = startBook;
+        document.querySelector('.filter_result span:nth-child(2)').textContent = endBook;
+        document.querySelector('.filter_result span:last-child').textContent = books.length;
+
+
+        // Hide all books
+        books.forEach(book => {
+          book.style.display = 'none';
+        });
+
+        // Show the books for the selected page
+        for (let i = startBook - 1; i < endBook && i < books.length; i++) {
+          books[i].style.display = 'block';
+        }
+
+        // Scroll to the "Showing X-Y of Z results" section
+        if (event.isTrusted) {
+          document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
+        }
       }
+    }
 
-      // Update the "Showing X-Y of Z results" text
-      const startBook = (page - 1) * booksPerPage + 1;
-      const endBook = Math.min(startBook + booksPerPage - 1, books.length);
-      const resultText = `Showing ${startBook}-${endBook} of ${books.length} results`;
+  </script>
 
-      document.querySelector('.filter_result span:first-child').textContent = startBook;
-      document.querySelector('.filter_result span:nth-child(2)').textContent = endBook;
-      document.querySelector('.filter_result span:last-child').textContent = books.length;
+  <script>
+    function filterBooks() {
+      // Get the search input value
+      var searchQuery = document.querySelector('input[name="search"]').value.toLowerCase();
 
-      // Hide all books
-      books.forEach(book => {
-        book.style.display = 'none';
+      // Get all book elements
+      var books = document.querySelectorAll('.book');
+
+      // Loop through each book element
+      books.forEach(function (book) {
+        // Get the author and title text content
+        var author = book.querySelector('.meta_info_list li:nth-child(1) span b').textContent.toLowerCase();
+        var title = book.querySelector('.item_title a').textContent.toLowerCase();
+
+        // Check if the search query matches the author or title
+        if (author.includes(searchQuery) || title.includes(searchQuery)) {
+          // Show the book if it matches
+          book.style.display = 'block';
+        } else {
+          // Hide the book if it doesn't match
+          book.style.display = 'none';
+        }
       });
-
-      // Show the books for the selected page
-      for (let i = startBook - 1; i < endBook && i < books.length; i++) {
-        books[i].style.display = 'block';
-      }
-
-      // Scroll to the "Showing X-Y of Z results" section
-      if (event.isTrusted) {
-        document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
-      }
     }
   </script>
 
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sortingSelect = document.getElementById('sorting');
 
+      // Add event listener to the sorting select
+      sortingSelect.addEventListener('change', function () {
+        // Remove the 'selected' class from all options
+        sortingSelect.querySelectorAll('option').forEach(option => {
+          option.classList.remove('selected');
+        });
 
-
-
-
-
-
+        // Add the 'selected' class to the chosen option
+        const selectedOption = sortingSelect.options[sortingSelect.selectedIndex];
+        selectedOption.classList.add('selected');
+      });
+    });
+  </script>
 
 </body>
 

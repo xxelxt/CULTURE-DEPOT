@@ -36,6 +36,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- file search.js-->
   <script src="search.js"></script>
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -140,7 +143,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="service_submenu">
 
-                      <li><a href="#!">Tin tức</a></li>
+                      <li><a href="blog.html">Tin tức</a></li>
                       <li><a href="#!">Review từ bạn đọc</a></li>
                       <li><a href="#!">Review từ báo chí</a></li>
                       <li><a href="#!">Lựa chọn của biên tập viên</a></li>
@@ -193,25 +196,24 @@
         ================================================== -->
       <section class="page_banner">
         <div class="container">
-          <div class="content_wrapper" style="background-image: url('assets/images/banner/page_banner_image.png');">
+          <div class="content_wrapper" style="background-image: url('');">
             <div class="row align-items-center">
-              <div class="col col-lg-6">
+              <div class="col col-lg-7">
                 <ul class="breadcrumb_nav unordered_list">
                   <li><a href="index.html">Trang chủ</a></li>
                   <li>Tin tức</li>
                 </ul>
-                <h1 class="page_title"></h1>
+                <h1 class="page_title">Tin tức</h1>
                 <p class="page_description">
-                  Sách là sản phẩm trí tuệ của con người, được tích lũy thông qua những kiến thức thực tiễn, nền văn hóa, lịch sử của các dân tộc trên thế giới, đây là công cụ để chứng minh cho những thành tựu của loài người trong quá trình hình thành và phát triển.
-                  Chúng tôi mang đến cho các bạn những món quà chân quý nhất , những cuốn sách thứ lưu trữ tri thức của nhân loại.                                                                                                                 
+                  Tin tức mới nhất về các cuốn sách, các sự kiện, các chương trình giảm giá và các chương trình khuyến mãi của Nhã Nam.
                 </p>
                 <form action="#">
                   <div class="form_item mb-0">
                     <input type="search" name="search" placeholder="Cuốn sách bạn muốn tìm ?">
                     <button type="submit" class="btn btn_dark">
                       <span>
-                        <small onclick="search()">Tìm kiếm</small>
-                        <small onclick="search()">Tìm kiếm</small>
+                        <small><i class="fas fa-search"></i></small>
+                        <small><i class="fas fa-search"></i></small>
                       </span>
                     </button>
                   </div>
@@ -226,10 +228,12 @@
       <!-- Courses Archive Section - Start
         ================================================== -->
       <section class="courses_archive_section section_space_lg">
+
         <div class="container">
           <div class="row">
             <div class="col col-lg-9">
-              <div class="course_card list_layout">
+
+              <div class="course_card list_layout" id="news1">
                 <div class="item_image">
                   <a href="course_details.html" data-cursor-text="View">
                     <img src="assets/images/ảnh trang tin sách/sách 1.webp" alt="Collab – Online Learning Platform">
@@ -252,7 +256,7 @@
                       <span>Thứ 3, 22/11/2023 - hôm nay trốn học </span>
                     </li>
                   </ul>
-                  <br>  
+                  <br>
                   <a class="btn_unfill" href="blog_detail.html">
                     <span class="btn_text">Chi tiết</span>
                     <span class="btn_icon">
@@ -262,7 +266,8 @@
                   </a>
                 </div>
               </div>
-              <div class="course_card list_layout">
+
+              <div class="course_card list_layout" id="news2">
                 <div class="item_image">
                   <a href="course_details.html" data-cursor-text="View">
                     <img src="assets/images/ảnh trang tin sách//sách 2.webp" alt="Collab – Online Learning Platform">
@@ -295,7 +300,8 @@
                   </a>
                 </div>
               </div>
-              <div class="course_card list_layout">
+
+              <div class="course_card list_layout" id="news3">
                 <div class="item_image">
                   <a href="course_details.html" data-cursor-text="View">
                     <img src="assets/images/ảnh trang tin sách/sách 3.webp" alt="Collab – Online Learning Platform">
@@ -317,7 +323,7 @@
                       <i class="fas fa-clock"></i>
                       <span>Chủ nhật, 13/11/2023</span>
                     </li>
-                
+
                   </ul>
                   <br>
                   <a class="btn_unfill" href="course_details.html">
@@ -330,7 +336,7 @@
                 </div>
               </div>
 
-              <div class="course_card list_layout">
+              <div class="course_card list_layout" id="news4">
                 <div class="item_image">
                   <a href="course_details.html" data-cursor-text="View">
                     <img src="assets/images/ảnh trang tin sách/sách 4.webp" alt="Collab – Online Learning Platform">
@@ -363,7 +369,8 @@
                   </a>
                 </div>
               </div>
-              <div class="course_card list_layout">
+
+              <div class="course_card list_layout" id="news5">
                 <div class="item_image">
                   <a href="course_details.html" data-cursor-text="View">
                     <img src="assets/images/ảnh trang tin sách/sách 5.webp" alt="Collab – Online Learning Platform">
@@ -396,17 +403,53 @@
                   </a>
                 </div>
               </div>
+
+              <div class="course_card list_layout" id="news6">
+                <div class="item_image">
+                  <a href="course_details.html" data-cursor-text="View">
+                    <img src="assets/images/ảnh trang tin sách/sách 1.webp" alt="Collab – Online Learning Platform">
+                  </a>
+                </div>
+                <div class="item_content">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <ul class="item_category_list unordered_list">
+                      <li><a href="#!">Tin bản quyền</a></li>
+                    </ul>
+                  </div>
+                  <h3 class="item_title">
+                    <a href="course_details.html">
+                      Tin bản quyền: Novelist as a Vocation và The City and Its Uncertain Walls - Haruki Murakami
+                    </a>
+                  </h3>
+                  <ul class="meta_info_list unordered_list">
+                    <li>
+                      <i class="fas fa-clock"></i>
+                      <span>Thứ 3, 22/11/2023 - hôm nay trốn học </span>
+                    </li>
+                  </ul>
+                  <br>
+                  <a class="btn_unfill" href="blog_detail.html">
+                    <span class="btn_text">Chi tiết</span>
+                    <span class="btn_icon">
+                      <i class="fas fa-long-arrow-right"></i>
+                      <i class="fas fa-long-arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+
               <div class="pagination_wrap">
-                <ul class="pagination_nav unordered_list">
-                  <li><a href="#!"><i class="fas fa-long-arrow-left"></i></a></li>
-                  <li class="active"><a href="#!">1</a></li>
-                  <li><a href="#!">2</a></li>
-                  <li><a href="#!">3</a></li>
-                  <li><a href="#!">...</a></li>
-                  <li><a href="#!">12</a></li>
-                  <li><a href="#!"><i class="fas fa-long-arrow-right"></i></a></li>
+                <ul class="pagination_nav unordered_list" id="paginationNav">
+
+                  <li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>
+                  <li class="active"><a href="#!" onclick="changePage(event, 1)">1</a></li>
+                  <li><a href="#!" onclick="changePage(event, 2)">2</a></li>
+                  <!-- Add more page links as needed -->
+                  <li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>
                 </ul>
               </div>
+
             </div>
             <div class="col col-lg-3">
               <aside class="sidebar filter_offcanvas">
@@ -428,8 +471,8 @@
                     </div>
                   </div>
                 </div>
-                
-               
+
+
                 <div class="widget">
                   <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_level"
                     aria-expanded="true" aria-controls="collapse_level">
@@ -443,15 +486,15 @@
                       </div>
                       <div class="checkbox_item">
                         <input id="checkbox_beginner" type="checkbox">
-                        <label for="checkbox_beginner"><span>Tin mới</span><span>(10)</span></label>
+                        <label for="checkbox_beginner"><span>Review từ bạn đọc</span><span>(10)</span></label>
                       </div>
                       <div class="checkbox_item">
                         <input id="checkbox_intermediate" type="checkbox">
-                        <label for="checkbox_intermediate"><span>Intermediate</span><span>(11)</span></label>
+                        <label for="checkbox_intermediate"><span>Review từ báo chí</span><span>(11)</span></label>
                       </div>
                       <div class="checkbox_item">
                         <input id="checkbox_expert" type="checkbox">
-                        <label for="checkbox_expert"><span>Expert</span><span>(11)</span></label>
+                        <label for="checkbox_expert"><span>Lựa chọn của biên tập viên</span><span>(11)</span></label>
                       </div>
                     </div>
                   </div>
@@ -503,133 +546,138 @@
 
     <!-- Site Footer - Start
       ================================================== -->
-      <footer class="site_footer">
-        <div class="footer_widget_area">
-          <div class="container">
-            <div class="row">
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="footer_widget">
-                  <div class="site_logo">
-                    <a class="site_link" href="index.html">
-                      <img src="assets/images/logo/logo-white.png" width="65px" alt="Collab - Online Learning Platform">
+    <footer class="site_footer">
+      <div class="footer_widget_area">
+        <div class="container">
+          <div class="row">
+            <div class="col col-lg-4 col-md-6 col-sm-6">
+              <div class="footer_widget">
+                <div class="site_logo">
+                  <a class="site_link" href="index.html">
+                    <img src="assets/images/logo/logo-white.png" width="65px" alt="Collab - Online Learning Platform">
+                  </a>
+                </div>
+                <p>
+                  Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể tìm thấy những cuốn sách mình hứng thú,
+                  tìm thấy không gian để chia sẻ niềm đam mê, tìm thấy những sự kiện để kích thích sự đọc và yêu sách,
+                  giúp lan truyền giá trị về văn hóa đọc đến mọi người.
+                </p>
+                <ul class="social_links unordered_list">
+                  <li>
+                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#!"><i class="fab fa-youtube"></i></a>
+                  </li>
+                  <li>
+                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col col-lg-4">
+              <div class="row">
+                <div class="col col-md-6 col-sm-6">
+                  <div class="footer_widget">
+                    <h3 class="footer_widget_title">Sách</h3>
+                    <ul class="page_list unordered_list_block">
+                      <li>
+                        <a href="books.html">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Tất cả sách</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#!">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Hư cấu</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#!">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Phi hư cấu</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#!">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Thiếu nhi</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#!">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Sách bán chạy</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col col-md-6 col-sm-6">
+                  <div class="footer_widget">
+                    <h3 class="footer_widget_title">Đường dẫn khác</h3>
+                    <ul class="page_list unordered_list_block">
+                      <li>
+                        <a href="blog.html">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Bảng tin</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="event.html">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Sự kiện</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="aboutus.html">
+                          <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                          <span class="item_text">Về chúng tôi</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col col-lg-4 col-md-6 col-sm-6">
+              <div class="footer_widget">
+                <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
+                <ul class="blog_small_group unordered_list_block">
+                  <li>
+                    <a class="blog_small" href="blog_details.html">
+                      <span class="item_image">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943"
+                          alt="blog-btv-1">
+                      </span>
+                      <span class="item_content">
+                        <strong class="item_title">5 bí quyết dưỡng ẩm đắt giá - Chăm sóc da hiệu quả ngay trong mùa
+                          đông</strong>
+                        <small class="item_post_date">20 thg 11, 2023</small>
+                      </span>
                     </a>
-                  </div>
-                  <p>
-                    Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể tìm thấy những cuốn sách mình hứng thú, tìm thấy không gian để chia sẻ niềm đam mê, tìm thấy những sự kiện để kích thích sự đọc và yêu sách, giúp lan truyền giá trị về văn hóa đọc đến mọi người.
-                  </p>
-                  <ul class="social_links unordered_list">
-                    <li>
-                      <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                      <a href="#!"><i class="fab fa-youtube"></i></a>
-                    </li>
-                    <li>
-                      <a href="#!"><i class="fab fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col col-lg-4">
-                <div class="row">
-                  <div class="col col-md-6 col-sm-6">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Sách</h3>
-                      <ul class="page_list unordered_list_block">
-                        <li>
-                          <a href="books.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Tất cả sách</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Hư cấu</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Phi hư cấu</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Thiếu nhi</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Sách bán chạy</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col col-md-6 col-sm-6">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Đường dẫn khác</h3>
-                      <ul class="page_list unordered_list_block">
-                        <li>
-                          <a href="blog.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Bảng tin</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="event.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Sự kiện</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="aboutus.html">
-                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                            <span class="item_text">Về chúng tôi</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6 col-sm-6">
-                <div class="footer_widget">
-                  <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
-                  <ul class="blog_small_group unordered_list_block">
-                    <li>
-                      <a class="blog_small" href="blog_details.html">
-                        <span class="item_image">
-                          <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943" alt="blog-btv-1">
-                        </span>
-                        <span class="item_content">
-                          <strong class="item_title">5 bí quyết dưỡng ẩm đắt giá - Chăm sóc da hiệu quả ngay trong mùa đông</strong>
-                          <small class="item_post_date">20 thg 11, 2023</small>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="blog_small" href="blog_details.html">
-                        <span class="item_image">
-                          <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631" alt="blog-btv-2">
-                        </span>
-                        <span class="item_content">
-                          <strong class="item_title">"Người Đài Bắc": Tàn một giấc mộng quá vãng nơi xứ người</strong>
-                          <small class="item_post_date">10 thg 10, 2023</small>
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  </li>
+                  <li>
+                    <a class="blog_small" href="blog_details.html">
+                      <span class="item_image">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631"
+                          alt="blog-btv-2">
+                      </span>
+                      <span class="item_content">
+                        <strong class="item_title">"Người Đài Bắc": Tàn một giấc mộng quá vãng nơi xứ người</strong>
+                        <small class="item_post_date">10 thg 10, 2023</small>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
     <!-- Site Footer - End
       ================================================== -->
 
@@ -668,7 +716,81 @@
   <!-- Custom - Jquery Include -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // This function will be called when the page is loaded
+  // Simulate a click on page 1
+  const page1Link = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
+  if (page1Link) {
+    page1Link.click();
+  }
+});
+
+function changePage(event, page) {
+  event.preventDefault();
+
+  const newsPerPage = 5; // Assuming 5 news per page
+  const news = document.querySelectorAll('.news'); // Update selector to match your HTML structure
+  const totalPages = Math.ceil(news.length / newsPerPage);
+
+  // Determine the current page
+  const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
+
+  // Update the requested page based on arrow direction
+  if (page === 'prev' && currentPage > 1) {
+    page = currentPage - 1;
+  } else if (page === 'next' && currentPage < totalPages) {
+    page = currentPage + 1;
+  }
+
+  // If the clicked page is within the valid range, update the pagination
+  if (page >= 1 && page <= totalPages) {
+    // Remove existing page links
+    const paginationNav = document.getElementById('paginationNav');
+    paginationNav.innerHTML = '';
+
+    // Add 'Previous' button
+    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+
+    // Generate page links
+    for (let i = 1; i <= totalPages; i++) {
+      paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+    }
+
+    // Add 'Next' button
+    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+
+    // Highlight the clicked page number
+    const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
+    if (selectedPageItem) {
+      selectedPageItem.classList.add('active');
+    }
+
+    // Hide all news
+    news.forEach(newsItem => {
+      newsItem.style.display = 'none';
+    });
+
+    // Show the news for the selected page
+    for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
+      news[i].style.display = 'block';
+    }
+
+    // Scroll to the pagination section
+    if (event.isTrusted) {
+      paginationNav.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
+
+  
+  </script>
+
+  
+  
+  
+  
+
 </body>
 
 </html>
-
