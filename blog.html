@@ -205,7 +205,8 @@
                 </ul>
                 <h1 class="page_title">Tin tức</h1>
                 <p class="page_description">
-                  Tin tức mới nhất về các cuốn sách, các sự kiện, các chương trình giảm giá và các chương trình khuyến mãi của Nhã Nam.
+                  Tin tức mới nhất về các cuốn sách, các sự kiện, các chương trình giảm giá và các chương trình khuyến
+                  mãi của Nhã Nam.
                 </p>
                 <form action="#">
                   <div class="form_item mb-0">
@@ -718,78 +719,74 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-  // This function will be called when the page is loaded
-  // Simulate a click on page 1
-  const page1Link = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
-  if (page1Link) {
-    page1Link.click();
-  }
-});
-
-function changePage(event, page) {
-  event.preventDefault();
-
-  const newsPerPage = 5; // Assuming 5 news per page
-  const news = document.querySelectorAll('.news'); // Update selector to match your HTML structure
-  const totalPages = Math.ceil(news.length / newsPerPage);
-
-  // Determine the current page
-  const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
-
-  // Update the requested page based on arrow direction
-  if (page === 'prev' && currentPage > 1) {
-    page = currentPage - 1;
-  } else if (page === 'next' && currentPage < totalPages) {
-    page = currentPage + 1;
-  }
-
-  // If the clicked page is within the valid range, update the pagination
-  if (page >= 1 && page <= totalPages) {
-    // Remove existing page links
-    const paginationNav = document.getElementById('paginationNav');
-    paginationNav.innerHTML = '';
-
-    // Add 'Previous' button
-    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
-    // Generate page links
-    for (let i = 1; i <= totalPages; i++) {
-      paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
-    }
-
-    // Add 'Next' button
-    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
-
-    // Highlight the clicked page number
-    const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
-    if (selectedPageItem) {
-      selectedPageItem.classList.add('active');
-    }
-
-    // Hide all news
-    news.forEach(newsItem => {
-      newsItem.style.display = 'none';
+      // This function will be called when the page is loaded
+      // Simulate a click on page 1
+      const page1Link = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
+      if (page1Link) {
+        page1Link.click();
+      }
     });
-
-    // Show the news for the selected page
-    for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
-      news[i].style.display = 'block';
-    }
-
-    // Scroll to the pagination section
-    if (event.isTrusted) {
-      paginationNav.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-}
-
   
+    function changePage(event, page) {
+      event.preventDefault();
+  
+      const newsPerPage = 5;
+      const news = document.querySelectorAll('.course_card.list_layout');
+      const totalPages = Math.ceil(news.length / newsPerPage);
+  
+      const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
+  
+      if (page === 'prev' && currentPage > 1) {
+        page = currentPage - 1;
+      } else if (page === 'next' && currentPage < totalPages) {
+        page = currentPage + 1;
+      }
+  
+      // If the clicked page is within the valid range, update the pagination
+      if (page >= 1 && page <= totalPages) {
+        // Remove existing page links
+        const paginationNav = document.getElementById('paginationNav');
+        paginationNav.innerHTML = '';
+  
+        // Add 'Previous' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+  
+        // Generate page links
+        for (let i = 1; i <= totalPages; i++) {
+          paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+        }
+  
+        // Add 'Next' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+  
+        // Highlight the clicked page number
+        const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
+        if (selectedPageItem) {
+          selectedPageItem.classList.add('active');
+        }
+  
+        // Hide all news
+        news.forEach(newsItem => {
+          newsItem.style.display = 'none';
+        });
+  
+        // Show the news for the selected page
+        for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
+          news[i].style.display = 'flex';
+        }
+  
+        // Scroll to the pagination section
+        if (event.isTrusted) {
+          paginationNav.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
   </script>
 
-  
-  
-  
-  
+
+
+
+
 
 </body>
 
