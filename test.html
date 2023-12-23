@@ -1,27 +1,32 @@
 </head>
 <body>
-    <script>
-        function timkiem(){
-          const searchbox = document.getElementById("search1").value;
-          alert(searchbox);
-        }
-      </script>
-    <form action="#">
-        <div class="form_item mb-0">
-          <input type="search" name="search" id="search" placeholder="Tìm kiếm tin bài tại đây" >
-          
-          <br>
-          <input type="button" value="ketqua" onclick="search()">
-          
-            <button type="submit" class="btn btn_dark" onclick="timkiem()">
-              <span>
-                <small><i class="fas fa-search"></i></small>
-                <small><i class="fas fa-search"></i></small>
-              </span>
-          
-            </button>
-                       
+  <div class="collapse show" id="collapse_category">
+    <div class="card card-body">
+        <div class="checkbox_item">
+            <input type="checkbox" id="checkbox_design" name="category">
+            <label for="checkbox_design"><span>Mới nhất</span><span>(18)</span></label>
         </div>
-      </form>
+        <div class="checkbox_item">
+            <input type="checkbox" id="checkbox_it_software" name="category">
+            <label for="checkbox_it_software"><span>Cũ nhất</span><span>(11)</span></label>
+        </div>
+    </div>
+</div>
+
+<script>
+    var checkboxes = document.getElementsByName('category');
+
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Checkbox ' + this.id + ' is checked');
+                // Thêm logic xử lý khi checkbox được chọn ở đây
+            } else {
+                console.log('Checkbox ' + this.id + ' is unchecked');
+                // Thêm logic xử lý khi checkbox được bỏ chọn ở đây
+            }
+        });
+    });
+</script>
 </body>
 </html>
