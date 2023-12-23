@@ -35,12 +35,12 @@
   <!-- Custom - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- file search.js-->
-  <script src="search.js"></script>
+
   <style>
 
   </style>
 
-  
+
 </head>
 
 <body>
@@ -210,10 +210,13 @@
                   Tin tức mới nhất về các cuốn sách, các sự kiện, các chương trình giảm giá và các chương trình khuyến
                   mãi của Nhã Nam.
                 </p>
-                <form action="#">
+
+                <form>
                   <div class="form_item mb-0">
-                    <input type="search" name="search" placeholder="Tìm kiếm tin bài tại đây">
-                    <button type="submit" class="btn btn_dark">
+                    <input type="search" name="search" placeholder="Tìm kiếm tin bài tại đây" id="search"
+                      onkeyup="timkiem()"> <!--thông tin tìm kiếm-->
+                    <br>
+                    <button type="submit" class="btn btn_dark" onclick="timkiem()">
                       <span>
                         <small><i class="fas fa-search"></i></small>
                         <small><i class="fas fa-search"></i></small>
@@ -221,6 +224,11 @@
                     </button>
                   </div>
                 </form>
+
+                <script>
+
+
+                </script>
               </div>
             </div>
           </div>
@@ -231,12 +239,10 @@
       <!-- Courses Archive Section - Start
         ================================================== -->
       <section class="courses_archive_section section_space_lg">
-
         <div class="container">
           <div class="row">
-            <div class="col col-lg-9">
-
-              <div class="course_card list_layout" id="news1">
+            <div class="col col-lg-9" id="danhsachsanpham"> <!-- chứa danh sách sản phẩm -->
+              <div class="course_card list_layout" id="news1"> <!-- sản phẩm 1 -->
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
                     <img src="https://bizweb.dktcdn.net/100/363/455/files/size-website-14.png?v=1701263611585"
@@ -249,8 +255,8 @@
                       <li><a href="#!">Chào 2024!</a></li>
                     </ul>
                   </div>
-                  <h3 class="item_title">
-                    <a href="#!">
+                  <h3 class="item_title" > <!-- tên sản phẩm-->
+                    <a href="#!" class="tensanpham">
                       Thông báo mở bán lịch bàn Nhã Nam 2024
                     </a>
                   </h3>
@@ -270,7 +276,6 @@
                   </a>
                 </div>
               </div>
-
               <div class="course_card list_layout" id="news2">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
@@ -281,7 +286,7 @@
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Biên tập viên giới thiệu</a></li>
+                      <li><a href="#!" class="tensanpham">Biên tập viên giới thiệu</a></li>
                     </ul>
                   </div>
                   <h3 class="item_title">
@@ -305,7 +310,6 @@
                   </a>
                 </div>
               </div>
-              
               <div class="course_card list_layout" id="news3">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
@@ -320,7 +324,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Những cuốn sách dành cho người hướng nội
                     </a>
                   </h3>
@@ -355,7 +359,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Thông báo về cuộc thi "Ai đó đọc cùng ta"
                     </a>
                   </h3>
@@ -379,18 +383,19 @@
               <div class="course_card list_layout" id="news5">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-10-30t182932-974.png?v=1698665394253"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-10-30t182932-974.png?v=1698665394253"
                       alt="'An Nam thời xưa' - Một hình dung sống động về An Nam">
                   </a>
                 </div>
                 <div class="item_content">
                   <div class="d-flex align-items-center justify-content-between mb-3">
                     <ul class="item_category_list unordered_list">
-                      <li><a href="#!">Review trên báo chí</a></li>
+                      <li><a href="#!" >Review trên báo chí</a></li>
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       "An Nam thời xưa" - Một hình dung sống động về An Nam
                     </a>
                   </h3>
@@ -414,7 +419,8 @@
               <div class="course_card list_layout" id="news6">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/files/3-1f81a73e-07cc-4547-85c9-d437c973e6c3.png?v=1698637477139"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/files/3-1f81a73e-07cc-4547-85c9-d437c973e6c3.png?v=1698637477139"
                       alt="Độc giả háo hức mong chờ lịch Nhã Nam 2024">
                   </a>
                 </div>
@@ -425,7 +431,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Độc giả háo hức mong chờ lịch Nhã Nam 2024
                     </a>
                   </h3>
@@ -460,7 +466,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Tín ngưỡng của sự chết trong “Tang lễ của người An Nam”
                     </a>
                   </h3>
@@ -484,7 +490,8 @@
               <div class="course_card list_layout" id="news8">
                 <div class="item_image">
                   <a href="blog_detail.html" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/files/trang-web-e0ba045b-0fdc-4a9b-be09-d251ae20b05e.png?v=1697532722619"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/files/trang-web-e0ba045b-0fdc-4a9b-be09-d251ae20b05e.png?v=1697532722619"
                       alt="Tin bản quyền: Novelist as a Vocation và The City and Its Uncertain Walls - Haruki Murakami">
                   </a>
                 </div>
@@ -495,7 +502,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="blog_detail.html">
+                    <a href="blog_detail.html" class="tensanpham">
                       Tin bản quyền: Novelist as a Vocation và The City and Its Uncertain Walls - Haruki Murakami
                     </a>
                   </h3>
@@ -519,7 +526,8 @@
               <div class="course_card list_layout" id="news9">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-10-13t180019-887.png?v=1697194831027"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-10-13t180019-887.png?v=1697194831027"
                       alt="Hà Nội âm thịnh dương suy và những chuyện bất ngờ khác">
                   </a>
                 </div>
@@ -530,7 +538,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Hà Nội âm thịnh dương suy và những chuyện bất ngờ khác
                     </a>
                   </h3>
@@ -565,7 +573,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Tin bản quyền: Bộ đôi bestseller của Colleen Hoover - It Ends with Us và It Starts with Us
                     </a>
                   </h3>
@@ -589,7 +597,8 @@
               <div class="course_card list_layout" id="news11">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-5-ebe462d8-a395-4818-9670-e40518373f1d.png?v=1695972719213"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-5-ebe462d8-a395-4818-9670-e40518373f1d.png?v=1695972719213"
                       alt="Review sách: Một thoáng ta rực rỡ ở nhân gian - Ocean Vuong">
                   </a>
                 </div>
@@ -600,7 +609,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Một thoáng ta rực rỡ ở nhân gian - Ocean Vuong
                     </a>
                   </h3>
@@ -611,7 +620,7 @@
                     </li>
                   </ul>
                   <br>
-                  <a class="btn_unfill" href="#!">
+                  <a class="btn_unfill" href="#!" class="tensanpham">
                     <span class="btn_text">Chi tiết</span>
                     <span class="btn_icon">
                       <i class="fas fa-long-arrow-right"></i>
@@ -624,7 +633,8 @@
               <div class="course_card list_layout" id="news12">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/files/review-hen-gap-lai-tren-kia-pierre-lemaitre-1.png?v=1695971254319"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/files/review-hen-gap-lai-tren-kia-pierre-lemaitre-1.png?v=1695971254319"
                       alt="Ly hôn văn minh - chuyện không dễ dàng">
                   </a>
                 </div>
@@ -635,7 +645,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Ly hôn văn minh - chuyện không dễ dàng
                     </a>
                   </h3>
@@ -659,7 +669,8 @@
               <div class="course_card list_layout" id="news13">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-17-86b4720f-f9dd-40b6-902d-cf85482e762c.png?v=1695974115943"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-17-86b4720f-f9dd-40b6-902d-cf85482e762c.png?v=1695974115943"
                       alt="Review sách: Hình hài của nước - Guillermo Del Toro">
                   </a>
                 </div>
@@ -670,7 +681,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Hình hài của nước - Guillermo Del Toro
                     </a>
                   </h3>
@@ -694,7 +705,8 @@
               <div class="course_card list_layout" id="news14">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-15-685a4df4-814a-42f4-a3df-a20651868966.png?v=1695973993233"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-15-685a4df4-814a-42f4-a3df-a20651868966.png?v=1695973993233"
                       alt="Review sách: Thư viện nửa đêm - Matt Haig">
                   </a>
                 </div>
@@ -705,7 +717,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Thư viện nửa đêm - Matt Haig
                     </a>
                   </h3>
@@ -729,7 +741,8 @@
               <div class="course_card list_layout" id="news15">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20211026125606/xuxudocsach_171219295_950286402399939_393226141701530443_n.jpg"
+                    <img
+                      src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20211026125606/xuxudocsach_171219295_950286402399939_393226141701530443_n.jpg"
                       alt="Review sách: Vụ án mạng ở nhà khách núi Hakuba – Higashino Keigo">
                   </a>
                 </div>
@@ -740,7 +753,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Vụ án mạng ở nhà khách núi Hakuba – Higashino Keigo
                     </a>
                   </h3>
@@ -760,11 +773,11 @@
                   </a>
                 </div>
               </div>
-
               <div class="course_card list_layout" id="news16">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-12-799eca38-2a72-4bd5-b048-09f1768d18ad.png?v=1695973665527"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-12-799eca38-2a72-4bd5-b048-09f1768d18ad.png?v=1695973665527"
                       alt="Review sách: Dám bị ghét - Nguyễn Thanh Vân">
                   </a>
                 </div>
@@ -775,7 +788,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Dám bị ghét - Nguyễn Thanh Vân
                     </a>
                   </h3>
@@ -795,13 +808,11 @@
                   </a>
                 </div>
               </div>
-
-              
-
               <div class="course_card list_layout" id="news17">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-28t233457-350.png?v=1695919119593"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-28t233457-350.png?v=1695919119593"
                       alt="Thị Kiến - từ tiểu thuyết của Stephen King đến phim của Kubrick">
                   </a>
                 </div>
@@ -812,7 +823,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Thị Kiến - từ tiểu thuyết của Stephen King đến phim của Kubrick
                     </a>
                   </h3>
@@ -832,11 +843,11 @@
                   </a>
                 </div>
               </div>
-
               <div class="course_card list_layout" id="news18">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t191835-807.png?v=1695557927507"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t191835-807.png?v=1695557927507"
                       alt="Review sách: Cây cam ngọt của tôi – José Mauro De Vasconcelos">
                   </a>
                 </div>
@@ -847,7 +858,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Cây cam ngọt của tôi – José Mauro De Vasconcelos
                     </a>
                   </h3>
@@ -867,11 +878,11 @@
                   </a>
                 </div>
               </div>
-
               <div class="course_card list_layout" id="news19">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t161723-765.png?v=1695547053683"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t161723-765.png?v=1695547053683"
                       alt="Review sách: Dù con sống thế nào - Mẹ vẫn luôn ủng hộ - Gong Ji Young">
                   </a>
                 </div>
@@ -882,7 +893,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Dù con sống thế nào - Mẹ vẫn luôn ủng hộ - Gong Ji Young
                     </a>
                   </h3>
@@ -902,11 +913,11 @@
                   </a>
                 </div>
               </div>
-
               <div class="course_card list_layout" id="news20">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
-                    <img src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t160743-373.png?v=1695546485507"
+                    <img
+                      src="https://bizweb.dktcdn.net/100/363/455/articles/review-he-n-ga-p-la-i-tre-n-kia-pierre-lemaitre-2023-09-24t160743-373.png?v=1695546485507"
                       alt="Review sách: Quán canh bò hầm của kẻ cắp quá khứ - Youngtak Kim">
                   </a>
                 </div>
@@ -917,7 +928,7 @@
                     </ul>
                   </div>
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensanpham">
                       Review sách: Quán canh bò hầm của kẻ cắp quá khứ - Youngtak Kim
                     </a>
                   </h3>
@@ -937,7 +948,6 @@
                   </a>
                 </div>
               </div>
-
               <div class="pagination_wrap">
                 <ul class="pagination_nav unordered_list" id="paginationNav">
 
@@ -1228,68 +1238,111 @@
         page1Link.click();
       }
     });
+    // cố gắng tự động kích hoạt một liên kết hoặc nút có sự kiện onclick là "changePage(event, 1)" 
+    // trong phần phân trang của trang web ngay sau khi trang web được tải xong. Điều này có thể được sử dụng 
+    // để chuyển đến trang 1 của một tập dữ liệu được phân trang, chẳng hạn.
 
-function changePage(event, page) {
-  event.preventDefault();
+    function changePage(event, page) {
+      event.preventDefault();
 
-  const newsPerPage = 9;
-  const news = document.querySelectorAll('.course_card.list_layout');
-  const totalPages = Math.ceil(news.length / newsPerPage);
+      const newsPerPage = 9;
+      const news = document.querySelectorAll('.course_card.list_layout');
+      const totalPages = Math.ceil(news.length / newsPerPage);
 
-  const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
+      const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
 
-  if (page === 'prev' && currentPage > 1) {
-    page = currentPage - 1;
-  } else if (page === 'next' && currentPage < totalPages) {
-    page = currentPage + 1;
-  }
+      if (page === 'prev' && currentPage > 1) {
+        page = currentPage - 1;
+      } else if (page === 'next' && currentPage < totalPages) {
+        page = currentPage + 1;
+      }
 
-  // If the clicked page is within the valid range, update the pagination
-  if (page >= 1 && page <= totalPages) {
-    // Remove existing page links
-    const paginationNav = document.getElementById('paginationNav');
-    paginationNav.innerHTML = '';
+      // If the clicked page is within the valid range, update the pagination
+      if (page >= 1 && page <= totalPages) {
+        // Remove existing page links
+        const paginationNav = document.getElementById('paginationNav');
+        paginationNav.innerHTML = '';
 
-    // Add 'Previous' button
-    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+        // Add 'Previous' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
 
-    // Generate page links
-    for (let i = 1; i <= totalPages; i++) {
-      paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+        // Generate page links
+        for (let i = 1; i <= totalPages; i++) {
+          paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+        }
+
+        // Add 'Next' button
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+
+        // Highlight the clicked page number
+        const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
+        if (selectedPageItem) {
+          selectedPageItem.classList.add('active');
+        }
+
+        // Hide all news
+        news.forEach(newsItem => {
+          newsItem.style.display = 'none';
+        });
+
+        // Show the news for the selected page
+        const displayStyle = window.innerWidth < 480 ? 'block' : 'flex';
+
+        for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
+          news[i].style.display = displayStyle;
+        }
+
+        // Scroll to the pagination section
+        if (event.isTrusted) {
+          document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
-
-    // Add 'Next' button
-    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
-
-    // Highlight the clicked page number
-    const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
-    if (selectedPageItem) {
-      selectedPageItem.classList.add('active');
-    }
-
-    // Hide all news
-    news.forEach(newsItem => {
-      newsItem.style.display = 'none';
-    });
-
-    // Show the news for the selected page
-    const displayStyle = window.innerWidth < 480 ? 'block' : 'flex';
-
-    for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
-      news[i].style.display = displayStyle;
-    }
-
-    // Scroll to the pagination section
-    if (event.isTrusted) {
-      document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-}
 
 
 
   </script>
+  <script>
+    const timkiem = () => {
+          const searchItemElement = document.getElementById("search");
+      // Kiểm tra xem phần tử có tồn tại không
+      if (!searchItemElement) {
+          console.error("Không tìm thấy phần tử với ID 'search-item'");
+          return;
+      }
+      else console.log('tham so truyen vao '+searchItemElement.value)
+      const thamsotimkiem = document.getElementById("search").value;
+      const danhsachsanpham = document.getElementById("danhsachsanpham")
+      const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
+      console.log('so luong san pham '+thongtinchitietsanpham.length)
+      // Lấy div có class "item_content"
+      const tensanpham = document.getElementsByClassName("tensanpham")
+      console.log('ten san pham ' +tensanpham)
+      console.log('so luong '+tensanpham.length)
+      for (var i = 0; i < tensanpham.length; i++) {
+        let match = thongtinchitietsanpham[i].getElementsByClassName("tensanpham")[0];
+        // duyệt từng ký tự của tên sản phẩm 
+        console.log(thongtinchitietsanpham[i])
+        console.log(match) 
+        if (match) {
+          let textvaLue = match.textContent || match.innerHTML 
+          // văn bản thuần túy < tên của từng sản phẩm >
+          console.log('nội dung sản phẩm'+textvaLue)
+          
 
+          if (textvaLue.indexOf(thamsotimkiem) > -1) {
+            console.log("phat hien")
+            thongtinchitietsanpham[i].style.display = "";
+          } else {
+            thongtinchitietsanpham[i].style.display = "none";
+            console.log("loai bo")
+          }
+        }
+
+      }
+    }
+
+  </script>
 
 
 
