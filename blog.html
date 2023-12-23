@@ -1360,59 +1360,41 @@
 
   </script>
   <script>
-    function loc2() {
-          const searchItemElement = spanText;
-      // Kiểm tra xem phần tử có tồn tại không
-      if (!searchItemElement) {
-          console.error("Không tìm thấy phần tử với ID 'search-item'");
-          return;
-      }
-      else console.log('Tham số truyền vào: ' + searchItemElement.value.toUpperCase());
-      const thamsotimkiem = document.getElementById("search").value.toUpperCase();
-      const danhsachsanpham = document.getElementById("danhsachsanpham")
-      const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
-      console.log('so luong san pham '+thongtinchitietsanpham.length)
-      // Lấy div có class "item_content"
-      const tentheloai = document.getElementsByClassName("tentheloai")
-      console.log('ten san pham ' +tentheloai)
-      console.log('so luong '+tentheloai.length)
-      for (var i = 0; i < tentheloai.length; i++) {
-        let match = thongtinchitietsanpham[i].getElementsByClassName("tentheloai")[0];
-        // duyệt từng ký tự của tên sản phẩm 
-        console.log(thongtinchitietsanpham[i])
-        console.log(match) 
-        if (match) {
-          let textvaLue = match.textContent || match.innerHTML 
-          // văn bản thuần túy < tên của từng sản phẩm >
-          console.log('nội dung sản phẩm'+textvaLue)
-          
-
-          if (textvaLue.toUpperCase().indexOf(thamsotimkiem) > -1) {
-            console.log("phat hien")
-            thongtinchitietsanpham[i].style.display = "";
-          } else {
-            thongtinchitietsanpham[i].style.display = "none";
-            console.log("loai bo")
-          }
-        }
-
-      }
-    }
+    
   </script>
   <script>
     var checkboxes = document.getElementsByName('theloai');
+    var luachon = [];
 
     checkboxes.forEach(function(checkbox) {
         checkbox.addEventListener('change', function() {
+            var spanText = checkbox.parentNode.querySelector('span').innerText;
             if (this.checked) {
                 console.log('Checkbox ' + this.id + ' is checked');
                 // Thêm logic xử lý khi checkbox được chọn ở đây
-                var spanText = checkbox.parentNode.querySelector('span').innerText;
+                // let spanText = checkbox.parentNode.querySelector('span').innerText;
                 console.log('Thông tin trong span: ' + spanText);
                 const searchItemElement = spanText;
+                luachon.push(spanText);
       // Kiểm tra xem phần tử có tồn tại không
 
-              const thamsotimkiem = spanText;
+
+
+            } else {
+                console.log('Checkbox ' + this.id + ' is unchecked');
+                // Thêm logic xử lý khi checkbox được bỏ chọn ở đây
+                var index = luachon.indexOf(spanText);
+                if (index !== -1) {
+                    luachon.splice(index, 1);
+                }
+                
+            }
+            console.log('Mảng giá trị đã chọn:', luachon);
+            var tonghop = luachon.join(', ');
+            let m = luachon.length;
+            //for(var i=0;i<m;i++){
+            //  const thamsotimkiem = luachon[i];
+              const thamsotimkiem = tonghop;
               const danhsachsanpham = document.getElementById("danhsachsanpham")
               const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
               console.log('so luong san pham '+thongtinchitietsanpham.length)
@@ -1441,10 +1423,10 @@
                 }
 
               }
-            } else {
-                console.log('Checkbox ' + this.id + ' is unchecked');
-                // Thêm logic xử lý khi checkbox được bỏ chọn ở đây
-            }
+
+
+            //}
+
         });
     });
 </script>
