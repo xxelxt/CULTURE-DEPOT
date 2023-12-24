@@ -237,7 +237,8 @@
                 </div>
                 <form action="#">
                   <div class="form_item mb-0">
-                    <input type="search" name="search" placeholder="Thông tin sự kiện bạn muốn tìm kiếm ?">
+                    <input type="search" name="search" id="search" placeholder="Thông tin sự kiện bạn muốn tìm kiếm ?" onkeyup="timkiem()"> 
+                    <!-- tim kiếm thông tin -->
                     <button type="submit" class="btn btn_dark">
                       <span>
                         <small><i class="fas fa-search"></i></small>
@@ -292,7 +293,7 @@
         <div class="container">
           <div class="row">
 
-            <div class="col col-lg-4 event" id="event1">
+            <div class="col col-lg-4 event" id="event1" class="thongtinsukien"> <!-- su kien 1 -->
               <div class="event_card">
                 <a class="item_image" href="#!">
                   <img src="https://bizweb.dktcdn.net/100/363/455/articles/bannerwebsite.png?v=1701344180757"
@@ -300,7 +301,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Toạ đàm ra mắt bản dịch tiếng Việt cuốn sách "Tang lễ của người An Nam"
                     </a>
                   </h3>
@@ -332,7 +333,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Ra mắt tác phẩm đoạt giải Goncourt 2018 - "Con cháu của họ cũng thế thôi"
                     </a>
                   </h3>
@@ -362,7 +363,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Ra mắt tập di cảo "Anh hùng còn chi" của nhà văn Nguyễn Huy Thiệp
                     </a>
                   </h3>
@@ -392,7 +393,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Ra mắt bản dịch tiếng Việt của tác phẩm "Tang lễ của người An Nam"
                     </a>
                   </h3>
@@ -424,7 +425,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Hội sách Nhã Nam Chào thu 2023
                     </a>
                   </h3>
@@ -450,7 +451,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Hội sách Nhã Nam Chào hè 2023
                     </a>
                   </h3>
@@ -476,7 +477,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Giới thiệu cuốn sách "Con người và biểu tượng" của Carl Jung
                     </a>
                   </h3>
@@ -506,7 +507,7 @@
                 </a>
                 <div class="item_content">
                   <h3 class="item_title">
-                    <a href="#!">
+                    <a href="#!" class="tensukien">
                       Ra mắt cuốn sách "Bản đồ thế giới cà phê" của James Hoffmann
                     </a>
                   </h3>
@@ -824,6 +825,47 @@
         // }
       }
     }
+  </script>
+  <script>
+    const timkiem = () => {
+          const searchItemElement = document.getElementById("search");
+      // Kiểm tra xem phần tử có tồn tại không
+      if (!searchItemElement) {
+          console.error("Không tìm thấy phần tử với ID 'search-item'");
+          return;
+      }
+      else console.log('tham so truyen vao '+searchItemElement.value.toUpperCase())
+      const thamsotimkiem = searchItemElement.value.toUpperCase();
+      const danhsachsanpham = document.getElementsByClassName("row")
+      const thongtinchitietsukien = document.querySelectorAll('.event_card');
+      console.log('so luong san pham '+thongtinchitietsukien.length)
+      // Lấy div có class "item_content"
+      const tensukien = document.getElementsByClassName("tensukien")
+      console.log('ten san pham ' +tensukien)
+      console.log('so luong '+tensukien.length)
+      for (var i = 0; i < tensukien.length; i++) {
+        let match = thongtinchitietsukien[i].getElementsByClassName("tensukien")[0];
+        // duyệt từng ký tự của tên sản phẩm 
+        console.log(thongtinchitietsukien[i])
+        console.log(match) 
+        if (match) {
+          let textvaLue = match.textContent || match.innerHTML 
+          // văn bản thuần túy < tên của từng sự kiện >
+          console.log('nội dung sản phẩm'+textvaLue)
+          
+
+          if (textvaLue.toUpperCase().indexOf(thamsotimkiem) > -1) {
+            console.log("phat hien")
+            thongtinchitietsukien[i].style.display = "";
+          } else {
+            thongtinchitietsukien[i].style.display = "none";
+            console.log("loai bo")
+          }
+        }
+
+      }
+    }
+
   </script>
 
 

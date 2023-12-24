@@ -1326,8 +1326,9 @@
           console.error("Không tìm thấy phần tử với ID 'search-item'");
           return;
       }
-      else console.log('tham so truyen vao '+searchItemElement.value)
-      const thamsotimkiem = document.getElementById("search").value;
+      else console.log('tham so truyen vao '+searchItemElement.value.toUpperCase())
+      // const thamsotimkiem = document.getElementById("search").value.toUpperCase();
+      const thamsotimkiem = searchItemElement.value.toUpperCase();
       const danhsachsanpham = document.getElementById("danhsachsanpham")
       const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
       console.log('so luong san pham '+thongtinchitietsanpham.length)
@@ -1344,9 +1345,11 @@
           let textvaLue = match.textContent || match.innerHTML 
           // văn bản thuần túy < tên của từng sản phẩm >
           console.log('nội dung sản phẩm'+textvaLue)
+          let mane = textvaLue.toUpperCase();
+          console.log(mane)
           
 
-          if (textvaLue.indexOf(thamsotimkiem) > -1) {
+          if (textvaLue.toUpperCase().indexOf(thamsotimkiem) > -1) {
             console.log("phat hien")
             thongtinchitietsanpham[i].style.display = "";
           } else {
