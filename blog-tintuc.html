@@ -983,11 +983,11 @@
                     <div class="card card-body">
                       <div class="radio_item">
                         <input type="radio" id="moinhat" name="time" value="moinhat">
-                        <label for="moinhat"><span>Mới nhất</span></label>
+                        <label for="moinhat"><span>Cũ nhất</span></label>
                       </div>
                       <div class="radio_item">
                         <input type="radio" id="cunhat" name="time" value="cunhat">
-                        <label for="cunhat"><span>Cũ nhất</span></label>
+                        <label for="cunhat"><span>Mới nhất</span></label>
                       </div>
                     </div>
                   </div>
@@ -1474,13 +1474,14 @@
           // Lấy giá trị của radio button được chọn
           var selectedValue = radio.value;
           console.log("Đã chọn: " + selectedValue);
-          if (selectedValue == 'moinhat') {
+          
+          if (selectedValue === 'moinhat') {
             const danhsachsanpham = document.getElementById("danhsachsanpham")
             const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
             console.log('so luong san pham ' + thongtinchitietsanpham.length)
             const soluongsp = thongtinchitietsanpham.length
             console.log(soluongsp)
-            for (var i = 0; i < soluongsp; i++) {
+            for (var i = 0; i < soluongsp-1; i++) {
               for (var j = i + 1; j < soluongsp; j++) {
                 if (thoigian_(thongtinchitietsanpham[i]) < thoigian_(thongtinchitietsanpham[j])); {
                   console.log(thoigian_(thongtinchitietsanpham[i])+'be hon'+ thoigian_(thongtinchitietsanpham[j]))
@@ -1493,6 +1494,7 @@
 
                   // Đảo vị trí giữa div1 và div2 trong DOM
                   parent.insertBefore(div2, div1);
+                  console.log(thoigian_(thongtinchitietsanpham[i])+'be hon hẳn'+ thoigian_(thongtinchitietsanpham[j]))
 
                 }
               }
