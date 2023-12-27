@@ -1684,64 +1684,61 @@
 
   <script>
     function filterBooks() {
-      // Get the search input value
-      var searchQuery = document.querySelector('input[name="search"]').value.toLowerCase();
+  var searchQuery = document.querySelector('input[name="search"]').value.toLowerCase();
 
-      // Get all book elements
-      var books = document.querySelectorAll('.book');
+  // Get the selected categories and countries
+  var selectedCategories = Array.from(document.querySelectorAll('.filter-category:checked')).map(el => el.value);
+  var selectedCountries = Array.from(document.querySelectorAll('.filter-country:checked')).map(el => el.value);
 
-      // Loop through each book element
-      books.forEach(function (book) {
-        // Get the author and title text content
-        var author = book.querySelector('.meta_info_list li:nth-child(1) span b').textContent.toLowerCase();
-        var title = book.querySelector('.item_title a').textContent.toLowerCase();
+  var books = document.querySelectorAll('.book');
+  books.forEach(function(book) {
+    var author = book.querySelector('.meta_info_list li:nth-child(1) span b').textContent.toLowerCase();
+    var title = book.querySelector('.item_title a').textContent.toLowerCase();
+    var category = book.getAttribute('data-category');
+    var country = book.getAttribute('data-country');
 
-        // Check if the search query matches the author or title
-        if (author.includes(searchQuery) || title.includes(searchQuery)) {
-          // Show the book if it matches
-          book.style.display = 'block';
-        } else {
-          // Hide the book if it doesn't match
-          book.style.display = 'none';
-        }
-      });
+    var matchesSearch = author.includes(searchQuery) || title.includes(searchQuery);
+    var matchesFilter = (selectedCategories.length === 0 || selectedCategories.includes(category)) &&
+                        (selectedCountries.length === 0 || selectedCountries.includes(country));
+
+    if (matchesSearch && matchesFilter) {
+      book.style.display = 'block';
+    } else {
+      book.style.display = 'none';
     }
-  </script>
+  });
 
+  // Update pagination after filtering
+  updatePagination();
+}
+function updatePagination() {
+    var visibleBooks = document.querySelectorAll('.book[style="display: block;"]');
+    var totalPages = Math.ceil(visibleBooks.length / booksPerPage);
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const sortingSelect = document.getElementById('sorting');
+    var paginationNav = document.getElementById('paginationNav');
+    paginationNav.innerHTML = '';
 
-      // Add event listener to the sorting select
-      sortingSelect.addEventListener('change', function () {
-        // Remove the 'selected' class from all options
-        sortingSelect.querySelectorAll('option').forEach(option => {
-          option.classList.remove('selected');
-        });
+    // Thêm nút "Trước" nếu cần
+    paginationNav.innerHTML += '<li><a href="#!" onclick="changePage(event, \'prev\')"><i class="fas fa-long-arrow-left"></i></a></li>';
 
-        // Add the 'selected' class to the chosen option
-        const selectedOption = sortingSelect.options[sortingSelect.selectedIndex];
-        selectedOption.classList.add('selected');
-      });
-    });
-  </script>
-  <script>
-    //Lọc theo quốc gia và thể loại
-    document.querySelectorAll('.filter-category, .filter-country').forEach(checkbox => {
-    checkbox.addEventListener('change', filterBooks);});
-
-    function filterBooks() {
-    const selectedCategories = Array.from(document.querySelectorAll('.filter-category:checked')).map(cb => cb.value);
-    const selectedCountries = Array.from(document.querySelectorAll('.filter-country:checked')).map(cb => cb.value);
-
-    document.querySelectorAll('.book').forEach(book => {
-        const isCategoryMatch = selectedCategories.length === 0 || selectedCategories.includes(book.dataset.category);
-        const isCountryMatch = selectedCountries.length === 0 || selectedCountries.includes(book.dataset.country);
-
-        book.style.display = isCategoryMatch && isCountryMatch ? '' : 'none';
-    });
+    // Tạo các nút trang
+    for (let i = 1; i <= totalPages; i++) {
+        paginationNav.innerHTML += `<li${i === 1 ? ' class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
     }
+
+    // Thêm nút "Sau" nếu cần
+    paginationNav.innerHTML += '<li><a href="#!" onclick="changePage(event, \'next\')"><i class="fas fa-long-arrow-right"></i></a></li>';
+
+    // Cập nhật hiển thị sách theo trang mới (chọn trang đầu tiên mặc định)
+    changePage(new Event('build'), 1);
+}
+
+
+document.querySelectorAll('.filter-category, .filter-country').forEach(function(checkbox) {
+  checkbox.addEventListener('change', filterBooks);
+});
+
+document.querySelector('input[name="search"]').addEventListener('input', filterBooks);
 
   </script>
 </body>
