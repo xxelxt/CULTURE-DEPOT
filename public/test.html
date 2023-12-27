@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="course_card list_layout" id="news12">
+    <div class="item_image">
+      <a href="#!" data-cursor-text="View">
+        <img
+          src="https://bizweb.dktcdn.net/100/363/455/files/review-hen-gap-lai-tren-kia-pierre-lemaitre-1.png?v=1695971254319"
+          alt="Ly hôn văn minh - chuyện không dễ dàng">
+      </a>
+    </div>
+    <div class="item_content">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <ul class="item_category_list unordered_list">
+          <li><a href="#!" class="tentheloai">Review từ báo chí</a></li>
+        </ul>
+      </div>
+      <h3 class="item_title">
+        <a href="#!" class="tensanpham">
+          Ly hôn văn minh - chuyện không dễ dàng
+        </a>
+      </h3>
+      <ul class="meta_info_list unordered_list">
+        <li>
+          <i class="fas fa-clock"></i>
+          <span datetime="2023-09-29">29 thg 09, 2023</span>
+        </li>
+      </ul>
+      <br>
+      <a class="btn_unfill" href="#!">
+        <span class="btn_text">Chi tiết</span>
+        <span class="btn_icon">
+          <i class="fas fa-long-arrow-right"></i>
+          <i class="fas fa-long-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="course_card list_layout" id="news13">
+    <div class="item_image">
+      <a href="#!" data-cursor-text="View">
+        <img
+          src="https://bizweb.dktcdn.net/100/363/455/articles/review-hen-gap-lai-tren-kia-pierre-lemaitre-17-86b4720f-f9dd-40b6-902d-cf85482e762c.png?v=1695974115943"
+          alt="Review sách: Hình hài của nước - Guillermo Del Toro">
+      </a>
+    </div>
+    <div class="item_content">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <ul class="item_category_list unordered_list">
+          <li><a href="#!" class="tentheloai">Review từ bạn đọc</a></li>
+        </ul>
+      </div>
+      <h3 class="item_title">
+        <a href="#!" class="tensanpham">
+          Review sách: Hình hài của nước - Guillermo Del Toro
+        </a>
+      </h3>
+      <ul class="meta_info_list unordered_list">
+        <li>
+          <i class="fas fa-clock"></i>
+          <span datetime="2023-09-29">29 thg 09, 2023</span>
+        </li>
+      </ul>
+      <br>
+      <a class="btn_unfill" href="#!">
+        <span class="btn_text">Chi tiết</span>
+        <span class="btn_icon">
+          <i class="fas fa-long-arrow-right"></i>
+          <i class="fas fa-long-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</body>
+<script>
+  // Lấy thẻ div có ID là "news12" và "news13"
+var div1 = document.getElementById('news12');
+var div2 = document.getElementById('news13');
+
+// Lấy phần tử cha của cả hai div
+var parent = div1.parentNode;
+
+// Đảo vị trí giữa div1 và div2 trong DOM
+parent.insertBefore(div2, div1);
+</script>
+</html>
