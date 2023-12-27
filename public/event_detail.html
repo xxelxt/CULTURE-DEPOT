@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <title>Event Details – Collab – Online Learning Platform Template</title>
+    <link rel="shortcut icon" href="assets/images/logo/favourite_icon_1.svg">
+    <title> | Nhã Nam</title>
+    <link rel="shortcut icon" href="assets/images/logo/logo.webp">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    
+
+  <!-- Framework - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+  <!-- Icon Font - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+
+  <!-- Animation - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+
+  <!-- Cursor - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
+
+  <!-- Carousel - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+
+  <!-- Video & Image Popup - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+
+  <!-- Vanilla Calendar - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vanilla-calendar.min.css">
+
+  <!-- Custom - CSS Include -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <style>
+    /* Add your custom styles here */
+    .carousel-indicators {
+    justify-content: center;
+    position: absolute;
+    bottom: 100px; /* Adjust the bottom position as needed */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Center the indicators */
+    z-index: 1; /* Ensure the indicators are above the banner */
+  }
+
+  .carousel-indicators li {
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .intro_video {
+    position: relative;
+    display: inline-block;
+  }
+
+  .video_wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video_wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for the desired level of dimming */
+  }
+
+  .video_wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .video_play_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+  }
+
+  .item_image img {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  }
+
+  .course_cards_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course_card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item_image {
+  flex: 1;
+  overflow: hidden;
+}
+
+.item_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- Body Wrap - Start -->
+  <div class="page_wrapper">
+
+    <!-- Back To Top - Start -->
+    <div class="backtotop">
+      <a href="#" class="scroll">
+        <i class="far fa-arrow-up"></i>
+      </a>
+    </div>
+    <!-- Back To Top - End -->
+
+    <!-- Site Header - Start
+      ================================================== -->
+    <header class="site_header site_header_1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col col-lg-3 col-5">
+            <div class="site_logo">
+              <a class="site_link" href="index.html">
+                <img src="assets/images/logo/logo.png" width="65px" alt="Culture Depot">
+              </a>
+            </div>
+          </div>
+          <div class="col col-lg-6 col-2">
+            <nav class="main_menu navbar navbar-expand-lg">
+              <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
+                <ul class="main_menu_list unordered_list_center">
+                  <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Sách
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      <li><a href="books.html">Tất cả sách</a></li>
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Văn học hiện đại</a></li>
+                          <li><a>Văn học kinh điển</a></li>
+                          <li><a>Văn học thiếu nhi</a></li>
+                          <li><a>Lãng mạn</a></li>
+                          <li><a>Kỳ ảo</a></li>
+                          <li><a>Trinh thám</a></li>
+                          <li><a>Khoa học - viễn tưởng</a></li>
+                          <li><a>Tản văn</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phi hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Triết học - Sử học</a></li>
+                          <li><a>Khoa học</a></li>
+                          <li><a>Kinh doanh</a></li>
+                          <li><a>Kỹ năng</a></li>
+                          <li><a>Nghệ thuật</a></li>
+                          <li><a>Tiểu luận - Phê bình</a></li>
+                          <li><a>Tâm lý học</a></li>
+                          <li><a>Tâm lý ứng dụng</a></li>
+                          <li><a>Phong cách sống</a></li>
+                          <li><a>Hồi ký</a></li>
+                          <li><a>Tâm linh - Tôn giáo</a></li>
+                          <li><a>Y học - Sức khoẻ</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a href="#!">Thiếu nhi</a></li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phân loại khác
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Sách bán chạy</a></li>
+                          <li><a>Sách mới xuất bản</a></li>
+                          <li><a>Sách sắp xuất bản</a></li>
+                          <li><a>Sách được giải thưởng</a></li>
+                          <li><a>Việt Nam danh tác</a></li>
+                          <li><a>Bản đặc biệt</a></li>
+                          <li><a>Phụ kiện & quà tặng</a></li>
+                        </ul>
+                      </li>
+                      
+                    </ul>
+                  </li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Bảng tin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      
+
+                      <li><a href="blog-tintuc.html">Tin tức</a></li>
+                      <li><a href="#!">Review từ bạn đọc</a></li>
+                      <li><a href="#!">Review từ báo chí</a></li>
+                      <li><a href="#!">Lựa chọn của biên tập viên</a></li>
+
+                      
+                      
+                    </ul>
+                  </li>
+
+                  <li><a class="nav-link" href="event.html">Sự kiện</a></li>
+                  <li><a class="nav-link" href="aboutus.html">Về chúng tôi</a></li>
+                  <li><a class="nav-link" href="contactus.html">Liên hệ</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="col col-lg-3 col-5">
+            <ul class="header_btns_group unordered_list_end">
+              <li>
+                <button class="mobile_menu_btn" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#main_menu_dropdown" aria-controls="main_menu_dropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <i class="far fa-bars"></i>
+                </button>
+              </li>
+              <li>
+                <a class="btn border_dark" href="login.html">
+                  <span>
+                    <small>Đăng nhập</small>
+                    <small>Đăng nhập</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="btn btn_dark" href="signup.html">
+                  <span>
+                    <small>Đăng ký</small>
+                    <small>Đăng ký</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+      <!-- Site Header - End
+      ================================================== -->
+
+      <!-- Main Body - Start
+      ================================================== -->
+      <main class="page_content">
+
+        <!-- Page Section - Start
+        ================================================== -->
+        <section class="page_banner">
+          <div class="container">
+            <div class="content_wrapper" style="background-image: url('assets/images/banner/ccc.png');">
+              <div class="row align-items-center">
+                <div class="col col-lg-7">
+                  <ul class="breadcrumb_nav unordered_list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="course.html">Sự kiện</a></li>
+                    <li>Thông báo về cuộc thi "Ai đó đọc cùng ta"</li>
+                  </ul>
+                  <h1 class="page_title">
+                    Thông báo về cuộc thi "Ai đó đọc cùng ta"
+                  </h1>
+                  <ul class="info_list unordered_list_block pb-0">
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>
+                        Chủ Nhật, 05/11/2023
+                      </span>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>
+                        Địa điểm: Phòng Prism, Nam Thi House, Số 152 Nam Kỳ Khởi Nghĩa, Quận 1, TP.HCM
+                      </span>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Page Section - End
+        ================================================== -->
+        
+        <!-- Blog Details Section - Start
+        ================================================== -->
+        <section class="details_section blog_details_section section_space_lg pb-0">
+          <div class="container">
+            <div class="row">
+              <div class="col col-lg-8">
+                
+                <div class="details_content">
+                  <ul class="meta_info_list unordered_list">
+                    
+                    <li>
+                      <a href="#!">
+                        <i class="fas fa-user"></i>
+                        <span>Phạm Bảo Anh</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Chủ Nhật, 05/11/2023</span>
+                      </a>
+                    </li>
+                  </ul>                 
+                  <h3 class="details_info_title">
+                    Thông báo về cuộc thi "Ai đó đọc cùng ta"
+                  </h3>
+                  <p>
+                    Lần đầu tiên Nhã Nam tổ chức một cuộc thi trên nền tảng website. Trước đó, ban tổ chức đã xin ý kiến và nhận được vô vàn phản hồi từ các bạn, nhiều bạn muốn làm thơ, nhiều bạn lại muốn chụp ảnh sách, nhiều bạn thì muốn viết bài review.
+                  </p>
+                  <p>
+                    Cuối cùng, ban tổ chức quyết định ra đề dễ nhất có thể, để các bạn mạnh dạn tham gia, cuộc thi mang tên “AI ĐÓ ĐỌC CÙNG TA”.
+                  </p>
+                  <div class="row mb-4">
+                    <div class="col col-md-12">
+                      <div class="details_image m-0">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/files/copy-of-trang-web-2.png?v=1699170563922" alt="Collab – Online Learning Platform">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <p>
+                    Thể lệ cuộc thi rất đơn giản, các bạn chỉ cần gửi bài dự thi gồm ảnh chụp một cuốn sách do Nhã Nam phát hành bất kỳ, kèm theo caption. Ảnh chụp các bạn tuỳ ý sáng tạo phô diễn kỹ thuật, phần caption các bạn có thể trổ tài làm thơ, viết review, cảm xúc cá nhân, miễn sao liên quan đến cuốn sách trong ảnh chụp.
+                  </p>
+                  <p>Ban tổ chức sẽ có những hạng mục giải thưởng rất hấp dẫn dành cho cả hai phần ảnh chụp và caption, các bạn nhớ lưu ý đừng bỏ lỡ bất kỳ phần nào nhé.</p>
+                  <p>Thông tin chi tiết mời các bạn theo dõi dưới đây:</p>
+                  <h3 class="details_info_title">
+                   THỂ LỆ CUỘC THI
+                  </h3>
+
+                  <p>
+                    - Bài dự thi gồm ảnh chụp một cuốn sách Nhã Nam bất kỳ và caption có liên quan đến cuốn sách trong ảnh chụp
+                  </p>
+                  <p>
+                    - Ảnh chụp phải đảm bảo chất lượng tốt, những ảnh quá nhỏ, quá mờ, rung v.v… sẽ bị coi là không hợp lệ
+                  </p>
+                  <p>
+                    - Caption có thể là trích dẫn trong sách, revew, cảm nghĩ về cuốn sách đó, dung lượng dưới 500 chữ, không giới hạn về các thức trình bày và thể hiện (thơ, văn xuôi…)
+                  </p>
+                  <p>
+                     + Phần caption cần đúng chính tả, không viết tắt, nếu là trích dẫn từ sách thì cần chính xác. Bài dự thi sẽ tự động bị coi là không đạt yêu cầu khi vi phạm các tiêu chí trên.
+                  </p>
+                  <p> + Trích dẫn trình bày theo cách: “trích dẫn”</p>
+                  <h3 class="details_info_title">
+                    CÁCH THỨC DỰ THI VÀ THỜI GIAN
+                  </h3>
+                  <p>
+                    - Dự thi bằng cách gửi bài đăng qua form:https://forms.gle/qfMgscspQXWbzPxZ9
+                  </p>
+                  <p>
+                    -  Bài dự thi được đăng trên website, bạn có thể xem tại link sau:https://nhanam.vn/cuoc-thi
+                  </p>
+                  <p>
+                    -  Bài dự thi không được duyệt đăng là bài thi không hợp lệ.
+                  </p>
+                  <p>
+                     - Thời gian nhận bài dự thi: Từ 05/11 đến 24h ngày 20/11
+                  </p>
+                  <p>
+                    - Kết quả sẽ được công bố vào ngày: 01/12
+                 </p>
+                 <p>
+                  - Liên hệ trao giải: 05/12
+                 </p>
+                 
+
+                  
+                  <div class="row mb-4">
+                    <div class="col col-md-12">
+                      <div class="details_image m-0">
+                        <img src="https://bizweb.dktcdn.net/100/363/455/files/copy-of-trang-web-1.png?v=1699170592493" alt="Collab – Online Learning Platform">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <p>
+                    
+                      Trước khi gửi bài dự thi, các bạn vui lòng đọc kỹ thể lệ để tránh những vi phạm đáng tiếc. Các bài thi sai quy cách/ không hợp lệ sẽ không được duyệt đăng.
+
+                      Mọi thắc mắc về bài dự thi, thể lệ, giải thưởng, xin vui lòng gửi về hòm thư phongtruyenthong@nhanam.com.vn.
+
+                      Ban tổ chức rất mong sẽ nhận được những bài thi độc đáo, sáng tạo từ các bạn!
+
+                      Mời các bạn cùng tham gia!
+                   <p>
+                    Trong cuốn sách hấp dẫn này, tác giả có sách bán chạy hàng đầu thế giới chia sẻ với độc giả những suy nghĩ của ông về việc trở thành một tiểu thuyết gia, vai trò của tiểu thuyết trong xã hội của chúng ta và quá trình sáng tác của ông, từ tác phẩm đầu tay “Lắng nghe gió hát” cho đến những tác phẩm phức tạp về mặt hình thức và nhiều tầng lớp hơn như tiểu thuyết “Giết chỉ huy đội kỵ sĩ”.
+                  </p>
+
+
+
+                  <hr>
+                  <div class="row">
+                    <div class="col col-lg-6">
+                      <ul class="item_category_list unordered_list">
+                        <li><a href="#!">Sự Kiện</a></li>
+                        <li><a href="#!">New</a></li>
+                        <li><a href="#!">Tin hot</a></li>
+                      </ul>
+                    </div>
+                    <div class="col col-lg-6 d-lg-flex justify-content-lg-end">
+                      <ul class="social_links unordered_list">
+                        <li>
+                          <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+       
+      <!-- Bình luận
+      ================================================== --> 
+                  <div class="comments_list_wrap">
+                    <h3 class="details_info_title">
+                      2 Comments
+                    </h3>
+                    <ul class="comments_list unordered_list_block">
+                      <li>
+                        <div class="comment_item">
+                          <div class="comment_author">
+                            <div class="author_thumbnail">
+                              <img src="https://lienquan.garena.vn/files/skin/57bd995d4de5a2b87a5162a74f750c685aa8f5025b23c.jpg" alt="Collab – Online Learning Platform">
+                            </div>
+                            <div class="author_content">
+                              <h4 class="author_name">Hà Gia Bảo</h4>
+                              <span class="comment_date">02/12/2023</span>
+                            </div>
+                          </div>
+                          <p>
+                            Cảm ơn tổ chức sự kiện vì đã giới thiệu nhiều tác phẩm mới vả tạo ra môi trường nơi chúng ta có thể chia sẻ ý kiến và trải nghiệm. 
+                          </p>
+                          <a class="reply_btn" href="#!"><i class="fas fa-reply"></i> Reply</a>
+                        </div>
+                        
+                      <li>
+                        <div class="comment_item">
+                          <div class="comment_author">
+                            <div class="author_thumbnail">
+                              <img src="https://lienquan.garena.vn/files/skin/ef13b29ffd78bd266a4a076030458fa35d6f9976e8139.jpg" alt="Collab – Online Learning Platform">
+                            </div>
+                            <div class="author_content">
+                              <h4 class="author_name">Ngô Văn Minh</h4>
+                              <span class="comment_date">02/12/2023</span>
+                            </div>
+                          </div>
+                          <p>
+                            Cảm ơn tổ chức vì đã tạo ra một môi trường thân thiện, cạnh tranh cho các đọc giả.
+                          </p>
+                          <a class="reply_btn" href="#!"><i class="fas fa-reply"></i> Reply</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="comment_form_wrap">
+                    <h3 class="details_info_title">
+                      Góp ý
+                    </h3>
+                    <form action="#">
+                      <div class="row">
+                        <div class="col">
+                          <div class="form_item mb-0">
+                            <label for="input_message" class="input_title text-uppercase">Message</label>
+                            <textarea id="input_message" name="comment" placeholder="Mong muốn"></textarea>
+                          </div>
+                        </div>
+                        <div class="col col-md-6">
+                          <div class="form_item mb-0">
+                            <label for="input_name" class="input_title">Họ tên</label>
+                            <input id="input_name" type="text" placeholder="Tên của bạn">
+                          </div>
+                        </div>
+                        <div class="col col-md-6">
+                          <div class="form_item mb-0">
+                            <label for="input_email" class="input_title">Gmail</label>
+                            <input id="input_email" type="email" placeholder="Gmail của bạn">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="checkbox_item">
+                            <input id="checkbox_remember" type="checkbox">
+                            <label for="checkbox_remember">Lưu tên và gmail</label>
+                          </div>
+                          <button type="submit" class="btn btn_dark">
+                            <span>
+                              <small>Gửi</small>
+                              <small>Gửi</small>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col col-lg-4">
+                <aside class="sidebar ps-lg-4">
+                  <div class="widget">
+                    <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_blog" aria-expanded="true" aria-controls="collapse_blog">
+                      Tin liên quan
+                    </div>
+                    <div class="collapse show" id="collapse_blog">
+                      <div class="card card-body">
+                        <ul class="blog_small_group unordered_list_block">
+                          <li>
+                            <a class="blog_small" href="event_detail.html">
+                              <span class="item_image">
+                                <img src="https://bizweb.dktcdn.net/100/363/455/articles/size-website-14.png?v=1701263624510" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Thông báo mở bán lịch bàn Nhã Nam 2024</strong>
+                                <small class="item_post_date">Thứ Tư, 29/11/2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="blog_small" href="event_detail.html">
+                              <span class="item_image">
+                                <img src="https://bizweb.dktcdn.net/100/363/455/articles/nha-nam-website.png?v=1699171454313" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Sự kiện ra mắt bản dịch tiếng Việt của tác phẩm "Tang lễ của người An</strong>
+                                <small class="item_post_date">Thứ Sáu, 24/11/2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="blog_small" href="event_detail.html">
+                              <span class="item_image">
+                                <img src="https://bizweb.dktcdn.net/100/363/455/articles/size-website.png?v=1700028750213" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Sự kiện ra mắt tập di cảo "Anh hùng còn chi" của nhà văn Nguyễn Huy</strong>
+                                <small class="item_post_date">Thứ Sáu, 24/11/2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="blog_small" href="event_detail.html">
+                              <span class="item_image">
+                                <img src="https://bizweb.dktcdn.net/100/363/455/articles/con-chu-a.png?v=1700747336883"" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Sự kiện ra mắt tác phẩm đoạt giải Goncourt 2018 - "Con cháu của họ cũng</strong>
+                                <small class="item_post_date">Thứ Sáu, 24/11/2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                    
+                  
+                  <div class="widget">
+                    <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_calendar" aria-expanded="true" aria-controls="collapse_calendar">
+                      Calendar
+                    </div>
+                    <div class="collapse show" id="collapse_calendar">
+                      <div class="card card-body">
+                        <div class="vanilla-calendar"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="widget">
+                    <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_blog" aria-expanded="true" aria-controls="collapse_blog">
+                      Nếu bạn muốn
+                    </div>
+                    <div class="collapse show" id="collapse_blog">
+                      <div class="card card-body">
+                        <ul class="blog_small_group unordered_list_block">
+                          <li>
+                            <a class="blog_small" href="blog_details.html">
+                              <span class="item_image">
+                                <img src="assets/images/ảnh trang tin sách/sách 2.webp" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Tin bản quyền: Sách mới của Tim Marshall - The Future of Geography </strong>
+                                <small class="item_post_date">October 12, 2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="blog_small" href="blog_details.html">
+                              <span class="item_image">
+                                <img src="assets/images/ảnh trang tin sách/sách 3.webp" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Thông báo về cuộc thi "Ai đó đọc cùng ta"</strong>
+                                <small class="item_post_date">October 12, 2023</small>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="blog_small" href="blog_details.html">
+                              <span class="item_image">
+                                <img src="assets/images/ảnh trang tin sách/sách 4.webp" alt="Collab – Online Learning Platform">
+                              </span>
+                              <span class="item_content">
+                                
+                                <strong class="item_title">Độc giả háo hức mong chờ lịch Nhã Nam 2024</strong>
+                                <small class="item_post_date">October 12, 2023</small>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>        
+                </aside>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        <!-- Blog Details Section - End
+        ================================================== -->
+
+       
+
+        <!-- Policy Section - Start
+        ================================================== -->
+        <section class="policy_section section_space_lg">
+        </section>
+        <!-- Policy Section - End
+        ================================================== -->
+
+        <!-- Newslatter Section - Start
+        ================================================== -->
+        <section class="newslatter_section">
+          <div class="container">
+            <div class="newslatter_box" style="background-image: url('assets/images/shape/shape_img_6.svg');">
+              <div class="row justify-content-center">
+                <div class="col col-lg-6">
+                  <div class="section_heading text-center">
+                    <h2 class="heading_text">
+                      Nhận thư từ chúng mình nhé bạn!
+                    </h2>
+                    <p class="heading_description mb-0">
+                      Chúng mình sẽ thông báo bạn về những cuốn sách hay, những chương trình giảm giá và sự kiện mới nhất
+                    </p>
+                  </div>
+                  <form action="#">
+                    <div class="form_item m-0">
+                      <input type="email" name="email" placeholder="Email của bạn">
+                      <button type="submit" class="btn btn_dark">
+                        <span>
+                          <small>Đăng ký</small>
+                          <small>Đăng ký</small>
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Newslatter Section - End
+        ================================================== -->
+
+      </main>
+      <!-- Main Body - End
+      ================================================== -->
+
+      <!-- Site Footer - Start
+      ================================================== -->
+      <footer class="site_footer">
+        <div class="footer_widget_area">
+          <div class="container">
+            <div class="row">
+              <div class="col col-lg-4 col-md-6 col-sm-6">
+                <div class="footer_widget">
+                  <div class="site_logo">
+                    <a class="site_link" href="index.html">
+                      <img src="assets/images/logo/logo-white.png" width="65px" alt="Collab - Online Learning Platform">
+                    </a>
+                  </div>
+                  <p>
+                    Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể tìm thấy những cuốn sách mình hứng thú, tìm thấy không gian để chia sẻ niềm đam mê, tìm thấy những sự kiện để kích thích sự đọc và yêu sách, giúp lan truyền giá trị về văn hóa đọc đến mọi người.
+                  </p>
+                  <ul class="social_links unordered_list">
+                    <li>
+                      <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="#!"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                      <a href="#!"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col col-lg-4">
+                <div class="row">
+                  <div class="col col-md-6 col-sm-6">
+                    <div class="footer_widget">
+                      <h3 class="footer_widget_title">Sách</h3>
+                      <ul class="page_list unordered_list_block">
+                        <li>
+                          <a href="books.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Tất cả sách</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Hư cấu</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Phi hư cấu</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Thiếu nhi</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#!">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Sách bán chạy</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col col-md-6 col-sm-6">
+                    <div class="footer_widget">
+                      <h3 class="footer_widget_title">Đường dẫn khác</h3>
+                      <ul class="page_list unordered_list_block">
+                        <li>
+                          <a href="blog-tintuc.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Bảng tin</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="event.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Sự kiện</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="aboutus.html">
+                            <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                            <span class="item_text">Về chúng tôi</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="col col-lg-4 col-md-6 col-sm-6">
+                <div class="footer_widget">
+                  <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
+                  <ul class="blog_small_group unordered_list_block">
+                    <li>
+                      <a class="blog_small" href="blog_details.html">
+                        <span class="item_image">
+                          <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943" alt="blog-btv-1">
+                        </span>
+                        <span class="item_content">
+                          <strong class="item_title">5 bí quyết dưỡng ẩm đắt giá - Chăm sóc da hiệu quả ngay trong mùa đông</strong>
+                          <small class="item_post_date">20 thg 11, 2023</small>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="blog_small" href="blog_details.html">
+                        <span class="item_image">
+                          <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631" alt="blog-btv-2">
+                        </span>
+                        <span class="item_content">
+                          <strong class="item_title">"Người Đài Bắc": Tàn một giấc mộng quá vãng nơi xứ người</strong>
+                          <small class="item_post_date">10 thg 10, 2023</small>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Site Footer - End
+      ================================================== -->
+
+    </div>
+    <!-- Body Wrap - End -->
+
+    <!-- Framework - Jquery Include -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-dropdown-ml-hack.js"></script>
+
+    <!-- animation - jquery include -->
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/tilt.min.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+
+    <!-- Carousel - Jquery Include -->
+    <script src="assets/js/slick.min.js"></script>
+
+    <!-- Video & Image Popup - Jquery Include -->
+    <script src="assets/js/magnific-popup.min.js"></script>
+
+    <!-- Counter Up - Jquery Include -->
+    <script src="assets/js/waypoint.js"></script>
+    <script src="assets/js/counterup.min.js"></script>
+
+    <!-- Countdown Timer - jquery include -->
+    <script src="assets/js/countdown.js"></script>
+
+    <!-- Vanilla Calendar - Jquery Include -->
+    <script src="assets/js/vanilla-calendar.min.js"></script>
+
+    <!-- Custom - Jquery Include -->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>

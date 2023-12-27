@@ -8,7 +8,7 @@
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <title>Đăng ký | Nhã Nam</title>
+    <title>Đăng nhập | Nhã Nam</title>
     <link rel="shortcut icon" href="assets/images/logo/logo.webp" />
 
     <!-- Framework - CSS Include -->
@@ -265,57 +265,51 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col col-lg-5">
-                <h1 class="register_heading text-center">Tạo tài khoản</h1>
-                <p class="register_heading_description text-center">
-                  Bạn đã có tài khoản ? <a href="login.html">Đăng nhập</a>
-                </p>
+                <h1 class="register_heading text-center">Đăng nhập</h1>
+                <!-- <p class="register_heading_description text-center">
+                  Please enter your User/Email & Password
+                </p> -->
                 <form action="#">
                   <div class="register_form signup_login_form">
                     <div class="form_item">
-                      <input type="email" name="email" placeholder="Email" id="email"/>
-                    </div>
-                    <div class="form_item">
                       <input
-                        type="password"
-                        name="createpassword"
-                        placeholder="Mật khẩu"
-                        id="matkhau"
+                        type="email"
+                        name="email"
+                        placeholder="Nhập email hoặc tên tài khoản"
                       />
                     </div>
                     <div class="form_item">
                       <input
                         type="password"
-                        name="confirmpassword"
-                        placeholder="Xác nhận mật khẩu"
-                        id="xacnhanmk"
+                        name="password"
+                        placeholder="**********"
                       />
                     </div>
-                    <button type="submit" class="btn btn_dark mb-5" onclick="thongtindangky()">
+                    <div
+                      class="remenber_forget row mb-3 align-items-center justify-content-between"
+                    >
+                      <div class="col col-6">
+                        <div class="checkbox_item mb-0">
+                          <input id="checkbox_remenber" type="checkbox" />
+                          <label for="checkbox_remenber">Nhớ mật khẩu</label>
+                        </div>
+                      </div>
+                      <div class="col col-6">
+                        <div class="forget_password text-end">
+                          <a href="#!">Quên mật khẩu ?</a>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn_dark mb-5">
                       <span>
-                        <small>Đăng ký ngay</small>
-                        <small>Đăng ký ngay</small>
+                        <small>Đăng nhập</small>
+                        <small>Đăng nhập</small>
                       </span>
                     </button>
-
-                    <p class="text-center">Hoặc đăng nhập với</p>
-
-                    <ul class="social_links unordered_list_center">
-                      <li>
-                        <a href="https://www.facebook.com/">
-                          <i class="fab fa-facebook-f"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://twitter.com/">
-                          <i class="fab fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.google.com/">
-                          <i class="fab fa-google"></i>
-                        </a>
-                      </li>
-                    </ul>
+                    <p class="mb-0 text-center">
+                      Nếu bạn chưa có tài khoản ?
+                      <a href="signup.html">Đăng ký</a>
+                    </p>
                   </div>
                 </form>
               </div>
@@ -536,7 +530,5 @@
 
     <!-- Custom - Jquery Include -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/firebase.js"></script>
-    <script src="assets/js/dangki.js"></script>
   </body>
 </html>
