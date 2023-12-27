@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, child, get } from "firebase/database";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
-    authDomain: "bookstore-group1.firebaseapp.com",
-    databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
-    projectId: "bookstore-group1",
-    storageBucket: "bookstore-group1.appspot.com",
-    messagingSenderId: "120255369519",
-    appId: "1:120255369519:web:5f29ed02bc55f63b0291da",
-    measurementId: "G-30HG5R98GF"
+  apiKey: "AIzaSyARzRypH50ZB-cpTH0RX6JL0awYFFuwZ_o",
+  authDomain: "bookstore-90d32.firebaseapp.com",
+  databaseURL: "https://bookstore-90d32-default-rtdb.firebaseio.com",
+  projectId: "bookstore-90d32",
+  storageBucket: "bookstore-90d32.appspot.com",
+  messagingSenderId: "561950763179",
+  appId: "1:561950763179:web:3bb096bda928d412c32fee",
+  measurementId: "G-C72YHG4DVM"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -22,10 +22,9 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Export the test function to make it accessible globally
 
   const dbRef = ref(getDatabase(firebaseApp));
-  get(child(dbRef, 'users')).then((snapshot) => {
+  get(child(dbRef, 'user')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
-      console.log('xong')
     } else {
       console.log('No data available');
     }

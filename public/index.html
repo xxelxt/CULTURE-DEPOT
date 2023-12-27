@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -7,44 +7,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Trang chủ | Nhã Nam</title>
-  <link rel="shortcut icon" href="assets/images/logo/logo.webp">
+  <title>Trang chủ | Culture Depot</title>
+  <link rel="shortcut icon" href="assets/images/c4c5b92f-5efa-469b-83e1-c13e84c13a08.webp">
 
-  <!-- Framework - CSS Include -->
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
   <!-- Icon Font - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
 
-  <!-- Animation - CSS Include -->
-  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <!-- Animation CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- Cursor - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
 
-  <!-- Carousel - CSS Include -->
-  <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+  <!-- Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 
   <!-- Video & Image Popup - CSS Include -->
-  <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
   <!-- Vanilla Calendar - CSS Include -->
-  <link rel="stylesheet" type="text/css" href="assets/css/vanilla-calendar.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vanilla-calendar/3.0.0/vanilla-calendar.min.css">
 
   <!-- Custom - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <style>
-    /* Add your custom styles here */
     .carousel-indicators {
     justify-content: center;
     position: absolute;
-    bottom: 100px; /* Adjust the bottom position as needed */
+    bottom: 100px;
     left: 0;
     right: 0;
-    margin: 0 auto; /* Center the indicators */
-    z-index: 1; /* Ensure the indicators are above the banner */
+    margin: 0 auto;
+    z-index: 1;
   }
 
   .carousel-indicators li {
@@ -125,17 +123,11 @@
       flex-direction: column;
       height: 100%;
     }
-    
-    
-
-
   </style>
 
 </head>
 
-
 <body>
-
   <!-- Body Wrap - Start -->
   <div class="page_wrapper">
 
@@ -155,7 +147,7 @@
           <div class="col col-lg-3 col-5">
             <div class="site_logo">
               <a class="site_link" href="index.html">
-                <img src="assets/images/logo/logo.png" width="65px" alt="Culture Depot">
+                <img src="assets/images/c4c5b92f-5efa-469b-83e1-c13e84c13a08-modified.webp" width="70px" alt="Culture Depot">
               </a>
             </div>
           </div>
@@ -166,18 +158,20 @@
                   <li><a class="nav-link" href="index.html">Trang chủ</a></li>
 
                   <li class="dropdown">
-                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                    <a class="nav-link" href="#!" id="service_submenu" role="button" data-bs-toggle="dropdown"
                       aria-expanded="false">
                       Sách
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="service_submenu">
-                      <li><a href="books.html">Tất cả sách</a></li>
+                      <li><a href="book.html">Tất cả sách</a></li>
                       <li class="dropdown">
-                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link" href="#!" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
                           aria-expanded="false">
                           Hư cấu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+													<li><a href="book_fts.html">Tất cả sách hư cấu</a></li>
+													<li><a>Văn học hiện đại</a></li>
                           <li><a>Văn học hiện đại</a></li>
                           <li><a>Văn học kinh điển</a></li>
                           <li><a>Văn học thiếu nhi</a></li>
@@ -195,6 +189,7 @@
                           Phi hư cấu
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+													<li><a href="book_nonfts.html">Tất cả sách phi hư cấu</a></li>
                           <li><a>Triết học - Sử học</a></li>
                           <li><a>Khoa học</a></li>
                           <li><a>Kinh doanh</a></li>
@@ -210,7 +205,8 @@
                         </ul>
                       </li>
 
-                      <li><a href="#!">Thiếu nhi</a></li>
+											<li><a href="book_vndt.html">Việt Nam danh tác</a></li>
+                      <li><a href="book_kids.html">Thiếu nhi</a></li>
 
                       <li class="dropdown">
                         <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
@@ -222,7 +218,6 @@
                           <li><a>Sách mới xuất bản</a></li>
                           <li><a>Sách sắp xuất bản</a></li>
                           <li><a>Sách được giải thưởng</a></li>
-                          <li><a>Việt Nam danh tác</a></li>
                           <li><a>Bản đặc biệt</a></li>
                           <li><a>Phụ kiện & quà tặng</a></li>
                         </ul>
@@ -239,10 +234,10 @@
                     <ul class="dropdown-menu" aria-labelledby="service_submenu">
                       
 
-                      <li><a href="blog-tintuc.html">Tin tức</a></li>
-                      <li><a href="#!">Review từ bạn đọc</a></li>
-                      <li><a href="#!">Review từ báo chí</a></li>
-                      <li><a href="#!">Lựa chọn của biên tập viên</a></li>
+                      <li><a href="blog.html">Tin tức</a></li>
+                      <li><a href="blog_reader.html">Review từ bạn đọc</a></li>
+                      <li><a href="blog_press.html">Review từ báo chí</a></li>
+                      <li><a href="blog_editor.html">Lựa chọn của biên tập viên</a></li>
 
                       
                       
@@ -1464,7 +1459,7 @@
             <div class="footer_widget">
               <div class="site_logo">
                 <a class="site_link" href="index.html">
-                  <img src="assets/images/logo/logo-white.png" width="65px" alt="nha-nam-white-logo">
+                  <img src="assets/images/c4c5b92f-5efa-469b-83e1-c13e84c13a08-modified.webp" width="150px" alt="Culture Depot">
                 </a>
               </div>
               <p>
@@ -1496,27 +1491,27 @@
                   <h3 class="footer_widget_title">Sách</h3>
                   <ul class="page_list unordered_list_block">
                     <li>
-                      <a href="books.html">
+                      <a href="book.html">
                         <span class="item_icon"><i class="fas fa-caret-right"></i></span>
                         <span class="item_text">Tất cả sách</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
+                      <a href="book_fts.html">
                         <span class="item_icon"><i class="fas fa-caret-right"></i></span>
                         <span class="item_text">Hư cấu</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
+                      <a href="book_nonfts.html">
                         <span class="item_icon"><i class="fas fa-caret-right"></i></span>
                         <span class="item_text">Phi hư cấu</span>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
+                      <a href="book_vndt.html">
                         <span class="item_icon"><i class="fas fa-caret-right"></i></span>
-                        <span class="item_text">Thiếu nhi</span>
+                        <span class="item_text">Việt Nam danh tác</span>
                       </a>
                     </li>
                     <li>
@@ -1533,7 +1528,7 @@
                   <h3 class="footer_widget_title">Đường dẫn khác</h3>
                   <ul class="page_list unordered_list_block">
                     <li>
-                      <a href="blog-tintuc.html">
+                      <a href="blog.html">
                         <span class="item_icon"><i class="fas fa-caret-right"></i></span>
                         <span class="item_text">Bảng tin</span>
                       </a>
@@ -1550,12 +1545,18 @@
                         <span class="item_text">Về chúng tôi</span>
                       </a>
                     </li>
+										<li>
+                      <a href="contactus.html">
+                        <span class="item_icon"><i class="fas fa-caret-right"></i></span>
+                        <span class="item_text">Liên hệ</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
-              
             </div>
           </div>
+					
           <div class="col col-lg-4 col-md-6 col-sm-6">
             <div class="footer_widget">
               <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
@@ -1659,6 +1660,16 @@
     $('#carouselExample').carousel(slideIndex);
   }
 </script>
+<script>
+	$(document).ready(function(){
+			$('#carouselExample').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+					$('.carousel-indicators li').removeClass('active');
+					$('.carousel-indicators li').eq(nextSlide).addClass('active');
+			});
+	});
+</script>
+
+
 
 
 </body>
