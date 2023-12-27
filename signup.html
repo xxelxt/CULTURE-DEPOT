@@ -239,7 +239,7 @@
                         id="xacnhanmk"
                       />
                     </div>
-                    <button type="submit" class="btn btn_dark mb-5" onclick="thongtindangky()">
+                    <button type="submit" class="btn btn_dark mb-5" onclick="nhandangky()" >
                       <span>
                         <small>Đăng ký ngay</small>
                         <small>Đăng ký ngay</small>
@@ -473,5 +473,20 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/firebase.js"></script>
     <script src="assets/js/dangki.js"></script>
+    <script src="assets/js/readfirebase.mjs" defer></script>
+    <script src="assets/js/writefirebase.mjs" defer></script>
+    <script src="assets/js/demsl.mjs" defer></script>
+    <script>
+      function nhandangky(){
+        const matkhau = document.getElementById("matkhau").value;
+        const email =document.getElementById("email").value;
+        const sluong = dem();
+        console.log(matkhau)
+        console.log(email)
+        console.log(sluong)
+        writeUserData(sluong+1,matkhau,email,sluong+1)
+
+      }
+    </script>
   </body>
 </html>
