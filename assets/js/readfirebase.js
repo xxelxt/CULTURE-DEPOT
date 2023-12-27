@@ -1,4 +1,6 @@
-var {getDatabase, ref, child, get } = require('firebase/database')
+
+var { getDatabase, ref, child, get } = require('firebase/database')
+
 
 var {getDatabase} = require('firebase/database')
 
