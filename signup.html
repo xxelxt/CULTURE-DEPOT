@@ -212,7 +212,7 @@
               <script type="module" defer>
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-                import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+                import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
                 // Import the functions you need from the SDKs you need
 
@@ -234,12 +234,42 @@
                 };
 
                 // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-
-
-
                 const firebaseApp = initializeApp(firebaseConfig);
+                var m = 0;
+                  try {
+                    const db = getDatabase();
+                    const usersRef = ref(db, 'users');
+                    const snapshot = await get(usersRef);
+
+                    if (snapshot.exists()) {
+                      const userCount = Object.keys(snapshot.val()).length;
+                      console.log(`Số lượng người trong cơ sở dữ liệu: ${userCount}`);
+                      console.log(userCount);
+                      m=userCount;
+                    } else {
+                      console.log('Không có dữ liệu người trong cơ sở dữ liệu.');
+                      
+                    }
+                  } catch (error) {
+                    console.error('Lỗi khi đếm số lượng người:', error);
+                    throw error; // Re-throw the error
+                  }
+                
+
+                // Lấy số lượng người và lưu vào biến
+                let userCountVariable;
+                console.log(m)
+
+                // getUserCount().then((count) => {
+                //   userCountVariable = count;
+                //   console.log('Số lượng người đã được lưu vào biến:', userCountVariable);
+                // });
+
+
+
+
+
+                
 
                 function writeUserData(Id, matkhau, email, sothutu) {
 
@@ -254,11 +284,12 @@
                 document.querySelector('#submit').addEventListener('click', () => {
 
 
+
                   console.log('xong')
                   // function luu(){
                   const matkhau = document.getElementById("matkhau").value;
                   const email = document.getElementById("email").value;
-                  const sluong = 7;
+                  const sluong = m;
                   console.log(matkhau)
                   console.log(email)
                   console.log(sluong)
@@ -270,9 +301,6 @@
                   console.log('xong2')
                 })
                 // writeUserData("7","ngovanminh","NVM@gmai.com",7)
-
-
-
               </script>
               <form action="#">
                 <div class="register_form signup_login_form">
