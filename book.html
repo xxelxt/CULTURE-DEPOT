@@ -268,12 +268,6 @@
         ================================================== -->
 
       <section class="courses_archive_section section_space_lg">
-        <!-- <div class="container">
-          <ul class="breadcrumb_nav unordered_list">
-            <li><a href="index.html">Trang chủ</a></li>
-            <li>Tất cả sách</li>
-          </ul>
-        </div> -->
         <div class="container">
           <div class="filter_topbar">
             <p class="filter_result">Đang hiển thị <span>first</span> - <span>last</span> trong tổng số
@@ -358,7 +352,8 @@
                       <li><a href="#!">Tâm linh - Tôn giáo</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">309.000đ</del><br>
                       <span class="sale_price">289.000đ</span>
                     </div>
                   </div>
@@ -612,7 +607,8 @@
                       <li><a href="#!">Văn học hiện đại</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">208.000đ</del><br>
                       <span class="sale_price">168.000đ</span>
                     </div>
                   </div>
@@ -694,7 +690,8 @@
                       <li><a href="#!">Tâm lý ứng dụng</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">136.000đ</del><br>
                       <span class="sale_price">116.000đ</span>
                     </div>
                   </div>
@@ -899,7 +896,8 @@
                       <li><a href="#!">Văn học Việt Nam</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">156.000đ</del><br>
                       <span class="sale_price">126.000đ</span>
                     </div>
                   </div>
@@ -940,7 +938,8 @@
                       <li><a href="#!">Phiêu lưu ly kỳ</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">238.000đ</del><br>
                       <span class="sale_price">196.000đ</span>
                     </div>
                   </div>
@@ -1063,7 +1062,8 @@
                       <li><a href="#!">Văn học hiện đại</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">150.000đ</del><br>
                       <span class="sale_price">130.000đ</span>
                     </div>
                   </div>
@@ -1227,7 +1227,8 @@
                       <li><a href="#!">Văn học hiện đại</a></li>
 
                     </ul>
-                    <div class="item_price">
+                    <div class="item_price" style="text-align: right; line-height: 8px;">
+                      <del class="remove_price" style="line-height: 8px;">179.000đ</del><br>
                       <span class="sale_price">139.000đ</span>
                     </div>
                   </div>
@@ -1252,9 +1253,6 @@
                 </div>
               </div>
             </div>
-
-
-
 
             <div class="pagination_wrap">
               <ul class="pagination_nav unordered_list" id="paginationNav">
@@ -1762,6 +1760,10 @@ function filterBooks() {
     document.querySelectorAll('.filter-category, .filter-country').forEach(checkbox => {
       checkbox.addEventListener('change', filterBooksByCriteria);
     });
+
+    if (event.isTrusted) {
+          document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
+        }
   </script>
 
 <script>
