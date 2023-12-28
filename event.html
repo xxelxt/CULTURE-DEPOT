@@ -36,7 +36,40 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <style>
+    .item_image img {
+      width: 100%;
+      /* Ensures the image takes the full width of its container */
+      object-fit: cover;
+      /* Maintain aspect ratio and cover the entire container */
+    }
 
+    .course_cards_container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .course_card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item_image {
+      overflow: hidden;
+    }
+
+    .item_image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .course_card,
+    .event_card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
   </style>
 
 </head>
@@ -57,147 +90,147 @@
 
     <!-- Site Header - Start
       ================================================== -->
-      <header class="site_header site_header_1">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col col-lg-3 col-5">
-              <div class="site_logo">
-                <a class="site_link" href="index.html">
-                  <img src="assets/images/culture-depot-logo.webp" width="70px" alt="Culture Depot">
-                </a>
-              </div>
-            </div>
-            <div class="col col-lg-6 col-2">
-              <nav class="main_menu navbar navbar-expand-lg">
-                <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
-                  <ul class="main_menu_list unordered_list_center">
-                    <li><a class="nav-link" href="index.html">Trang chủ</a></li>
-  
-                    <li class="dropdown">
-                      <a class="nav-link" href="#!" id="service_submenu" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Sách
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="service_submenu">
-                        <li><a href="book.html">Tất cả sách</a></li>
-                        <li class="dropdown">
-                          <a class="nav-link" href="#!" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Hư cấu
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
-                            <li><a href="book_fts.html">Tất cả sách hư cấu</a></li>
-                            <li><a>Văn học hiện đại</a></li>
-                            <li><a>Văn học hiện đại</a></li>
-                            <li><a>Văn học kinh điển</a></li>
-                            <li><a>Văn học thiếu nhi</a></li>
-                            <li><a>Lãng mạn</a></li>
-                            <li><a>Kỳ ảo</a></li>
-                            <li><a>Trinh thám</a></li>
-                            <li><a>Khoa học - viễn tưởng</a></li>
-                            <li><a>Tản văn</a></li>
-                          </ul>
-                        </li>
-  
-                        <li class="dropdown">
-                          <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Phi hư cấu
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
-                            <li><a href="book_nonfts.html">Tất cả sách phi hư cấu</a></li>
-                            <li><a>Triết học - Sử học</a></li>
-                            <li><a>Khoa học</a></li>
-                            <li><a>Kinh doanh</a></li>
-                            <li><a>Kỹ năng</a></li>
-                            <li><a>Nghệ thuật</a></li>
-                            <li><a>Tiểu luận - Phê bình</a></li>
-                            <li><a>Tâm lý học</a></li>
-                            <li><a>Tâm lý ứng dụng</a></li>
-                            <li><a>Phong cách sống</a></li>
-                            <li><a>Hồi ký</a></li>
-                            <li><a>Tâm linh - Tôn giáo</a></li>
-                            <li><a>Y học - Sức khoẻ</a></li>
-                          </ul>
-                        </li>
-  
-                        <li><a href="book_vndt.html">Việt Nam danh tác</a></li>
-                        <li><a href="book_kids.html">Thiếu nhi</a></li>
-  
-                        <li class="dropdown">
-                          <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Phân loại khác
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
-                            <li><a>Sách bán chạy</a></li>
-                            <li><a>Sách mới xuất bản</a></li>
-                            <li><a>Sách sắp xuất bản</a></li>
-                            <li><a>Sách được giải thưởng</a></li>
-                            <li><a>Bản đặc biệt</a></li>
-                            <li><a>Phụ kiện & quà tặng</a></li>
-                          </ul>
-                        </li>
-                        
-                      </ul>
-                    </li>
-  
-                    <li class="dropdown">
-                      <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Bảng tin
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="service_submenu">
-                        
-  
-                        <li><a href="blog.html">Tin tức</a></li>
-                        <li><a href="blog_reader.html">Review từ bạn đọc</a></li>
-                        <li><a href="blog_press.html">Review từ báo chí</a></li>
-                        <li><a href="blog_editor.html">Lựa chọn của biên tập viên</a></li>
-  
-                        
-                        
-                      </ul>
-                    </li>
-  
-                    <li><a class="nav-link" href="event.html">Sự kiện</a></li>
-                    <li><a class="nav-link" href="aboutus.html">Về chúng tôi</a></li>
-                    <li><a class="nav-link" href="contactus.html">Liên hệ</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <div class="col col-lg-3 col-5">
-              <ul class="header_btns_group unordered_list_end">
-                <li>
-                  <button class="mobile_menu_btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#main_menu_dropdown" aria-controls="main_menu_dropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <i class="far fa-bars"></i>
-                  </button>
-                </li>
-                <li>
-                  <a class="btn border_dark" href="login.html">
-                    <span>
-                      <small>Đăng nhập</small>
-                      <small>Đăng nhập</small>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a class="btn btn_dark" href="signup.html">
-                    <span>
-                      <small>Đăng ký</small>
-                      <small>Đăng ký</small>
-                    </span>
-                  </a>
-                </li>
-              </ul>
+    <header class="site_header site_header_1">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col col-lg-3 col-5">
+            <div class="site_logo">
+              <a class="site_link" href="index.html">
+                <img src="assets/images/culture-depot-logo.webp" width="70px" alt="Culture Depot">
+              </a>
             </div>
           </div>
+          <div class="col col-lg-6 col-2">
+            <nav class="main_menu navbar navbar-expand-lg">
+              <div class="main_menu_inner collapse navbar-collapse justify-content-center" id="main_menu_dropdown">
+                <ul class="main_menu_list unordered_list_center">
+                  <li><a class="nav-link" href="index.html">Trang chủ</a></li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#!" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Sách
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+                      <li><a href="book.html">Tất cả sách</a></li>
+                      <li class="dropdown">
+                        <a class="nav-link" href="#!" id="courses_layout_submenu" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a href="book_fts.html">Tất cả sách hư cấu</a></li>
+                          <li><a>Văn học hiện đại</a></li>
+                          <li><a>Văn học hiện đại</a></li>
+                          <li><a>Văn học kinh điển</a></li>
+                          <li><a>Văn học thiếu nhi</a></li>
+                          <li><a>Lãng mạn</a></li>
+                          <li><a>Kỳ ảo</a></li>
+                          <li><a>Trinh thám</a></li>
+                          <li><a>Khoa học - viễn tưởng</a></li>
+                          <li><a>Tản văn</a></li>
+                        </ul>
+                      </li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phi hư cấu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a href="book_nonfts.html">Tất cả sách phi hư cấu</a></li>
+                          <li><a>Triết học - Sử học</a></li>
+                          <li><a>Khoa học</a></li>
+                          <li><a>Kinh doanh</a></li>
+                          <li><a>Kỹ năng</a></li>
+                          <li><a>Nghệ thuật</a></li>
+                          <li><a>Tiểu luận - Phê bình</a></li>
+                          <li><a>Tâm lý học</a></li>
+                          <li><a>Tâm lý ứng dụng</a></li>
+                          <li><a>Phong cách sống</a></li>
+                          <li><a>Hồi ký</a></li>
+                          <li><a>Tâm linh - Tôn giáo</a></li>
+                          <li><a>Y học - Sức khoẻ</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a href="book_vndt.html">Việt Nam danh tác</a></li>
+                      <li><a href="book_kids.html">Thiếu nhi</a></li>
+
+                      <li class="dropdown">
+                        <a class="nav-link" href="#" id="courses_layout_submenu" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Phân loại khác
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="courses_layout_submenu">
+                          <li><a>Sách bán chạy</a></li>
+                          <li><a>Sách mới xuất bản</a></li>
+                          <li><a>Sách sắp xuất bản</a></li>
+                          <li><a>Sách được giải thưởng</a></li>
+                          <li><a>Bản đặc biệt</a></li>
+                          <li><a>Phụ kiện & quà tặng</a></li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                  </li>
+
+                  <li class="dropdown">
+                    <a class="nav-link" href="#" id="service_submenu" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Bảng tin
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
+
+
+                      <li><a href="blog.html">Tin tức</a></li>
+                      <li><a href="blog_reader.html">Review từ bạn đọc</a></li>
+                      <li><a href="blog_press.html">Review từ báo chí</a></li>
+                      <li><a href="blog_editor.html">Lựa chọn của biên tập viên</a></li>
+
+
+
+                    </ul>
+                  </li>
+
+                  <li><a class="nav-link" href="event.html">Sự kiện</a></li>
+                  <li><a class="nav-link" href="aboutus.html">Về chúng tôi</a></li>
+                  <li><a class="nav-link" href="contactus.html">Liên hệ</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <div class="col col-lg-3 col-5">
+            <ul class="header_btns_group unordered_list_end">
+              <li>
+                <button class="mobile_menu_btn" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#main_menu_dropdown" aria-controls="main_menu_dropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <i class="far fa-bars"></i>
+                </button>
+              </li>
+              <li>
+                <a class="btn border_dark" href="login.html">
+                  <span>
+                    <small>Đăng nhập</small>
+                    <small>Đăng nhập</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="btn btn_dark" href="signup.html">
+                  <span>
+                    <small>Đăng ký</small>
+                    <small>Đăng ký</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
-      <!-- Site Header - End
+      </div>
+    </header>
+    <!-- Site Header - End
         ================================================== -->
 
     <!-- Main Body - Start
@@ -206,57 +239,11 @@
 
       <!-- Page Section - Start
         ================================================== -->
-        <section class="page_banner">
-          <div class="container">
-            <div class="content_wrapper" style="background-image: url('assets/images/banner/aaa.png');">
-              <div class="row align-items-center">
-                <div class="col col-lg-7">
-                  <ul class="breadcrumb_nav unordered_list">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="event.html">Sự kiện</a></li>
-                  </ul>
-                  <h1 class="page_title" >
-                    Thông báo về cuộc thi "Ai đó đọc cùng ta"
-                  </h1>
-                  <ul class="info_list unordered_list_block pb-0">
-                    <li>
-                      <i class="fas fa-check"></i>
-                      <span>
-                        Chủ Nhật, 05/11/2023
-                      </span>
-                    </li>
-                    <li>
-                      <i class="fas fa-check"></i>
-                      <span>
-                        Địa điểm: Phòng Prism, Nam Thi House, Số 152 Nam Kỳ Khởi Nghĩa, Quận 1, TP.HCM
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <form action="#">
-                  <div class="form_item mb-0">
-                    <input type="search" name="search" id="search" placeholder="Thông tin sự kiện bạn muốn tìm kiếm ?" onkeyup="timkiem()"> 
-                    <!-- tim kiếm thông tin -->
-                    <button type="submit" class="btn btn_dark">
-                      <span>
-                        <small><i class="fas fa-search"></i></small>
-                        <small><i class="fas fa-search"></i></small>
-                      </span>
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-       
-        <!-- Page Section - End
-
       <section class="page_banner">
         <div class="container">
           <div class="content_wrapper" style="background-image: url('');">
             <div class="row align-items-center">
-              <div class="col col-lg-9">
+              <div class="col col-lg-12">
                 <ul class="breadcrumb_nav unordered_list">
                   <li><a href="index.html">Trang chủ</a></li>
                   <li>Sự kiện</li>
@@ -265,9 +252,9 @@
                 <p class="page_description">
                   Cập nhật mới nhất về những sự kiện ra mắt sách, toạ đàm và hội sách của Nhã Nam
                 </p>
-                <form action="#">
+                <form action="#" onsubmit="searchEvents(event)">
                   <div class="form_item mb-0">
-                    <input type="search" name="search" placeholder="Tìm kiếm sự kiện tại đây">
+                    <input type="search" id="searchInput" placeholder="Tìm kiếm sự kiện hoặc địa điểm">
                     <button type="submit" class="btn btn_dark">
                       <span>
                         <small><i class="fas fa-search"></i></small>
@@ -281,9 +268,8 @@
           </div>
         </div>
       </section>
-
       <!-- Page Section - End
-        ================================================== -->
+          ================================================== -->
 
       <!-- Event Section - Start
         ================================================== -->
@@ -291,7 +277,7 @@
         <div class="container">
           <div class="row">
 
-            <div class="col col-lg-4 event" id="event1" class="thongtinsukien"> <!-- su kien 1 -->
+            <div class="col col-lg-4 event" id="event1" class="thongtinsukien">
               <div class="event_card">
                 <a class="item_image" href="#!">
                   <img src="https://bizweb.dktcdn.net/100/363/455/articles/bannerwebsite.png?v=1701344180757"
@@ -470,7 +456,8 @@
             <div class="col col-lg-4 event" id="event7">
               <div class="event_card">
                 <a class="item_image" href="#!">
-                  <img src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20230215095659/0Vnlq5m-820x480.png"
+                  <img
+                    src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20230215095659/0Vnlq5m-820x480.png"
                     alt="Sự kiện giới thiệu cuốn sách 'Con người và biểu tượng' của Carl Jung">
                 </a>
                 <div class="item_content">
@@ -500,7 +487,8 @@
             <div class="col col-lg-4 event" id="event8">
               <div class="event_card">
                 <a class="item_image" href="#!">
-                  <img src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20230206145951/N6bHyZj.jpg"
+                  <img
+                    src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20230206145951/N6bHyZj.jpg"
                     alt="Ra mắt cuốn sách 'Bản đồ thế giới cà phê' của James Hoffmann">
                 </a>
                 <div class="item_content">
@@ -688,7 +676,7 @@
                 <h3 class="footer_widget_title">Lựa chọn của biên tập viên</h3>
                 <ul class="blog_small_group unordered_list_block">
                   <li>
-                    <a class="blog_small" href="blog_details.html">
+                    <a class="blog_small" href="#!">
                       <span class="item_image">
                         <img src="https://bizweb.dktcdn.net/100/363/455/articles/seo-2.png?v=1700487959943"
                           alt="blog-btv-1">
@@ -701,7 +689,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="blog_small" href="blog_details.html">
+                    <a class="blog_small" href="#!">
                       <span class="item_image">
                         <img src="https://bizweb.dktcdn.net/100/363/455/files/website-nn-16.png?v=1696932969631"
                           alt="blog-btv-2">
@@ -807,6 +795,7 @@
           selectedPageItem.classList.add('active');
         }
 
+
         // Update the "Showing X-Y of Z results" text
         const startEvent = (page - 1) * eventsPerPage + 1;
         const endEvent = Math.min(startEvent + eventsPerPage - 1, events.length);
@@ -822,56 +811,75 @@
           events[i].style.display = 'block';
         }
 
+        if (typeof page === 'number') {
+          currentPage = page;
+        } else if (page === 'prev' && currentPage > 1) {
+          currentPage--;
+        } else if (page === 'next' && currentPage < Math.ceil(filteredEvents.length / 6)) {
+          currentPage++;
+        }
+
+        displayEvents();
+
         // Scroll to the "Showing X-Y of Z results" section
         // if (event.isTrusted) {
         //   document.querySelector('.event_section').scrollIntoView({ behavior: 'smooth' });
         // }
       }
     }
-  </script>
-  <script>
-    const timkiem = () => {
-          const searchItemElement = document.getElementById("search");
-      // Kiểm tra xem phần tử có tồn tại không
-      if (!searchItemElement) {
-          console.error("Không tìm thấy phần tử với ID 'search-item'");
-          return;
-      }
-      else console.log('tham so truyen vao '+searchItemElement.value.toUpperCase())
-      const thamsotimkiem = searchItemElement.value.toUpperCase();
-      const danhsachsanpham = document.getElementsByClassName("row")
-      const thongtinchitietsukien = document.querySelectorAll('.event_card');
-      console.log('so luong san pham '+thongtinchitietsukien.length)
-      // Lấy div có class "item_content"
-      const tensukien = document.getElementsByClassName("tensukien")
-      console.log('ten san pham ' +tensukien)
-      console.log('so luong '+tensukien.length)
-      for (var i = 0; i < tensukien.length; i++) {
-        let match = thongtinchitietsukien[i].getElementsByClassName("tensukien")[0];
-        // duyệt từng ký tự của tên sản phẩm 
-        console.log(thongtinchitietsukien[i])
-        console.log(match) 
-        if (match) {
-          let textvaLue = match.textContent || match.innerHTML 
-          // văn bản thuần túy < tên của từng sự kiện >
-          console.log('nội dung sản phẩm'+textvaLue)
-          
+    let currentPage = 1;
+    let filteredEvents = []; // Mảng để lưu trữ kết quả tìm kiếm
 
-          if (textvaLue.toUpperCase().indexOf(thamsotimkiem) > -1) {
-            console.log("phat hien")
-            thongtinchitietsukien[i].style.display = "";
-          } else {
-            thongtinchitietsukien[i].style.display = "none";
-            console.log("loai bo")
-          }
+    function searchEvents(event) {
+      event.preventDefault();
+      currentPage = 1;
+      const searchText = document.getElementById('searchInput').value.toLowerCase();
+      const events = document.querySelectorAll('.event');
+      filteredEvents = []; // Xóa mảng trước khi thêm kết quả mới
+
+      events.forEach(event => {
+        const eventName = event.querySelector('.tensukien').textContent.toLowerCase();
+        const eventLocation = event.querySelector('.meta_info_list li span').textContent.toLowerCase();
+
+        if (eventName.includes(searchText) || eventLocation.includes(searchText)) {
+          filteredEvents.push(event); // Thêm sự kiện vào mảng kết quả tìm kiếm
         }
+      });
 
+      updatePagination(filteredEvents.length);
+      displayEvents(); // Hiển thị sự kiện dựa trên trang hiện tại và kết quả tìm kiếm
+    }
+
+    function displayEvents() {
+      const eventsPerPage = 6;
+      const startEvent = (currentPage - 1) * eventsPerPage;
+      const endEvent = startEvent + eventsPerPage;
+
+      document.querySelectorAll('.event').forEach(event => {
+        event.style.display = 'none'; // Ẩn tất cả sự kiện trước khi hiển thị kết quả mới
+      });
+
+      filteredEvents.slice(startEvent, endEvent).forEach(event => {
+        event.style.display = ''; // Hiển thị sự kiện trong phạm vi trang hiện tại
+      });
+    }
+
+    function updatePagination(totalEvents) {
+      const eventsPerPage = 6;
+      const totalPages = Math.ceil(totalEvents / eventsPerPage);
+      const paginationNav = document.getElementById('paginationNav');
+
+      paginationNav.innerHTML = '';
+      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+
+      for (let i = 1; i <= totalPages; i++) {
+        paginationNav.innerHTML += `<li ${currentPage === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
       }
+
+      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
     }
 
   </script>
-
-
 </body>
 
 </html>
