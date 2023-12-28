@@ -264,26 +264,22 @@
                     
                   });
                   }
-                  document.querySelector('#submit').addEventListener('click',()=> {
-
-
-                    console.log('xong')           
-                  // function luu(){
+                  
+                  writeUserData("7","ngovanminh","NVM@gmai.com",7)
+                  console.log('xong')           
+                  function luu(){
                   const matkhau = document.getElementById("matkhau").value;
                         const email =document.getElementById("email").value;
-                        const sluong = 7;
+                        const sluong = 6;
                         console.log(matkhau)
                         console.log(email)
                         console.log(sluong)
                         writeUserData(sluong+1,matkhau,email,sluong+1)
                         
                         
-                  // console.log('xong')
-                  // }
+                  console.log('xong')
+                  }
                   console.log('xong2')
-                  })
-                  // writeUserData("7","ngovanminh","NVM@gmai.com",7)
-                  
                 
             
                 </script>
@@ -308,7 +304,7 @@
                         id="xacnhanmk"
                       />
                     </div>
-                    <button type="submit" class="btn btn_dark mb-5" id="submit" >
+                    <button type="submit" class="btn btn_dark mb-5" onclick="luu()">
                       <span>
                         <small>Đăng ký ngay</small>
                         <small>Đăng ký ngay</small>

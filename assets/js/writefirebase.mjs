@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-import { getDatabase, ref, set, get } from "firebase/database";
+import { getDatabase, ref, set } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
@@ -14,13 +14,8 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-
-
-
-
-
-
 function writeUserData(Id, matkhau, email,sothutu) {
+  
   const db = getDatabase();
   set(ref(db, 'users/'+sothutu), {
     id:Id,
@@ -29,7 +24,18 @@ function writeUserData(Id, matkhau, email,sothutu) {
     
   });
 }
-writeUserData("5","ngovanminh","NVM@gmai.com",5)
+function save(){
+  const matkhau = document.getElementById("matkhau").value;
+        const email =document.getElementById("email").value;
+        const sluong = 5;
+        console.log(matkhau)
+        console.log(email)
+        console.log(sluong)
+        writeUserData(sluong+1,matkhau,email,sluong+1)
+  writeUserData("5","ngovanminh","NVM@gmai.com",5)
+}
+
 console.log('xong')
+
 
 

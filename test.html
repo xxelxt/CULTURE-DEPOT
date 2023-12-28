@@ -6,13 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <!-- Import the test function from readfilebase.mjs -->
-  <script type="module" src="assets/js/readfilebase.mjs" defer></script>
-  <script src="assets/js/firebase.js" type="module" defer></script>
+ 
 </head>
 <body>
   <!-- Call the test function when clicking -->
   <a id="clickMe">click me</a>
+  <a onclick="ma()">CLICKME</a>
 
   <script type="module">
     // Wait for the DOM to be ready before adding the click event
@@ -21,5 +20,10 @@
       document.getElementById('clickMe').addEventListener('click', window.test);
     });
   </script>
+  <script>
+  function ma(){
+    alert('haha');
+    console.log('test')
+  }</script>
 </body>
 </html>

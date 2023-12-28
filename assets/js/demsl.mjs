@@ -2,7 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 
-import { getDatabase, ref, set, get } from "firebase/database";
+import { getDatabase, ref, get } from "firebase/database";
 function dem(){
 const firebaseConfig = {
     apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
@@ -37,7 +37,7 @@ async function countUsers() {
     }
   }
   
-  let m;
+  var m;
   countUsers().then(result => {
     m = result;
     console.log(m);
@@ -47,3 +47,4 @@ async function countUsers() {
 
   return m;
 }
+dem()
