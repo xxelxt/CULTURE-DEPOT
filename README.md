@@ -44,10 +44,10 @@ Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể
 | blog_detail     | x                      |
 | event           | x                      |
 | event_detail    | x                      |
-| aboutus         |                        |
+| aboutus         | x                      |
 | contactus       | x                      |
-| login           |                        |
-| signup          |                        |
+| login           | x                      |
+| signup          | x                      |
 | 404             |                        |
 
 ### 🚀 Framework và thư viện sử dụng

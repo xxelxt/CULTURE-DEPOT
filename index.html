@@ -166,11 +166,13 @@
 		}
 
 		/* Hide left and right controls on small screens */
-    @media (max-width: 768px) {
-        .carousel-control-prev, .carousel-control-next {
-            display: none;
-        }
-    }
+		@media (max-width: 768px) {
+
+			.carousel-control-prev,
+			.carousel-control-next {
+				display: none;
+			}
+		}
 	</style>
 
 </head>
@@ -195,8 +197,7 @@
 					<div class="col col-lg-3 col-5">
 						<div class="site_logo">
 							<a class="site_link" href="index.html">
-								<img src="assets/images/culture-depot-logo.webp" width="70px"
-									alt="Culture Depot">
+								<img src="assets/images/culture-depot-logo.webp" width="70px" alt="Culture Depot">
 							</a>
 						</div>
 					</div>
@@ -376,7 +377,8 @@
 										<div class="col col-lg-5">
 											<div class="banner_image_1 decoration_wrap">
 												<div class="image_wrap">
-													<img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/ngoithunhatsoit01.jpg?v=1696216738573"
+													<img
+														src="https://bizweb.dktcdn.net/thumb/1024x1024/100/363/455/products/ngoithunhatsoit01.jpg?v=1696216738573"
 														style="width: 100%;" alt="Ngôi thứ nhất số ít">
 												</div>
 											</div>
@@ -1594,8 +1596,7 @@
 						<div class="footer_widget">
 							<div class="site_logo">
 								<a class="site_link" href="index.html">
-									<img src="assets/images/culture-depot-logo.webp" width="150px"
-										alt="Culture Depot">
+									<img src="assets/images/culture-depot-logo.webp" width="150px" alt="Culture Depot">
 								</a>
 							</div>
 							<p>
@@ -1812,61 +1813,61 @@
 		}
 	</script>
 
-<script>
-	function adjustHeights() {
+	<script>
+		function adjustHeights() {
 			var maxHeightCarouselItem = 0;
 			var maxHeightContentWrap = 0;
 
 			// Tìm chiều cao lớn nhất của carousel-item
-			$('#carouselExample .carousel-item').each(function() {
-					var thisHeight = $(this).height();
-					if (thisHeight > maxHeightCarouselItem) {
-							maxHeightCarouselItem = thisHeight; // Cập nhật chiều cao lớn nhất
-					}
+			$('#carouselExample .carousel-item').each(function () {
+				var thisHeight = $(this).height();
+				if (thisHeight > maxHeightCarouselItem) {
+					maxHeightCarouselItem = thisHeight; // Cập nhật chiều cao lớn nhất
+				}
 			});
 
 			// Tìm chiều cao lớn nhất của content-wrap
-			$('#carouselExample .carousel-item .content_wrap').each(function() {
-					var thisHeight = $(this).height();
-					if (thisHeight > maxHeightContentWrap) {
-							maxHeightContentWrap = thisHeight; // Cập nhật chiều cao lớn nhất
-					}
+			$('#carouselExample .carousel-item .content_wrap').each(function () {
+				var thisHeight = $(this).height();
+				if (thisHeight > maxHeightContentWrap) {
+					maxHeightContentWrap = thisHeight; // Cập nhật chiều cao lớn nhất
+				}
 			});
 
 			// Thiết lập chiều cao cho carousel-inner và mỗi content_wrap
 			$('.carousel-inner').height(maxHeightCarouselItem);
 			$('.content_wrap').height(maxHeightContentWrap);
-	}
+		}
 
-	// Chạy hàm khi tài liệu sẵn sàng và khi cửa sổ được thay đổi kích thước
-	$(document).ready(adjustHeights);
-	$(window).resize(adjustHeights);
-</script>
+		// Chạy hàm khi tài liệu sẵn sàng và khi cửa sổ được thay đổi kích thước
+		$(document).ready(adjustHeights);
+		$(window).resize(adjustHeights);
+	</script>
 
 
-<script>
-	$(document).ready(function() {
+	<script>
+		$(document).ready(function () {
 			// Check if touch is supported
 			if ('ontouchstart' in document.documentElement) {
-					// Enable swipe for Bootstrap Carousel
-					$(".carousel").on("touchstart", function(event){
-							var xClick = event.originalEvent.touches[0].pageX;
-							$(this).one("touchmove", function(event){
-									var xMove = event.originalEvent.touches[0].pageX;
-									if( Math.floor(xClick - xMove) > 5 ){
-											$(this).carousel('next');
-									}
-									else if( Math.floor(xClick - xMove) < -5 ){
-											$(this).carousel('prev');
-									}
-							});
-							$(".carousel").on("touchend", function(){
-									$(this).off("touchmove");
-							});
+				// Enable swipe for Bootstrap Carousel
+				$(".carousel").on("touchstart", function (event) {
+					var xClick = event.originalEvent.touches[0].pageX;
+					$(this).one("touchmove", function (event) {
+						var xMove = event.originalEvent.touches[0].pageX;
+						if (Math.floor(xClick - xMove) > 5) {
+							$(this).carousel('next');
+						}
+						else if (Math.floor(xClick - xMove) < -5) {
+							$(this).carousel('prev');
+						}
 					});
+					$(".carousel").on("touchend", function () {
+						$(this).off("touchmove");
+					});
+				});
 			}
-	});
-</script>
+		});
+	</script>
 
 </body>
 
