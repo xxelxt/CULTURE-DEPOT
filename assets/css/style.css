@@ -3845,7 +3845,7 @@ blockquote p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #FFD32B;
+  background-color: #ff9a5f;
   -webkit-box-shadow: 2px 2px 30px rgba(31, 29, 13, 0.0894963), 4px 4px 0 0 #06121a;
           box-shadow: 2px 2px 30px rgba(31, 29, 13, 0.0894963), 4px 4px 0 0 #06121a;
 }
