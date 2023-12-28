@@ -578,7 +578,7 @@
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>Haruki Murakami</b></span>
+                      <span><b>HARUKI MURAKAMI</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
@@ -619,7 +619,7 @@
                   <ul class="meta_info_list unordered_list">
                     <li>
                       <i class="fas fa-pen-nib"></i>
-                      <span><b>Kevin Chen</b></span>
+                      <span><b>KEVIN CHEN</b></span>
                     </li>
                   </ul>
                   <h3 class="item_title">
@@ -1763,6 +1763,45 @@ function filterBooks() {
       checkbox.addEventListener('change', filterBooksByCriteria);
     });
   </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCategoryCounts();
+    updateCountryCounts();
+  });
+
+  function updateCategoryCounts() {
+    const categoryCounts = {};
+    document.querySelectorAll('.book').forEach(book => {
+      const category = book.getAttribute('data-category');
+      categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    });
+
+    document.querySelectorAll('.filter-category').forEach(checkbox => {
+      const category = checkbox.value;
+      const count = categoryCounts[category] || 0;
+      const label = checkbox.nextElementSibling;
+      label.querySelector('span:last-child').textContent = `(${count})`;
+    });
+  }
+
+  function updateCountryCounts() {
+    const countryCounts = {};
+    document.querySelectorAll('.book').forEach(book => {
+      const country = book.getAttribute('data-country');
+      countryCounts[country] = (countryCounts[country] || 0) + 1;
+    });
+
+    document.querySelectorAll('.filter-country').forEach(checkbox => {
+      const country = checkbox.value;
+      const count = countryCounts[country] || 0;
+      const label = checkbox.nextElementSibling;
+      label.querySelector('span:last-child').textContent = `(${count})`;
+    });
+  }
+
+</script>
+
   <script type="module" src="assets/firebase-newsletter.js"></script>
 
 
