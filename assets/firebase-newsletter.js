@@ -70,6 +70,7 @@ document.querySelector('#submit').addEventListener('click', () => {
     console.log(email)
     console.log(sluong)
     writeUserData(email, sluong + 1)
+    alert("Đăng ký thành công"+email)
 
 
     console.log('xong2')
