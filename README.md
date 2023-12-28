@@ -42,8 +42,8 @@ Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể
 | book_detail     | x                      |
 | blog            |                        |
 | blog_detail     | x                      |
-| event           |                        |
-| event_detail    |                        |
+| event           | x                      |
+| event_detail    | x                      |
 | aboutus         |                        |
 | contactus       |                        |
 | login           |                        |
