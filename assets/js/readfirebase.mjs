@@ -22,7 +22,19 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Export the test function to make it accessible globally
 
   const dbRef = ref(getDatabase(firebaseApp));
-  get(child(dbRef, 'users/1')).then((snapshot) => {
+  get(child(dbRef, 'users')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      console.log('xong')
+    } else {
+      console.log('No data available');
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+
+
+  get(child(dbRef, 'Customers sign up to receive mail')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
       console.log('xong')
