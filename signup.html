@@ -213,7 +213,7 @@
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
                 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
                 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
+                import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
                 // Import the functions you need from the SDKs you need
 
 
@@ -264,7 +264,7 @@
                 //   userCountVariable = count;
                 //   console.log('Số lượng người đã được lưu vào biến:', userCountVariable);
                 // });
-
+                
                 function writeUserData(Id, matkhau, email, sothutu) {
 
                   const db = getDatabase();
@@ -276,18 +276,17 @@
                   });
                 }
                 document.querySelector('#submit').addEventListener('click', () => {
-
-
-
-                  console.log('xong')
-                  // function luu(){
                   const matkhau = document.getElementById("matkhau").value;
                   const email = document.getElementById("email").value;
+
+                  // function luu(){
+                  
                   const sluong = m;
                   console.log(matkhau)
                   console.log(email)
                   console.log(sluong)
                   writeUserData(sluong + 1, matkhau, email, sluong + 1)
+                  
                   alert("Đăng ký thành công"+email)
 
 
@@ -295,7 +294,36 @@
                   // }
                   console.log('xong2')
                 })
+                
+                  // const auth = getAuth();
+                  // const matkhau = document.getElementById("matkhau").value;
+                  // const email = document.getElementById("email").value;
+
+                
+
                 // writeUserData("7","ngovanminh","NVM@gmai.com",7)
+              </script>
+              <script>
+                submit.addEventListener('click',(e)=>{
+                  const email = "NVM11@gmai.comf";
+                  const password = "ngovanminh11";
+                  const auth = getAuth();
+                  createUserWithEmailAndPassword(auth, email,password)
+                    .then((userCredential) => {
+                      // Signed up 
+                      const user = userCredential.user;
+
+                      console.log("xong")
+                      // ...
+                    })
+                    .catch((error) => {
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      console.log('error')
+                      // ..
+                    });
+                })
+                
               </script>
               <form action="#">
                 <div class="register_form signup_login_form">

@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
@@ -31,11 +32,27 @@ function save(){
         console.log(matkhau)
         console.log(email)
         console.log(sluong)
-        writeUserData(sluong+1,matkhau,email,sluong+1)
-  writeUserData("5","ngovanminh","NVM@gmai.com",5)
+       
+  
 }
+writeUserData("11","ngovanminh11","NVM11@gmai.com",11)
 
 console.log('xong')
 
+const email = "NVM11@gmai.comf";
+const password = "ngovanminh11";
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email,password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
 
-
+    console.log("xong")
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log('error')
+    // ..
+  });

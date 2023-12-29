@@ -207,8 +207,54 @@
                     <input type="email" name="email" placeholder="Nhập email hoặc tên tài khoản" id="email" />
                   </div>
                   <div class="form_item">
-                    <input type="password" name="password" placeholder="**********" id="matkhau"/>
+                    <input type="password" name="password" placeholder="**********" id="matkhau" />
                   </div>
+                  <script type="module" defer>
+                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+                    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+                    import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+                    import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+                    const firebaseConfig = {
+                      apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
+                      authDomain: "bookstore-group1.firebaseapp.com",
+                      databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
+                      projectId: "bookstore-group1",
+                      storageBucket: "bookstore-group1.appspot.com",
+                      messagingSenderId: "120255369519",
+                      appId: "1:120255369519:web:5f29ed02bc55f63b0291da",
+                      measurementId: "G-30HG5R98GF"
+                    };
+
+                    const firebaseApp = initializeApp(firebaseConfig);
+                    const auth = getAuth();
+                    // var email = "NVM11@gmai.comf";
+                    // var password = "ngovanminh11";
+                    document.querySelector('#submit').addEventListener('click', () => {
+                      
+                    const password= document.getElementById("matkhau").value;
+                    const email = document.getElementById("email").value;
+                    signInWithEmailAndPassword(auth, email, password)
+                      .then((userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+
+                        
+                        console.log("đăng nhập thành công")
+                        alert("đăng nhập thành công")
+                        // ...
+                      })
+                      .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log("that bai")
+                        alert("that bai")
+                      });
+
+                    })
+
+                  </script>
                   <div class="remenber_forget row mb-3 align-items-center justify-content-between">
                     <div class="col col-6">
                       <div class="checkbox_item mb-0">
