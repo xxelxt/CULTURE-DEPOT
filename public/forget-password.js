@@ -70,7 +70,7 @@ function forget_pass(){
     console.log(email)
     console.log(sluong)
     writeUserData(email, sluong + 1)
-    alert("Nhận tin từ chúng mình nhé"+email)
+    alert("Thế sao không ghi là đường link đăng nhập đã được gửi về mail bạn "+email)
     
 
 
