@@ -1245,15 +1245,19 @@
 
   <script>
     function activateFirstPageLink() {
-      const firstPageLink = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
-      if (firstPageLink) {
-        firstPageLink.click();
-      }
-    }
+  const firstPageLink = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
+  if (firstPageLink) {
+    firstPageLink.click();
+    highlightCurrentPage(1);
+  }
+}
 
     document.addEventListener("DOMContentLoaded", function () {
       activateFirstPageLink();
     });
+
+    var filteredNews = [];
+
 
     var checkboxes = document.querySelectorAll('input[name="theloai"]');
     checkboxes.forEach(function (checkbox) {
@@ -1262,112 +1266,128 @@
       });
     });
 
-    function updateNewsDisplayBasedOnFilters() {
-      var anyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    var filteredNews = [];
 
-      if (!anyCheckboxChecked) {
-        activateFirstPageLink();
-      } else {
-        applyFilters();
-      }
-    }
 
     function applyFilters() {
-      const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
-        .map(checkbox => checkbox.parentNode.querySelector('span').innerText.trim().toLowerCase());
-      const newsItems = document.querySelectorAll('.course_card.list_layout');
+  const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
+    .map(checkbox => checkbox.parentNode.querySelector('span').innerText.trim().toLowerCase());
+  const newsItems = document.querySelectorAll('.course_card.list_layout');
 
-      // Reset display of all news items
-      newsItems.forEach(item => item.style.display = '');
+  // Reset the filtered news array
+  filteredNews = [];
 
-      newsItems.forEach(item => {
-        const category = item.querySelector(".tentheloai").innerText.trim().toLowerCase();
-        item.style.display = filterValues.includes(category) ? '' : 'none';
-      });
-
-      // Count visible news items
-      const visibleNewsCount = Array.from(newsItems).filter(item => item.style.display !== 'none').length;
-
-      // Update pagination
-      updatePagination(Math.ceil(visibleNewsCount / 9));
+  newsItems.forEach(item => {
+    const category = item.querySelector(".tentheloai").innerText.trim().toLowerCase();
+    if (filterValues.includes(category)) {
+      filteredNews.push(item);
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
     }
+  });
+
+  // Update pagination based on filtered news
+  updatePagination(Math.ceil(filteredNews.length / 9));
+  changePage(null, 1);
+  highlightCurrentPage(1);
+}
+
 
     function updatePagination(totalPages) {
-      const paginationNav = document.getElementById('paginationNav');
-      paginationNav.innerHTML = '';
+  const paginationNav = document.getElementById('paginationNav');
+  paginationNav.innerHTML = '';
 
-      // Add 'Previous' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+  // Thêm nút 'Previous'
+  paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
 
-      // Generate page links
-      for (let i = 1; i <= totalPages; i++) {
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
-      }
+  // Tạo liên kết cho từng trang
+  for (let i = 1; i <= totalPages; i++) {
+    paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+  }
 
-      // Add 'Next' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+  // Thêm nút 'Next'
+  paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
 
-      // Default to first page
-      changePage(null, 1);
+  // Đặt trang đầu tiên làm hoạt động
+  if (paginationNav.children[1]) {
+    paginationNav.children[1].classList.add('active');
+  }
+}
+
+function highlightCurrentPage(page) {
+  const paginationNav = document.getElementById('paginationNav');
+  const pageLinks = paginationNav.querySelectorAll('li a');
+
+  pageLinks.forEach(link => {
+    if (link.textContent == page.toString()) {
+      link.parentElement.classList.add('active');
+    } else {
+      link.parentElement.classList.remove('active');
     }
-
-    function changePage(event, page) {
-      event.preventDefault();
-
-      const newsPerPage = 9;
-      const news = document.querySelectorAll('.course_card.list_layout');
-      const totalPages = Math.ceil(news.length / newsPerPage);
-
-      const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
-
-      if (page === 'prev' && currentPage > 1) {
-        page = currentPage - 1;
-      } else if (page === 'next' && currentPage < totalPages) {
-        page = currentPage + 1;
-      }
-
-      // If the clicked page is within the valid range, update the pagination
-      if (page >= 1 && page <= totalPages) {
-        // Remove existing page links
-        const paginationNav = document.getElementById('paginationNav');
-        paginationNav.innerHTML = '';
-
-        // Add 'Previous' button
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
-        // Generate page links
-        for (let i = 1; i <= totalPages; i++) {
-          paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
-        }
-
-        // Add 'Next' button
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
-
-        // Highlight the clicked page number
-        const selectedPageItem = document.querySelector(`.pagination_nav a[href="#!"][onclick="changePage(event, ${page})"]`).parentElement;
-        if (selectedPageItem) {
-          selectedPageItem.classList.add('active');
-        }
-
-        // Hide all news
-        news.forEach(newsItem => {
-          newsItem.style.display = 'none';
-        });
-
-        // Show the news for the selected page
-        const displayStyle = window.innerWidth < 480 ? 'block' : 'flex';
-
-        for (let i = (page - 1) * newsPerPage; i < page * newsPerPage && i < news.length; i++) {
-          news[i].style.display = displayStyle;
-        }
+  });
+}
 
 
-        // Scroll to the pagination section
-        if (event.isTrusted) {
-          document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+function changePage(event, page) {
+  if (event) {
+    event.preventDefault();
+  }
+
+  const newsPerPage = 9;
+  let totalPages = Math.ceil(filteredNews.length / newsPerPage);
+
+  if (filteredNews.length === 0) {
+    // Handle case where no filters are applied
+    filteredNews = Array.from(document.querySelectorAll('.course_card.list_layout'));
+    totalPages = Math.ceil(filteredNews.length / newsPerPage);
+  }
+
+  const currentPage = parseInt(document.querySelector('.pagination_nav li.active a').textContent);
+
+  if (page === 'prev' && currentPage > 1) {
+    page = currentPage - 1;
+  } else if (page === 'next' && currentPage < totalPages) {
+    page = currentPage + 1;
+  }
+
+  if (page >= 1 && page <= totalPages) {
+    const start = (page - 1) * newsPerPage;
+    const end = start + newsPerPage;
+
+    // Update pagination
+    updatePagination(totalPages);
+    highlightCurrentPage(page);
+
+    // Hide all news and then show only the news for the current page
+    document.querySelectorAll('.course_card.list_layout').forEach(item => item.style.display = 'none');
+    filteredNews.slice(start, end).forEach(item => item.style.display = 'flex');
+
+    if (event && event.isTrusted) {
+      document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
     }
+  }
+}
+
+
+
+
+
+
+
+    
+
+    function updateNewsDisplayBasedOnFilters() {
+  var anyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+  if (!anyCheckboxChecked) {
+    filteredNews = Array.from(document.querySelectorAll('.course_card.list_layout'));
+    filteredNews.forEach(item => item.style.display = '');
+    updatePagination(Math.ceil(filteredNews.length / 9));
+    changePage(null, 1); // Reset xem trang đầu tiên
+  } else {
+    applyFilters();
+  }
+}
 
   </script>
 
