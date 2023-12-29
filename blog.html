@@ -1273,24 +1273,43 @@
     }
 
     function applyFilters() {
-  const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
-    .map(checkbox => checkbox.parentNode.querySelector('span').innerText.trim().toLowerCase());
-  const newsItems = document.querySelectorAll('.course_card.list_layout');
+      const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
+        .map(checkbox => checkbox.parentNode.querySelector('span').innerText.trim().toLowerCase());
+      const newsItems = document.querySelectorAll('.course_card.list_layout');
 
-  // Reset display of all news items
-  newsItems.forEach(item => item.style.display = '');
+      // Reset display of all news items
+      newsItems.forEach(item => item.style.display = '');
 
-  newsItems.forEach(item => {
-    const category = item.querySelector(".tentheloai").innerText.trim().toLowerCase();
-    item.style.display = filterValues.includes(category) ? '' : 'none';
-  });
+      newsItems.forEach(item => {
+        const category = item.querySelector(".tentheloai").innerText.trim().toLowerCase();
+        item.style.display = filterValues.includes(category) ? '' : 'none';
+      });
 
-  // Recalculate pagination based on the filtered results
-  changePage(null, 1);
-}
+      // Count visible news items
+      const visibleNewsCount = Array.from(newsItems).filter(item => item.style.display !== 'none').length;
 
+      // Update pagination
+      updatePagination(Math.ceil(visibleNewsCount / 9));
+    }
 
-    
+    function updatePagination(totalPages) {
+      const paginationNav = document.getElementById('paginationNav');
+      paginationNav.innerHTML = '';
+
+      // Add 'Previous' button
+      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+
+      // Generate page links
+      for (let i = 1; i <= totalPages; i++) {
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
+      }
+
+      // Add 'Next' button
+      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
+
+      // Default to first page
+      changePage(null, 1);
+    }
 
     function changePage(event, page) {
       event.preventDefault();
