@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-  <title>Đăng nhập | Culture Depot</title>
+  <title>Đăng ký | Culture Depot</title>
   <link rel="shortcut icon" href="assets/images/culture-depot-logo.webp">
 
   <!-- Framework - CSS Include -->
@@ -33,6 +33,10 @@
 
   <!-- Custom - CSS Include -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script></script>
+
+
+
 </head>
 
 <body>
@@ -40,7 +44,7 @@
   <div class="page_wrapper">
     <!-- Back To Top - Start -->
     <div class="backtotop">
-      <a class="scroll">
+      <a href="#" class="scroll">
         <i class="far fa-arrow-up"></i>
       </a>
     </div>
@@ -200,86 +204,179 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col col-lg-5">
-              <h1 class="register_heading text-center">Đăng nhập</h1>
+              <h1 class="register_heading text-center">Tạo tài khoản</h1>
+              <p class="register_heading_description text-center">
+                Bạn đã có tài khoản? <a href="login.html" style="color: black; text-decoration: underline;">Đăng
+                  nhập</a>
+              </p>
+              <script type="module" defer>
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+                import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+                import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+                // Import the functions you need from the SDKs you need
+
+
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
+                  authDomain: "bookstore-group1.firebaseapp.com",
+                  databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
+                  projectId: "bookstore-group1",
+                  storageBucket: "bookstore-group1.appspot.com",
+                  messagingSenderId: "120255369519",
+                  appId: "1:120255369519:web:5f29ed02bc55f63b0291da",
+                  measurementId: "G-30HG5R98GF"
+                };
+
+                // Initialize Firebase
+                const firebaseApp = initializeApp(firebaseConfig);
+                var m = 0;
+                  try {
+                    const db = getDatabase();
+                    const usersRef = ref(db, 'users');
+                    const snapshot = await get(usersRef);
+
+                    if (snapshot.exists()) {
+                      const userCount = Object.keys(snapshot.val()).length;
+                      console.log(`Số lượng người trong cơ sở dữ liệu: ${userCount}`);
+                      console.log(userCount);
+                      m=userCount;
+                    } else {
+                      console.log('Không có dữ liệu người trong cơ sở dữ liệu.');
+                      
+                    }
+                  } catch (error) {
+                    console.error('Lỗi khi đếm số lượng người:', error);
+                    throw error; // Re-throw the error
+                  }
+                
+
+                // Lấy số lượng người và lưu vào biến
+                let userCountVariable;
+                console.log(m)
+
+                // getUserCount().then((count) => {
+                //   userCountVariable = count;
+                //   console.log('Số lượng người đã được lưu vào biến:', userCountVariable);
+                // });
+                
+                function writeUserData(Id, matkhau, email, sothutu) {
+
+                  const db = getDatabase();
+                  set(ref(db, 'users/' + sothutu), {
+                    id: Id,
+                    matkhau: matkhau,
+                    email: email,
+
+                  });
+                }
+                document.querySelector('#submit').addEventListener('click', () => {
+                  const matkhau = document.getElementById("matkhau").value;
+                  const email = document.getElementById("email").value;
+
+                  // function luu(){
+                  
+                  const sluong = m;
+                  console.log(matkhau)
+                  console.log(email)
+                  console.log(sluong)
+                  writeUserData(sluong + 1, matkhau, email, sluong + 1)
+                  
+                  alert("Đăng ký thành công"+email)
+                  window.location.href = "login.html";
+
+
+                  // console.log('xong')
+                  // }
+                  console.log('xong2')
+                })
+                
+                  // const auth = getAuth();
+                  // const matkhau = document.getElementById("matkhau").value;
+                  // const email = document.getElementById("email").value;
+
+                
+
+                // writeUserData("7","ngovanminh","NVM@gmai.com",7)
+              </script>
+              <!-- <script>
+
+
+
+
+                document.querySelectorAll('#submit2').addEventListener('click', () => {
+                  const email = "NVM11@gmai.comf";
+                  const password = "ngovanminh11";
+                  const auth = getAuth();
+                  createUserWithEmailAndPassword(auth, email,password)
+                    .then((userCredential) => {
+                      // Signed up 
+                      const user = userCredential.user;
+
+                      console.log("xong")
+                      // ...
+                    })
+                    .catch((error) => {
+                      const errorCode = error.code;
+                      const errorMessage = error.message;
+                      console.log('error')
+                      // ..
+                    });
+                })
+                
+              </script> -->
               <form action="#">
                 <div class="register_form signup_login_form">
                   <div class="form_item">
-                    <input type="email" name="email" placeholder="Nhập email hoặc tên tài khoản" id="email" />
+                    <input type="email" name="email" placeholder="Email" id="email" />
                   </div>
                   <div class="form_item">
-                    <input type="password" name="password" placeholder="**********" id="matkhau" />
+                    <input type="password" name="createpassword" placeholder="Mật khẩu" id="matkhau" />
                   </div>
-                  <script type="module" defer>
-                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-                    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-                    import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-                    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-
-                    const firebaseConfig = {
-                      apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
-                      authDomain: "bookstore-group1.firebaseapp.com",
-                      databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
-                      projectId: "bookstore-group1",
-                      storageBucket: "bookstore-group1.appspot.com",
-                      messagingSenderId: "120255369519",
-                      appId: "1:120255369519:web:5f29ed02bc55f63b0291da",
-                      measurementId: "G-30HG5R98GF"
-                    };
-
-                    const firebaseApp = initializeApp(firebaseConfig);
-                    const auth = getAuth();
-                    // var email = "NVM11@gmai.comf";
-                    // var password = "ngovanminh11";
-                    document.querySelector('#submit').addEventListener('click', () => {
-
-                      const password = document.getElementById("matkhau").value;
-                      const email = document.getElementById("email").value;
-                      signInWithEmailAndPassword(auth, email, password)
-                        .then((userCredential) => {
-                          // Signed in 
-                          const user = userCredential.user;
-
-
-                          console.log("đăng nhập thành công")
-                          alert("đăng nhập thành công")
-                          window.location.href = "index.html";
-                        })
-                        .catch((error) => {
-                          const errorCode = error.code;
-                          const errorMessage = error.message;
-                          console.log("that bai")
-                          alert("that bai")
-                        });
-
-                    })
-
-                  </script>
-                  <script type="module" src="assets/forget-password.js"></script>
-                  <div class="remenber_forget row mb-3 align-items-center justify-content-between">
-                    <div class="col col-6">
-                      <div class="checkbox_item mb-0">
-                        <input id="checkbox_remenber" type="checkbox" />
-                        <label for="checkbox_remenber">Nhớ mật khẩu</label>
-                      </div>
-                    </div>
-                    <div class="col col-6">
-                      <div class="forget_password text-end">
-                        <!-- <a href="#!" style="color: black; text-decoration: underline;" id="forget_password" onclick="forget_pass()">Quên mật khẩu</a> -->
-                        <button type="submit" id="quenmk">Quên mật khẩu</button>
-                      </div>
-                    </div>
+                  <div class="form_item">
+                    <input type="password" name="confirmpassword" placeholder="Xác nhận mật khẩu" id="xacnhanmk" />
                   </div>
                   <button type="submit" class="btn btn_dark mb-5" id="submit">
+                    
+                  
                     <span>
-                      <small>Đăng nhập</small>
-                      <small>Đăng nhập</small>
+                      <small>Đăng ký</small>
+                      <small>Đăng ký</small>
                     </span>
-                  </button>
-                  <p class="mb-0 text-center">
-                    Bạn chưa có tài khoản?
-                    <a href="signup.html" style="color: black; text-decoration: underline;">Đăng ký</a>
-                  </p>
+                  </button> 
+                  <!-- <button type="submit" class="btn btn_dark mb-5" id="submit2">
+                    
+                  
+                    <span>
+                      <small>Đăng ký</small>
+                      <small>Đăng ký</small>
+                    </span>
+                  </button> -->
+
+                  <p class="text-center">Hoặc đăng nhập với</p>
+
+                  <ul class="social_links unordered_list_center">
+                    <li>
+                      <a href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.google.com/">
+                        <i class="fab fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </form>
             </div>
@@ -314,9 +411,7 @@
                 </p>
                 <ul class="social_links unordered_list">
                   <li>
-                    <a href="https://www.facebook.com/nhanampublishing">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
+                    <a href="https://www.facebook.com/nhanampublishing"><i class="fab fa-facebook-f"></i></a>
                   </li>
                   <li>
                     <a href="https://www.youtube.com/@NhanamVideoChannel"><i class="fab fa-youtube"></i></a>
@@ -471,79 +566,13 @@
 
   <!-- Vanilla Calendar - Jquery Include -->
   <script src="assets/js/vanilla-calendar.min.js"></script>
-
   <!-- Custom - Jquery Include -->
   <script src="assets/js/main.js"></script>
-  <script type="module" defer>
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-    import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
-    // Import the functions you need from the SDKs you need
-
-
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    
-
-    // Initialize Firebase
-    
-    var m = 0;
-    try {
-      const db = getDatabase();
-      const usersRef = ref(db, 'customer forgot password');
-      const snapshot = await get(usersRef);
-
-      if (snapshot.exists()) {
-        const userCount = Object.keys(snapshot.val()).length;
-        console.log(`Số lượng người trong cơ sở dữ liệu: ${userCount}`);
-        console.log(userCount);
-        m = userCount;
-      } else {
-        console.log('Không có dữ liệu người trong cơ sở dữ liệu.');
-
-      }
-    } catch (error) {
-      console.error('Lỗi khi đếm số lượng người:', error);
-      throw error; // Re-throw the error
-    }
-
-
-    // Lấy số lượng người và lưu vào biến
-    let userCountVariable;
-    console.log(m)
 
 
 
-    function writeUserData(email, sothutu) {
-
-      const db = getDatabase();
-      set(ref(db, 'customer forgot password/' + sothutu), {
-        gmail: email,
-
-      });
-    }
-    document.querySelector('#quenmk').addEventListener('click', () => {
 
 
-
-      console.log('xong')
-      // function luu(){
-      const email = document.getElementById("email").value;
-      const sluong = m;
-
-      console.log(email)
-      console.log(sluong)
-      writeUserData(email, sluong + 1)
-      alert("Chờ phản hồi từ chúng mình nhé" + email)
-
-
-      console.log('xong2')
-    })
-  </script>
 </body>
 
 </html>
