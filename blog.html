@@ -973,38 +973,6 @@
             <div class="col col-lg-3">
               <aside class="sidebar filter_offcanvas">
                 <div class="widget">
-                  <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_category"
-                    aria-expanded="true" aria-controls="collapse_category">
-                    Phân loại
-                  </div>
-                  <!-- <div class="collapse show" id="collapse_category">
-                    <div class="card card-body">
-                      <div class="checkbox_item">
-                        <input id="checkbox_design" type="checkbox">
-                        <label for="checkbox_design"><span>Mới nhất</span></label>
-                      </div>
-                      <div class="checkbox_item">
-                        <input id="checkbox_it_software" type="checkbox">
-                        <label for="checkbox_it_software"><span>Cũ nhất</span></label>
-                      </div>
-                    </div>
-                  </div> -->
-                  <div class="collapse show" id="collapse_category">
-                    <div class="card card-body">
-                      <div class="radio_item">
-                        <input type="radio" id="moinhat" name="time" value="moinhat">
-                        <label for="moinhat"><span>Cũ nhất</span></label>
-                      </div>
-                      <div class="radio_item">
-                        <input type="radio" id="cunhat" name="time" value="cunhat">
-                        <label for="cunhat"><span>Mới nhất</span></label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="widget">
                   <div class="widget_title" role="button" data-bs-toggle="collapse" data-bs-target="#collapse_level"
                     aria-expanded="true" aria-controls="collapse_level">
                     Thể loại
@@ -1282,9 +1250,26 @@
         page1Link.click();
       }
     });
-    // cố gắng tự động kích hoạt một liên kết hoặc nút có sự kiện onclick là "changePage(event, 1)" 
-    // trong phần phân trang của trang web ngay sau khi trang web được tải xong. Điều này có thể được sử dụng 
-    // để chuyển đến trang 1 của một tập dữ liệu được phân trang, chẳng hạn.
+
+    function applyFilters() {
+    const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
+      .map(checkbox => checkbox.parentNode.querySelector('span').innerText);
+    const newsItems = document.querySelectorAll('.course_card.list_layout');
+    let visibleNewsCount = 0;
+
+    newsItems.forEach(item => {
+      const category = item.querySelector(".tentheloai").innerText;
+      if (filterValues.includes(category)) {
+        item.style.display = '';
+        visibleNewsCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    changePage(null, 1); // Reset to page 1 after applying filters
+}
+
 
     function changePage(event, page) {
       event.preventDefault();
@@ -1308,8 +1293,7 @@
         paginationNav.innerHTML = '';
 
         // Add 'Previous' button
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`
         // Generate page links
         for (let i = 1; i <= totalPages; i++) {
           paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
@@ -1341,311 +1325,23 @@
           document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // updatePagination(page);
+        changePage(null, 1);
       }
     }
 
 
-
-  </script>
-  <script>
-    function updatePagination(currentPage) {
-      const newsPerPage = 9;
-      const allNews = document.querySelectorAll('.course_card.list_layout');
-      const visibleNews = Array.from(allNews).filter(news => news.style.display !== 'none');
-      const totalPages = Math.ceil(visibleNews.length / newsPerPage);
-
-      const paginationNav = document.getElementById('paginationNav');
-      paginationNav.innerHTML = '';
-
-      // Thêm 'Previous' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
-      // Thêm các trang
-      for (let i = 1; i <= totalPages; i++) {
-        paginationNav.innerHTML += `<li ${currentPage === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
-      }
-
-      // Thêm 'Next' button
-      paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
-    }
-
-
-
-
-    function timkiem() {
-      const searchItemElement = document.getElementById("search");
-      // Kiểm tra xem phần tử có tồn tại không
-      if (!searchItemElement) {
-        console.error("Không tìm thấy phần tử với ID 'search-item'");
-        return;
-      }
-      else console.log('tham so truyen vao ' + searchItemElement.value.toUpperCase())
-      // const thamsotimkiem = document.getElementById("search").value.toUpperCase();
-      const thamsotimkiem = searchItemElement.value.toUpperCase();
-      const danhsachsanpham = document.getElementById("danhsachsanpham")
-      const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
-      console.log('so luong san pham ' + thongtinchitietsanpham.length)
-      // Lấy div có class "item_content"
-      const tensanpham = document.getElementsByClassName("tensanpham")
-      console.log('ten san pham ' + tensanpham)
-      console.log('so luong ' + tensanpham.length)
-      for (var i = 0; i < tensanpham.length; i++) {
-        let match = thongtinchitietsanpham[i].getElementsByClassName("tensanpham")[0];
-        // duyệt từng ký tự của tên sản phẩm 
-        console.log(thongtinchitietsanpham[i])
-        console.log(match)
-        if (match) {
-          let textvaLue = match.textContent || match.innerHTML
-          // văn bản thuần túy < tên của từng sản phẩm >
-          console.log('nội dung sản phẩm' + textvaLue)
-          let mane = textvaLue.toUpperCase();
-          console.log(mane)
-
-
-          if (textvaLue.toUpperCase().indexOf(thamsotimkiem) > -1) {
-            console.log("phat hien")
-            thongtinchitietsanpham[i].style.display = "";
-          } else {
-            thongtinchitietsanpham[i].style.display = "none";
-            console.log("loai bo")
-          }
-        }
-
-      }
-
-
-      changePage(null, 1);
-    }
-
-
-
-
-  </script>
-
-  <script>
     var checkboxes = document.getElementsByName('theloai');
     var luachon = [];
 
     checkboxes.forEach(function (checkbox) {
       checkbox.addEventListener('change', function () {
-        var spanText = checkbox.parentNode.querySelector('span').innerText;
-        if (this.checked) {
-          console.log('Checkbox ' + this.id + ' is checked');
-          // Thêm logic xử lý khi checkbox được chọn ở đây
-          // let spanText = checkbox.parentNode.querySelector('span').innerText;
-          console.log('Thông tin trong span: ' + spanText);
-          const searchItemElement = spanText;
-          luachon.push(spanText);
-          // Kiểm tra xem phần tử có tồn tại không
-
-
-
-        } else {
-          console.log('Checkbox ' + this.id + ' is unchecked');
-          // Thêm logic xử lý khi checkbox được bỏ chọn ở đây
-          var index = luachon.indexOf(spanText);
-          if (index !== -1) {
-            luachon.splice(index, 1);
-          }
-
-        }
-        console.log('Mảng giá trị đã chọn:', luachon);
-        var tonghop = luachon.join(', ');
-        let m = luachon.length;
-        //for(var i=0;i<m;i++){
-        //  const thamsotimkiem = luachon[i];
-        const thamsotimkiem = tonghop;
-        const danhsachsanpham = document.getElementById("danhsachsanpham")
-        const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
-        console.log('so luong san pham ' + thongtinchitietsanpham.length)
-        // Lấy div có class "item_content"
-        const tentheloai = document.getElementsByClassName("tentheloai")
-        console.log('ten san pham ' + tentheloai)
-        console.log('so luong ' + tentheloai.length)
-        for (var i = 0; i < tentheloai.length; i++) {
-          let match = thongtinchitietsanpham[i].getElementsByClassName("tentheloai")[0];
-          // duyệt từng ký tự của tên sản phẩm 
-          console.log(thongtinchitietsanpham[i])
-          console.log(match)
-          if (match) {
-            let textvaLue = match.textContent || match.innerHTML
-            // văn bản thuần túy < tên của từng sản phẩm >
-            console.log('nội dung sản phẩm' + textvaLue)
-
-
-            if (textvaLue.indexOf(thamsotimkiem) > -1) {
-              console.log("phat hien")
-              thongtinchitietsanpham[i].style.display = "";
-            } else {
-              thongtinchitietsanpham[i].style.display = "none";
-              console.log("loai bo")
-            }
-          }
-
-        }
-        updatePagination(1);
-
-
-        //}
-
+        applyFilters();
       });
     });
   </script>
 
-  <script>
-    // lấy ra thông tin về ngày đăng của từng bài viết
-    function thoigian_(thongtinchitietsanpham_) {
-      tt = thongtinchitietsanpham_
-      var spanElement = tt.querySelector('.meta_info_list span[datetime]');
-      console.log(spanElement)
-      // Get the datetime attribute value
-      console.log("----------------------------------------------");
-      var datetimeValue = spanElement.getAttribute('datetime');
-      console.log(datetimeValue);
-      console.log("----------------------------------------------");
-      // Convert the datetime string to a Date object
-      var dateObject = new Date(datetimeValue);
-      // Get the day, month, and year
-      var day = dateObject.getDate();
-      var month = dateObject.getMonth() + 1;
-      var year = dateObject.getFullYear();
-      var newDate = new Date(year, month - 1, day);
 
-      // Display the extracted date and month
-      return newDate;
-
-    }
-
-
-  </script>
-
-  <script>
-    // Lấy tất cả các radio button
-    var radioButtons = document.querySelectorAll('input[type="radio"][name="time"]');
-
-    // Thêm sự kiện change cho mỗi radio button
-    radioButtons.forEach(function (radio) {
-      radio.addEventListener('change', function () {
-        // Kiểm tra xem radio button có được chọn hay không
-        if (radio.checked) {
-          // Lấy giá trị của radio button được chọn
-          var selectedValue = radio.value;
-          console.log("Đã chọn: " + selectedValue);
-
-          if (selectedValue === 'moinhat') {
-            const danhsachsanpham = document.getElementById("danhsachsanpham")
-            const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
-            console.log('so luong san pham ' + thongtinchitietsanpham.length)
-            const soluongsp = thongtinchitietsanpham.length
-            console.log(soluongsp)
-            for (var i = 0; i < soluongsp - 1; i++) {
-              for (var j = i + 1; j < soluongsp; j++) {
-                if (thoigian_(thongtinchitietsanpham[i]) < thoigian_(thongtinchitietsanpham[j])); {
-                  console.log(thoigian_(thongtinchitietsanpham[i]) + 'be hon' + thoigian_(thongtinchitietsanpham[j]))
-                  console.log("dao");
-                  var div1 = thongtinchitietsanpham[i];
-                  var div2 = thongtinchitietsanpham[j];
-
-                  // Lấy phần tử cha của cả hai div
-                  var parent = div1.parentNode;
-
-                  // Đảo vị trí giữa div1 và div2 trong DOM
-                  parent.insertBefore(div2, div1);
-                  console.log(thoigian_(thongtinchitietsanpham[i]) + 'be hon hẳn' + thoigian_(thongtinchitietsanpham[j]))
-
-                }
-              }
-            }
-          }
-          else {
-            const danhsachsanpham = document.getElementById("danhsachsanpham")
-            const thongtinchitietsanpham = document.querySelectorAll('.course_card.list_layout');
-            console.log('so luong san pham ' + thongtinchitietsanpham.length)
-            const soluongsp = thongtinchitietsanpham.length
-            console.log(soluongsp)
-            for (var i = 0; i < soluongsp; i++) {
-              for (var j = i + 1; j < soluongsp; j++) {
-                if (thoigian_(thongtinchitietsanpham[i]) > thoigian_(thongtinchitietsanpham[j])); {
-                  console.log(thoigian_(thongtinchitietsanpham[i]) + 'lon hon' + thoigian_(thongtinchitietsanpham[j]))
-                  console.log("dao");
-                  var div1 = thongtinchitietsanpham[i];
-                  var div2 = thongtinchitietsanpham[j];
-
-                  // Lấy phần tử cha của cả hai div
-                  var parent = div1.parentNode;
-
-                  // Đảo vị trí giữa div1 và div2 trong DOM
-                  parent.insertBefore(div2, div1);
-
-                }
-
-
-
-              }
-            }
-          }
-        }
-        updatePagination(1);
-
-      });
-    });
-
-    function calculateAndDisplayPages() {
-      const newsPerPage = 9;
-      const filteredNews = document.querySelectorAll('.course_card.list_layout:not([style*="display: none"])');
-      const totalPages = Math.ceil(filteredNews.length / newsPerPage);
-
-      const paginationNav = document.getElementById('paginationNav');
-      paginationNav.innerHTML = '';
-
-      if (totalPages > 1) {
-        // Thêm nút 'Previous'
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
-
-        // Tạo các trang
-        for (let i = 1; i <= totalPages; i++) {
-          paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
-        }
-
-        // Thêm nút 'Next'
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'next')"><i class="fas fa-long-arrow-right"></i></a></li>`;
-      }
-      changePage(null, 1);
-    }
-
-    function resetNewsDisplay() {
-      const allNewsItems = document.querySelectorAll('.course_card.list_layout');
-
-      // Hiển thị 9 tin đầu tiên
-      allNewsItems.forEach((item, index) => {
-        item.style.display = index < 9 ? '' : 'none';
-      });
-
-      // Cập nhật phân trang
-      updatePagination(1);
-    }
-
-    // Gọi hàm lọc tin tức khi thay đổi bất kỳ bộ lọc nào
-    checkboxes.forEach(function (checkbox) {
-      checkbox.addEventListener('change', filterNews);
-    });
-
-    radios.forEach(function (radio) {
-      radio.addEventListener('change', filterNews);
-    });
-
-    // Lần đầu tiên tải trang, tính toán và hiển thị các trang
-    resetNewsDisplay();
-    calculateAndDisplayPages();
-
-
-  </script>
   <script type="module" src="assets/firebase-newsletter.js"></script>
-
-
-
-
 </body>
 
 </html>
