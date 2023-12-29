@@ -232,7 +232,7 @@
                     // var email = "NVM11@gmai.comf";
                     // var password = "ngovanminh11";
                     document.querySelector('#submit').addEventListener('click', () => {
-                      
+
                     const password= document.getElementById("matkhau").value;
                     const email = document.getElementById("email").value;
                     signInWithEmailAndPassword(auth, email, password)
@@ -243,7 +243,7 @@
                         
                         console.log("đăng nhập thành công")
                         alert("đăng nhập thành công")
-                        // ...
+                        window.location.href = "index.html";
                       })
                       .catch((error) => {
                         const errorCode = error.code;
@@ -255,6 +255,7 @@
                     })
 
                   </script>
+                    <script type="module" src="assets/forget-password.js"></script>
                   <div class="remenber_forget row mb-3 align-items-center justify-content-between">
                     <div class="col col-6">
                       <div class="checkbox_item mb-0">
@@ -264,7 +265,7 @@
                     </div>
                     <div class="col col-6">
                       <div class="forget_password text-end">
-                        <a href="#!" style="color: black; text-decoration: underline;">Quên mật khẩu</a>
+                        <a href="#!" style="color: black; text-decoration: underline;" id="forget_password" onclick="forget_pass()">Quên mật khẩu</a>
                       </div>
                     </div>
                   </div>

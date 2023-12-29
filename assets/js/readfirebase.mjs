@@ -35,7 +35,7 @@ const firebaseApp = initializeApp(firebaseConfig);
   });
 
 
-  get(child(dbRef, 'Customers sign up to receive mail')).then((snapshot) => {
+  get(child(dbRef, 'customer forgot password')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
       console.log('xong')
