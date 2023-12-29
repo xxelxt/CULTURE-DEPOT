@@ -1001,7 +1001,7 @@
                       </div>
                       <div class="checkbox_item">
                         <input id="2024" type="checkbox" name="theloai">
-                        <label for="2024"><span>Chào 2024</span></label>
+                        <label for="2024"><span>Chào 2024!</span></label>
                       </div>
                     </div>
                   </div>
@@ -1241,35 +1241,56 @@
   <!-- Custom - Jquery Include -->
   <script src="assets/js/main.js"></script>
 
+  <script type="module" src="assets/firebase-newsletter.js"></script>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // This function will be called when the page is loaded
-      // Simulate a click on page 1
-      const page1Link = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
-      if (page1Link) {
-        page1Link.click();
+    function activateFirstPageLink() {
+      const firstPageLink = document.querySelector('.pagination_nav a[href="#!"][onclick="changePage(event, 1)"]');
+      if (firstPageLink) {
+        firstPageLink.click();
       }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      activateFirstPageLink();
     });
+
+    var checkboxes = document.querySelectorAll('input[name="theloai"]');
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        updateNewsDisplayBasedOnFilters();
+      });
+    });
+
+    function updateNewsDisplayBasedOnFilters() {
+      var anyCheckboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+      if (!anyCheckboxChecked) {
+        activateFirstPageLink();
+      } else {
+        applyFilters();
+      }
+    }
 
     function applyFilters() {
-    const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
-      .map(checkbox => checkbox.parentNode.querySelector('span').innerText);
-    const newsItems = document.querySelectorAll('.course_card.list_layout');
-    let visibleNewsCount = 0;
+  const filterValues = [...document.querySelectorAll('input[name="theloai"]:checked')]
+    .map(checkbox => checkbox.parentNode.querySelector('span').innerText.trim().toLowerCase());
+  const newsItems = document.querySelectorAll('.course_card.list_layout');
 
-    newsItems.forEach(item => {
-      const category = item.querySelector(".tentheloai").innerText;
-      if (filterValues.includes(category)) {
-        item.style.display = '';
-        visibleNewsCount++;
-      } else {
-        item.style.display = 'none';
-      }
-    });
+  // Reset display of all news items
+  newsItems.forEach(item => item.style.display = '');
 
-    changePage(null, 1); // Reset to page 1 after applying filters
+  newsItems.forEach(item => {
+    const category = item.querySelector(".tentheloai").innerText.trim().toLowerCase();
+    item.style.display = filterValues.includes(category) ? '' : 'none';
+  });
+
+  // Recalculate pagination based on the filtered results
+  changePage(null, 1);
 }
 
+
+    
 
     function changePage(event, page) {
       event.preventDefault();
@@ -1293,7 +1314,8 @@
         paginationNav.innerHTML = '';
 
         // Add 'Previous' button
-        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`
+        paginationNav.innerHTML += `<li><a href="#!" onclick="changePage(event, 'prev')"><i class="fas fa-long-arrow-left"></i></a></li>`;
+
         // Generate page links
         for (let i = 1; i <= totalPages; i++) {
           paginationNav.innerHTML += `<li ${page === i ? 'class="active"' : ''}><a href="#!" onclick="changePage(event, ${i})">${i}</a></li>`;
@@ -1320,28 +1342,21 @@
           news[i].style.display = displayStyle;
         }
 
+
         // Scroll to the pagination section
         if (event.isTrusted) {
           document.querySelector('.courses_archive_section').scrollIntoView({ behavior: 'smooth' });
         }
-
-        changePage(null, 1);
       }
     }
 
-
-    var checkboxes = document.getElementsByName('theloai');
-    var luachon = [];
-
-    checkboxes.forEach(function (checkbox) {
-      checkbox.addEventListener('change', function () {
-        applyFilters();
-      });
-    });
   </script>
 
 
-  <script type="module" src="assets/firebase-newsletter.js"></script>
+
+
+
+
 </body>
 
 </html>
