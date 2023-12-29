@@ -33,6 +33,23 @@ Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể
 
 - **Giới thiệu (About us)**: Giới thiệu về câu chuyện của chúng tôi
 
+### 📈 Tiến trình
+
+| Page            | Trạng thái hoàn thành  |
+| --------------- | ---------------------- |
+| index           | x                      |
+| book            |                        |
+| book_detail     | x                      |
+| blog            |                        |
+| blog_detail     | x                      |
+| event           | x                      |
+| event_detail    | x                      |
+| aboutus         | x                      |
+| contactus       | x                      |
+| login           | x                      |
+| signup          | x                      |
+| 404             |                        |
+
 ### 🚀 Framework và thư viện sử dụng
 
 - 
