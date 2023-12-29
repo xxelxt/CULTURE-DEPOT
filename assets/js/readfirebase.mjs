@@ -17,10 +17,16 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 // Xuất hàm test để có thể nhập vào từ tệp HTML
 
+
+
+
+// Export the test function to make it accessible globally
+
   const dbRef = ref(getDatabase(firebaseApp));
   get(child(dbRef, 'users')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
+      console.log('xong')
     } else {
       console.log('No data available');
     }
@@ -29,13 +35,25 @@ const firebaseApp = initializeApp(firebaseConfig);
   });
 
 
-  get(child(dbRef, 'Customer forgot password')).then((snapshot) => {
+  get(child(dbRef, 'customer forgot password')).then((snapshot) => {
     if (snapshot.exists()) {
       console.log(snapshot.val());
+      console.log('xong')
     } else {
       console.log('No data available');
     }
   }).catch((error) => {
     console.error(error);
   });
-  
+
+
+  get(child(dbRef, 'save user information in contact information')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      console.log('xong')
+    } else {
+      console.log('No data available');
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
