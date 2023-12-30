@@ -45,24 +45,24 @@
 		});
 	});
 
-	// wow.js
-	var wow = new WOW({
-		animateClass: 'animated',
-		offset: 100,
-		mobile: true,
-		duration: 400,
-	});
-	wow.init();
+	// // wow.js
+	// var wow = new WOW({
+	// 	animateClass: 'animated',
+	// 	offset: 100,
+	// 	mobile: true,
+	// 	duration: 400,
+	// });
+	// wow.init();
 
-	// Tilt
-	$('.tilt').tilt({
-		maxTilt: 12,
-		perspective: 10000,
-		scale: 1,
-		speed: 10000,
-		glare: false,
-		maxGlare: 1
-	});
+	// // Tilt
+	// $('.tilt').tilt({
+	// 	maxTilt: 12,
+	// 	perspective: 10000,
+	// 	scale: 1,
+	// 	speed: 10000,
+	// 	glare: false,
+	// 	maxGlare: 1
+	// });
 
 	// Dropdown
 	$(document).ready(function () {
@@ -107,7 +107,6 @@
 				return element.find('img');
 			}
 		}
-
 	});
 
 	// Common Carousels

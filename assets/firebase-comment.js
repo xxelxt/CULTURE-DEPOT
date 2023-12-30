@@ -17,26 +17,26 @@ const firebaseApp = initializeApp(firebaseConfig);
 var m = 0;
 try {
 	const db = getDatabase();
-	const usersRef = ref(db, 'Customers sign up to receive mail with messages');
+	const usersRef = ref(db, 'Customers commented');
 	const snapshot = await get(usersRef);
 
 	if (snapshot.exists()) {
 		
 		const userCount = Object.keys(snapshot.val()).length;
 		m=userCount;
-		console.log(`Số mail trong Firebase: ${userCount}`);
+		console.log(`Số bình luận: ${userCount}`);
 	} else {
 		console.log('Không có DL trong CSDL.');
 
 	}
 } catch (error) {
-	console.error('Lỗi khi đếm số mail:', error);
+	console.error('Lỗi khi đếm số bình luận:', error);
 	throw error;
 }
 
 function writeUserData(ten,email,tinnnhan, sothutu) {
 	const db = getDatabase();
-	set(ref(db, 'Customers sign up to receive mail with messages/' + sothutu), {
+	set(ref(db, 'Customers commented/' + sothutu), {
 		name: ten,
 		mess: tinnnhan,
 		email: email,
@@ -51,5 +51,5 @@ document.querySelector('#submit2').addEventListener('click', () => {
 	const sluong = m;
 
 	writeUserData(name,email,tinnnhan, sluong + 1)
-	alert("Cảm ơn về phản hồi của bạn " + name +" nhé");
+	alert("Bình luận của bạn đã được đăng tải");
 })
