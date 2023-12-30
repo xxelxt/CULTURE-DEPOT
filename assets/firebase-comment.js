@@ -34,7 +34,7 @@ try {
 	throw error;
 }
 
-function writeUserData(ten,email,tinnnhan, sothutu) {
+function writeUserData(ten, email, tinnnhan, sothutu) {
 	const db = getDatabase();
 	set(ref(db, 'Customers commented/' + sothutu), {
 		name: ten,

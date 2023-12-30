@@ -184,12 +184,12 @@
 
     <main class="page_content">
 
-      <section class="register_section section_space_lg">
+      <section class="register_section section_space_lg" style="padding: 150px 0px 150px 0px;">
         <div class="container">
           <div class="row justify-content-center">
 
             <div class="col col-lg-5">
-              <h1 class="register_heading text-center">Đăng nhập</h1>
+              <h1 class="register_heading text-center" style="padding-bottom: 30px;">Đăng nhập</h1>
               <form action="#">
                 <div class="register_form signup_login_form">
 
@@ -209,40 +209,36 @@
 
                     const firebaseConfig = {
                       apiKey: "AIzaSyBej9lF7GVt0_XTC_04YhbX2nTpzYTFbkA",
-  authDomain: "bookstore-group1.firebaseapp.com",
-  databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
-  projectId: "bookstore-group1",
-  storageBucket: "bookstore-group1.appspot.com",
-  messagingSenderId: "120255369519",
-  appId: "1:120255369519:web:0640d6ae60ee20f40291da",
-  measurementId: "G-K7T1XKHQ7F"
+                      authDomain: "bookstore-group1.firebaseapp.com",
+                      databaseURL: "https://bookstore-group1-default-rtdb.firebaseio.com",
+                      projectId: "bookstore-group1",
+                      storageBucket: "bookstore-group1.appspot.com",
+                      messagingSenderId: "120255369519",
+                      appId: "1:120255369519:web:0640d6ae60ee20f40291da",
+                      measurementId: "G-K7T1XKHQ7F"
                     };
 
                     const firebaseApp = initializeApp(firebaseConfig);
                     const auth = getAuth();
-                    document.querySelector('#submit').addEventListener('click', () => {
 
-                      const password = document.getElementById("matkhau").value;
+                    document.querySelector('form').addEventListener('submit', async (event) => {
+                      event.preventDefault();
                       const email = document.getElementById("email").value;
-                      signInWithEmailAndPassword(auth, email, password)
-                        .then((userCredential) => {
-                          const user = userCredential.user;
-                          console.log("Đăng nhập thành công!");
-                          alert("Đăng nhập thành công!");
-                          window.location.href = "index.html";
-                        })
+                      const password = document.getElementById("matkhau").value;
 
-                        .catch((error) => {
-                          const errorCode = error.code;
-                          const errorMessage = error.message;
-                          console.log("Đăng nhập thất bại.")
-                          alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
-                        });
+                      try {
+                        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                        console.log("Đăng nhập thành công!");
+                        alert("Đăng nhập thành công!");
+                        window.location.href = "index.html";
+                        
+                      } catch (error) {
+                        console.error("Đăng nhập thất bại.", error);
+                        alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+                      }
+                    });
 
-                    })
                   </script>
-
-                  <script type="module" src="assets/forget-password.js"></script>
 
                   <div class="remenber_forget row mb-3 align-items-center justify-content-between">
                     <div class="col col-6">
@@ -254,7 +250,8 @@
 
                     <div class="col col-6">
                       <div class="forget_password text-end">
-                        <button type="submit" id="quenmk" style="color: black; text-decoration: underline;">Quên mật khẩu</button>
+                        <button type="submit" id="quenmk" style="color: black; text-decoration: underline;">Quên mật
+                          khẩu</button>
                       </div>
                     </div>
                   </div>
@@ -454,7 +451,7 @@
     try {
       const db = getDatabase();
       const usersRef = ref(db, 'User forgot password');
-      m=userCount;
+      m = userCount;
       const snapshot = await get(usersRef);
 
       if (snapshot.exists()) {

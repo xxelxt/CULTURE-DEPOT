@@ -12,23 +12,23 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
 
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
-  
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/cursor.css">
 
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
   <link rel="stylesheet" type="text/css" href="assets/css/vanilla-calendar.min.css">
 
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
@@ -184,7 +184,7 @@
 
     <main class="page_content">
 
-      <section class="register_section section_space_lg">
+      <section class="register_section section_space_lg" style="padding: 90px 0px;">
         <div class="container">
           <div class="row justify-content-center">
 
@@ -216,49 +216,54 @@
                 // Initialize Firebase
                 const firebaseApp = initializeApp(firebaseConfig);
                 var m = 0;
-                  try {
-                    const db = getDatabase();
-                    const usersRef = ref(db, 'users');
-                    const snapshot = await get(usersRef);
+                try {
+                  const db = getDatabase();
+                  const usersRef = ref(db, 'users');
+                  const snapshot = await get(usersRef);
 
-                    if (snapshot.exists()) {
-                      
-                      const userCount = Object.keys(snapshot.val()).length;
-                      m=userCount;
-                      console.log(`Số mail trong Firebase: ${userCount}`);
-                    } else {
-                      console.log('Không có DL trong CSDL.');
-                      
-                    }
-                  } catch (error) {
-                    console.error('Lỗi khi đếm số mail:', error);
-                    throw error;
+                  if (snapshot.exists()) {
+
+                    const userCount = Object.keys(snapshot.val()).length;
+                    m = userCount;
+                    console.log(`Số mail trong Firebase: ${userCount}`);
+                  } else {
+                    console.log('Không có DL trong CSDL.');
+
                   }
+                } catch (error) {
+                  console.error('Lỗi khi đếm số mail:', error);
+                  throw error;
+                }
 
                 let userCountVariable;
-                console.log(m)
+                console.log(m);
 
-                function writeUserData(Id, matkhau, email, sothutu) {
-                  const db = getDatabase();
-                  set(ref(db, 'users/' + sothutu), {
-                    id: Id,
-                    matkhau: matkhau,
-                    email: email,
-                  });
-
-                }
-                document.querySelector('#submit').addEventListener('click', () => {
+                document.querySelector('#submit').addEventListener('click', async (event) => {
+                  event.preventDefault();
                   const matkhau = document.getElementById("matkhau").value;
                   const email = document.getElementById("email").value;
                   const sluong = m;
 
-                  writeUserData(sluong + 1, matkhau, email, sluong + 1)
-                  
-                  alert("Đăng ký thành công!")
-                  window.location.href = "login.html";
+                  try {
+                    await writeUserData(sluong + 1, matkhau, email, sluong + 1);
+                    alert("Đăng ký thành công!");
+                    window.location.href = "login.html";
+                  } catch (error) {
+                    console.error('Lỗi:', error);
+                  }
                 });
+
+                async function writeUserData(Id, matkhau, email, sothutu) {
+                  const db = getDatabase();
+                  await set(ref(db, 'users/' + sothutu), {
+                    id: Id,
+                    matkhau: matkhau,
+                    email: email,
+                  });
+                }
+
               </script>
-              
+
               <form action="#">
                 <div class="register_form signup_login_form">
                   <div class="form_item">
@@ -278,8 +283,8 @@
                       <small>Đăng ký</small>
                       <small>Đăng ký</small>
                     </span>
-                  </button> 
-                  
+                  </button>
+
                   <p class="text-center">Hoặc đăng nhập với</p>
                   <ul class="social_links unordered_list_center">
                     <li>
@@ -298,7 +303,7 @@
                       </a>
                     </li>
                   </ul>
-                  
+
                 </div>
               </form>
             </div>
@@ -455,22 +460,22 @@
     </footer>
 
   </div>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
-	<script src="assets/js/bootstrap-dropdown-ml-hack.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap-dropdown-ml-hack.js"></script>
 
-	<script src="assets/js/cursor.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
-	<script src="assets/js/parallax-scroll.js"></script>
+  <script src="assets/js/cursor.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
+  <script src="assets/js/parallax-scroll.js"></script>
 
-	<script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
 
-	<script src="assets/js/magnific-popup.min.js"></script>
+  <script src="assets/js/magnific-popup.min.js"></script>
 
-	<script src="assets/js/vanilla-calendar.min.js"></script>
+  <script src="assets/js/vanilla-calendar.min.js"></script>
 
-	<script src="assets/js/main.js"></script>
-  
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
