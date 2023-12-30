@@ -364,8 +364,8 @@ hr {
 /* 2.5 - Spaces or Gaps - Start
 ================================================== */
 .section_space_lg {
-	padding-top: 120px;
-	padding-bottom: 120px;
+	padding-top: 60px;
+	padding-bottom: 90px;
 }
 
 .section_space_md {
@@ -4877,7 +4877,7 @@ Responsive For Mobile & Tablet Devices
 	}
 
 	.section_space_lg {
-		padding-top: 90px;
+		padding-top: 60px;
 		padding-bottom: 90px;
 	}
 

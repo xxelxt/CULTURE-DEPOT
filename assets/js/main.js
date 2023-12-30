@@ -57,9 +57,9 @@
 	// Tilt
 	$('.tilt').tilt({
 		maxTilt: 12,
-		perspective: 1000,
+		perspective: 10000,
 		scale: 1,
-		speed: 1000,
+		speed: 10000,
 		glare: false,
 		maxGlare: 1
 	});

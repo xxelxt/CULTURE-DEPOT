@@ -1548,7 +1548,7 @@
     function changePage(event, page) {
       event.preventDefault();
 
-      const booksPerPage = 9;
+      const booksPerPage = 15;
       const books = document.querySelectorAll('.book');
       const totalPages = Math.ceil(books.length / booksPerPage);
 
@@ -1639,7 +1639,7 @@
     }
 
     function changePage(page) {
-      const booksPerPage = 9;
+      const booksPerPage = 15;
       let currentPage = page;
       const totalPages = Math.ceil(filteredBooks.length / booksPerPage);
 
