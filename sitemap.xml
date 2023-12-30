@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.00</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/book.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/book_detail.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.64</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/blog.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/blog_detail.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.64</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/event.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/event_detail.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.64</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/aboutus.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.64</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/contactus.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.64</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/login.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+   <url>
+      <loc>https://xxelxt.github.io/CULTURE-DEPOT/signup.html</loc>
+      <lastmod>2023-12-30</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.80</priority>
+   </url>
+
+</urlset>
