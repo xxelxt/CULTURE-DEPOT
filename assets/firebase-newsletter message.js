@@ -17,12 +17,13 @@ const firebaseApp = initializeApp(firebaseConfig);
 var m = 0;
 try {
 	const db = getDatabase();
-	const usersRef = ref(db, 'Customers sign up to receive mail');
+	const usersRef = ref(db, 'Customers sign up to receive mail with messages');
 	const snapshot = await get(usersRef);
 
 	if (snapshot.exists()) {
+		
 		const userCount = Object.keys(snapshot.val()).length;
-		m = userCount;
+		m=userCount;
 		console.log(`Số mail trong Firebase: ${userCount}`);
 	} else {
 		console.log('Không có DL trong CSDL.');
@@ -33,17 +34,22 @@ try {
 	throw error;
 }
 
-function writeUserData(email, sothutu) {
+function writeUserData(ten,email,tinnnhan, sothutu) {
 	const db = getDatabase();
-	set(ref(db, 'Customers sign up to receive mail/' + sothutu), {
-		gmail: email,
+	set(ref(db, 'Customers sign up to receive mail with messages/' + sothutu), {
+		name: ten,
+		mess: tinnnhan,
+		email: email,
 	});
 }
 
-document.querySelector('#submit').addEventListener('click', () => {
-	const email = document.getElementById("email").value;
+document.querySelector('#submit2').addEventListener('click', () => {
+	const email = document.getElementById("input_email").value;
+	const name = document.getElementById("input_name").value;
+	const tinnnhan = document.getElementById("input_message").value;
+	
 	const sluong = m;
 
-	writeUserData(email, sluong + 1)
-	alert("Đăng ký nhận thư thành công! Những thông báo mới nhất sẽ được gửi đến địa chỉ " + email);
+	writeUserData(name,email,tinnnhan, sluong + 1)
+	alert("Cảm ơn về phản hồi của bạn " + name +" nhé");
 })
