@@ -470,7 +470,7 @@
               </div>
             </div>
 
-            <div class="col col-lg-4 book" data-category="Tamly" data-country="Y" id="book6">
+            <div class="col col-lg-4 book" data-category="Tamly" data-country="TrungQuoc" id="book6">
               <div class="course_card">
                 <div class="item_image">
                   <a href="#!" data-cursor-text="View">
@@ -1605,41 +1605,34 @@
     let filteredBooks = [];
 
     document.addEventListener("DOMContentLoaded", function () {
-      filterBooksByCriteria();
+      combineFilterAndSearch();
       changePage(1);
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.getElementById('searchForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        filterBooks();
-      });
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      combineFilterAndSearch();
     });
 
-    function filterBooks() {
+    function combineFilterAndSearch() {
       var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
-      filteredBooks = Array.from(document.querySelectorAll('.book')).filter(function (book) {
-        var author = book.querySelector('.meta_info_list li:nth-child(1) span b').textContent.toLowerCase();
-        var title = book.querySelector('.item_title a').textContent.toLowerCase();
-        return author.includes(searchQuery) || title.includes(searchQuery);
-      });
-
-      changePage(1);
-    }
-
-    function filterBooksByCriteria() {
       var selectedCategories = document.querySelectorAll('.filter-category:checked');
       var selectedCountries = document.querySelectorAll('.filter-country:checked');
-
       var selectedCategoryValues = Array.from(selectedCategories).map(checkbox => checkbox.value);
       var selectedCountryValues = Array.from(selectedCountries).map(checkbox => checkbox.value);
 
       filteredBooks = Array.from(document.querySelectorAll('.book')).filter(function (book) {
+        var author = book.querySelector('.meta_info_list li:nth-child(1) span b').textContent.toLowerCase();
+        var title = book.querySelector('.item_title a').textContent.toLowerCase();
         var bookCategory = book.getAttribute('data-category');
         var bookCountry = book.getAttribute('data-country');
-        return (selectedCategoryValues.length === 0 || selectedCategoryValues.includes(bookCategory)) &&
-          (selectedCountryValues.length === 0 || selectedCountryValues.includes(bookCountry));
+
+        var matchesSearch = author.includes(searchQuery) || title.includes(searchQuery);
+        var matchesCategory = selectedCategoryValues.length === 0 || selectedCategoryValues.includes(bookCategory);
+        var matchesCountry = selectedCountryValues.length === 0 || selectedCountryValues.includes(bookCountry);
+
+        return matchesSearch && matchesCategory && matchesCountry;
       });
 
       changePage(1);
@@ -1678,10 +1671,11 @@
       resultTextElement.textContent = `Đang hiển thị ${showingStart} - ${showingEnd} trong tổng số ${filteredBooks.length} cuốn sách`;
     }
 
-    document.querySelector('input[name="search"]').addEventListener('input', filterBooks);
     document.querySelectorAll('.filter-category, .filter-country').forEach(checkbox => {
-      checkbox.addEventListener('change', filterBooksByCriteria);
+      checkbox.addEventListener('change', combineFilterAndSearch);
     });
+
+    document.querySelector('input[name="search"]').addEventListener('input', combineFilterAndSearch);
 
     if (event.isTrusted) {
       document.querySelector('.filter_result').scrollIntoView({ behavior: 'smooth' });
