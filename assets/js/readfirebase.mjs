@@ -9,8 +9,8 @@ const firebaseConfig = {
   projectId: "bookstore-group1",
   storageBucket: "bookstore-group1.appspot.com",
   messagingSenderId: "120255369519",
-  appId: "1:120255369519:web:5f29ed02bc55f63b0291da",
-  measurementId: "G-30HG5R98GF"
+  appId: "1:120255369519:web:0640d6ae60ee20f40291da",
+  measurementId: "G-K7T1XKHQ7F"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
