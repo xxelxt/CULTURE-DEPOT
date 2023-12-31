@@ -1,6 +1,6 @@
-# Đề tài: Xây dựng trang web kinh doanh sách
+## Culture Depot - Nơi hội tụ của văn hoá đọc
 
-## Nhóm 1 - Thiết kế web (231IS19A01)
+## Nhóm 1
 
 ### ✊ Danh sách thành viên
 
@@ -21,28 +21,49 @@
 
 Lấy sách và văn hoá đọc làm trung tâm, đây là nơi bạn có thể tìm thấy những cuốn sách mình hứng thú, tìm thấy không gian để chia sẻ niềm đam mê, tìm thấy những sự kiện để kích thích sự đọc và yêu sách, giúp lan truyền giá trị về văn hóa đọc đến mọi người.
 
-### 📖 Mô tả
-
-- **Trang chủ (Home)**: Bao gồm thông tin nổi bật, sách và merchandise mới lên kệ, sự kiện sắp diễn ra, chia sẻ mới nhất từ độc giả
-
-- **Trang bán hàng (Store)**: Bạn đọc có thể duyệt qua danh sách sách đang bán cũng như sản phẩm đi kèm như sổ tay, túi tote,...
-
-- **Bảng tin (Feed)**: Cập nhật thông tin về những cuốn sách mới và cảm nhận của độc giả
-  
-- **Sự kiện (Events)**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả
-
-- **Giới thiệu (About us)**: Giới thiệu về câu chuyện của chúng tôi
-
-### 🚀 Framework và thư viện sử dụng
-
-- 
-
 ### 🌐 Website tham khảo
 
 - [Nhã Nam](https://nhanam.vn/)
- 
-- [Abebooks](https://www.abebooks.com/collections/cm_sp=TopNav-_-Advs-_-Collections)
- 
-- [Fahasa](https://www.fahasa.com/)
- 
 - [Vinabook](https://www.vinabook.com/)
+- [Thaihabooks](https://thaihabooks.com/)
+
+### 📖 Mô tả
+
+- **Trang chủ**: Thông tin nổi bật, sách được lựa chọn, tin bài và sự kiện mới,...
+- **Trang sách**: Danh sách sách đang bán cũng như sản phẩm đi kèm như sổ tay, túi tote,...
+- **Bảng tin**: Tin tức, review từ bạn đọc & độc giả, lựa chọn của biên tập viên,...
+- **Sự kiện**: Các sự kiện offline & online liên quan đến văn hóa đọc, giao lưu cùng tác giả, dịch giả,...
+- **Giới thiệu**: Giới thiệu về thông diệp, bản sắc, tinh thần của startup
+- **Liên hệ**: Thông tin liên hệ và gửi phản hồi tới startup
+
+### 🚀 Tiện ích sử dụng
+
+- **Bootstrap**: Framework CSS tạo giao diện linh hoạt và responsive
+- **jQuery**: Thư viện JavaScript xử lý sự kiện, hoạt ảnh,...
+- **Font Awesome**: Thư viện CSS cung cấp vector icon
+- **Magnific Popup**: Cửa sổ popup in-site cho video và hình ảnh
+- **Vanilla Calendar**: Tiện ích lịch đơn giản
+- **Parallax.js**: Hiệu ứng parallax cho element
+- **Cursor.css & Cursor.css**: Tuỳ chỉnh con trỏ chuột
+- **Node.js**: Xây dựng backend (bước đầu)
+- **Firebase**: NoSQL database lưu trữ dữ liệu đám mây và xác thực người dùng (bước đầu)
+
+### ⚙️ Sửa lỗi không kết nối được với Firebase
+
+- Chạy các lệnh sau trong Powershell với quyền Admin:
+
+1. Kiểm tra ExecutionPolicy
+
+```
+Get-ExecutionPolicy -list
+```
+
+2. Cho phép CurrentUser chạy các script từ internet được signed
+
+```
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+------
+
+*Nội dung hiển thị trên trang đuọc tham khảo từ website [Nhã Nam](https://nhanam.vn/), bản quyền thuộc Công ty Văn hoá và Truyền thông Nhã Nam.*
