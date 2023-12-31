@@ -66,4 +66,4 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 ------
 
-*Nội dung hiển thị trên trang đuọc tham khảo từ website [Nhã Nam](https://nhanam.vn/), bản quyền thuộc Công ty Văn hoá và Truyền thông Nhã Nam.*
+> *Nội dung hiển thị trên trang đuọc tham khảo từ website [Nhã Nam](https://nhanam.vn/), bản quyền thuộc Công ty Văn hoá và Truyền thông Nhã Nam.*
