@@ -451,11 +451,12 @@
     try {
       const db = getDatabase();
       const usersRef = ref(db, 'User forgot password');
-      m = userCount;
+     
       const snapshot = await get(usersRef);
 
       if (snapshot.exists()) {
         const userCount = Object.keys(snapshot.val()).length;
+        m = userCount;
         console.log(`Số mail trong Firebase: ${userCount}`);
       } else {
         console.log('Không có DL trong CSDL.');
